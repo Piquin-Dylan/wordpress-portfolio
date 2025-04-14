@@ -1,0 +1,25 @@
+.container_form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.title_form {
+  text-align: center;
+
+}
+
+
+.input_form{
+  color: white;
+  padding: 16px 14px;
+  width: 300px;
+  height: 15px;
+  border-radius: 12px;
+  background-color: #0D2436;
+  border: 1px solid #314E63;
+}

@@ -1,0 +1,159 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.scene {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s ease;
+}
+
+.carousel article {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform-style: preserve-3d;
+  margin-left: -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-align: center;
+}
+
+.carousel .slide {
+  transform-style: preserve-3d;
+}
+
+.carousel .slide img {
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.carousel .slide a {
+  margin-top: 10px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+}
+.carousel .slide a .title_project_3 {
+  position: relative;
+  top: -20px;
+}
+
+.arrow {
+  position: absolute; /* Utilisation de `absolute` pour les flèches */
+  font-size: 2em;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.left {
+  left: 10px; /* Colle la flèche gauche au bord de l'écran */
+  top: 1000px;
+}
+
+.right {
+  right: 10px; /* Colle la flèche droite au bord de l'écran */
+  top: 1000px;
+}
+
+
+.title_project {
+  font-size: 32px;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/*
+!* Code quand le js est désactiver *!
+
+.no-js .arrow {
+  display: none;
+}
+
+.no-js .carousel {
+  display: block;
+  transform: none;
+}
+
+.no-js .carousel article {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: none;
+}
+
+.no-js .carousel .slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+
+  .no-js .carousel .slide p {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.2rem;
+  }
+*/
+
+
+@media screen and (max-width: 700px) {
+  .scene {
+    overflow: hidden;
+  }
+
+  .carousel .slide img {
+
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .left {
+    left: 0;
+    top: 1000px;
+  }
+  .right {
+    top: 1000px;
+  }
+}
+
+
+
+
+
+

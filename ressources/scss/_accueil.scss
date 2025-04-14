@@ -1,0 +1,103 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+canvas#my-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: block;
+}
+
+
+.Présentation__Projet {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.125em; /* 50 / 16 */
+  margin-bottom: 332px; /* 332 / 16 */
+  margin-top: 4.6875em; /* 75 / 16 */
+  padding-right: 2em; /* 32 / 16 */
+}
+
+.name {
+  font-size: 3em; /* 48 / 16 */
+  margin-bottom: 0.3333em; /* 16 / 48 */
+  font-weight: bold;
+
+}
+
+.job {
+  font-size: 1.5em; /* 24 / 16 */
+  margin-bottom: 0.6666em; /* 16 / 24 */
+}
+
+
+.container_btn {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_header {
+  font-size: 16px;
+  padding: 12px;
+  max-width: 150px;
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
+  border: 2px solid #4ec3ff;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #4ec3ff66;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.btn_header:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(78, 195, 255, 0.2) 0%, transparent 80%);
+  transform: rotate(25deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.btn_header:hover::before {
+  opacity: 1;
+  top: -80%;
+  left: -50%;
+}
+
+.btn_header:hover {
+  box-shadow: 0 0 20px #4ec3ff;
+  border-color: #ffffff;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+  position: absolute;
+}
+
