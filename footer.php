@@ -18,6 +18,7 @@
 <body>
 <footer>
     <nav class="navigation_footer">
+        <h2 class="hidden">Menu de navigation de bas de page</h2>
         <ul>
             <li class="menu_title">Navigation
                 <ul>

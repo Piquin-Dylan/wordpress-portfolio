@@ -52,3 +52,35 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+@font-face {
+    font-family: 'Orbitron Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Orbitron Light'), url('../Font/orbitron-webfont/orbitron-light.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Orbitron Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Orbitron Medium'), url('../Font/orbitron-webfont/orbitron-medium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Orbitron Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Orbitron Bold'), url('../Font/orbitron-webfont/orbitron-bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Orbitron Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Orbitron Black'), url('../Font/orbitron-webfont/orbitron-black.woff') format('woff');
+}

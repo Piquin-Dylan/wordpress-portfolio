@@ -1,0 +1,31 @@
+.project_title {
+  font-family: 'Orbitron Bold', serif;
+  font-size: 2em; /* 32 / 16 */
+  margin-left: 4.6875em; /* 150 / 32 */
+  margin-bottom: 2em; /* 64 / 32 */
+  font-weight: bolder;
+  color: white;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.navigation_project {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3em; /* 48 / 16 */
+}
+
+.navigation_project a {
+
+  font-size: 24px;/* 24 / 16 */
+  color: white;
+  font-family: "Orbitron Light", serif;
+  text-decoration: none;
+  padding: 16px 48px;/* 16 / 24   48 / 24 */;
+  border: 1px solid white;
+  border-radius: 24px;
+
+
+}

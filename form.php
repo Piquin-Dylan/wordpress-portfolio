@@ -2,11 +2,13 @@
 /**
  * Template Name: Page de contact
  */
+
+
 get_header();
 ?>
 
 <div class="container">
-    <form action="#" method="post">
+    <form action="<?php echo get_template_directory_uri(); ?>/form_validation.php" method="post">
         <section class="container_form">
             <h2 class="title_form">Contactez-moi </h2>
             <label for="name">Nom complet</label>
@@ -22,7 +24,7 @@ get_header();
             <textarea name="area" id="area" cols="30" rows="10" placeholder="Ex: Entre votre message"
                       required></textarea>
 
-            <input type="button" value="Envoyer">
+            <input type="submit" value="Envoyer">
         </section>
     </form>
     <aside>

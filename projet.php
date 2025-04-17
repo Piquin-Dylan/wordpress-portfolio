@@ -3,23 +3,40 @@
  * Template Name: Projet
  */
 get_header();
+
+
 ?>
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Projet</title>
-</head>
-<body>
-<h1>Page Projet</h1>
 
-<div class="Présentation">
-    <span class="name"><?php the_field('first_name'); ?></span>
-</div>
 
-<?php get_footer(); ?>
-</body>
-</html>
+        <section class="container_project">
+            <h2 class="project_title">Mes projets</h2>
+            <div class="navigation_project">
+                <a href="#" title="Voir tout les projets">Tout</a>
+                <a href="#" title="Voir les projets Web">Web</a>
+                <a href="#" title="Voir les projets 3d">3D</a>
+                <a href="#" title="Voir les projets Mobile">Mobile</a>
+
+            </div>
+
+
+            <article class="item_project">
+                <h3 class="hidden">Projet Portfolio</h3>
+                <a href=""></a>
+            </article>
+            <article>
+                <h3 class="hidden">Site Cv</h3>
+                <a href=""></a>
+            </article>
+            <article>
+                <h3 class="hidden">Site Client</h3>
+                <a href=""></a>
+            </article>
+
+
+        </section>
+
+
+
+<?php
+get_footer();
+?>
