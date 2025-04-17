@@ -469,11 +469,10 @@ aside {
 .project_title {
   font-family: "Orbitron Bold", serif;
   font-size: 2em; /* 32 / 16 */
-  margin-left: 4.6875em; /* 150 / 32 */
   margin-bottom: 2em; /* 64 / 32 */
   font-weight: bolder;
   color: white;
-  text-align: left;
+  text-align: center;
   flex-wrap: wrap;
 }
 
@@ -483,16 +482,44 @@ aside {
   justify-content: center;
   align-items: center;
   gap: 3em; /* 48 / 16 */
+  margin-bottom: 32px;
 }
 
 .navigation_project a {
-  font-size: 24px; /* 24 / 16 */
+  font-size: 1.5em; /* 24 / 16 */
   color: white;
   font-family: "Orbitron Light", serif;
   text-decoration: none;
-  padding: 16px 48px; /* 16 / 24   48 / 24 */
+  padding: 0.6666em 2em; /* 16 / 24   48 / 24 */
   border: 1px solid white;
-  border-radius: 24px;
+  border-radius: 1em; /* 24 / 24 */
+}
+
+.image_project {
+  background-color: #0E122E;
+  border: 1px solid white;
+  border-radius: 12px;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 150px;
+  margin-right: 150px;
+  position: relative;
+}
+
+.name_project {
+  font-size: 16px;
+  position: relative;
+  color: white;
+  font-family: "Orbitron Black", serif;
+  top: 50px;
+  left: 35px;
 }
 
 /*# sourceMappingURL=main.css.map */
