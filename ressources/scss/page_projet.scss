@@ -1,7 +1,18 @@
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .project_title {
   font-family: 'Orbitron Bold', serif;
-  font-size: 2em; /* 32 / 16 */
-  margin-bottom: 2em; /* 64 / 32 */
+  font-size: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   font-weight: bolder;
   color: white;
   text-align: center;
@@ -10,23 +21,23 @@
 
 .navigation_project {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3em; /* 48 / 16 */
-  margin-bottom: 32px;
+  gap: 16px;
+  margin: 24px 0;
 }
 
 .navigation_project a {
-
-  font-size: 1.5em; /* 24 / 16 */
+  text-decoration: none;
+  font-size: 14px;
   color: white;
   font-family: "Orbitron Light", serif;
-  text-decoration: none;
-  padding: 0.6666em 2em; /* 16 / 24   48 / 24 */
+  padding: 8px 24px; /* 16 / 24   48 / 24 */
   border: 1px solid white;
   border-radius: 1em; /* 24 / 24 */
 }
+
 
 .image_project {
   background-color: #0E122E;
@@ -34,17 +45,6 @@
   border-radius: 12px;
 }
 
-.projects-container {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-left: 150px;
-  margin-right: 150px;
-  position: relative;
-}
 
 .name_project {
   font-size: 16px;
@@ -55,3 +55,59 @@
   left: 35px;
 }
 
+.image_project img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+
+@media (max-width: 280px) {
+  .project_title {
+    font-size: 1.5em;
+  }
+
+  .navigation_project a {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+}
+
+
+@media screen and (min-width: 320px) {
+
+  .navigation_project {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (min-width: 720px) {
+  .navigation_project a {
+
+    font-size: 1em;
+    font-family: "Orbitron Light", serif;
+    text-decoration: none;
+    padding: 16px 48px;
+    border: 1px solid white;
+    border-radius: 1em;
+  }
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-right: 150px;
+    position: relative;
+  }
+}

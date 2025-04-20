@@ -41,3 +41,19 @@ function mortal_theme()
 }
 
 add_action('wp_enqueue_scripts', 'mortal_theme');
+
+
+function allow_svg_upload($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'allow_svg_upload');
+
+add_action('init', function () {
+    remove_filter('the_content', 'wpautop');
+});
+
+
+session_write_close();

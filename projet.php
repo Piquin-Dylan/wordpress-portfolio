@@ -25,7 +25,7 @@ get_header();
                     <h3 class="hidden"><?php echo esc_html($title); ?></h3>
                     <?php if ($image) : ?>
                         <p class="name_project"><?php echo esc_html($title); ?></p>
-                        <a href="<?php echo esc_url($link); ?>">
+                        <a href="<?php echo site_url('/single_page/?project=' . sanitize_title($title)); ?>">
                             <div class="image_project_wrapper">
                                 <img
                                         src="<?php echo esc_url($image['url']); ?>"
