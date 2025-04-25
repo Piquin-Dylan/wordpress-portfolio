@@ -24,29 +24,37 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             $image4 = get_sub_field('realisation_image_2');
             ?>
             <h1 class="project_name_single_page">Projet <?php echo esc_html($title); ?></h1>
-            <section>
+            <section class="project_section">
                 <h2 class="hidden">Description Projet</h2>
                 <?php echo wp_kses_post($description); ?>
             </section>
-            <section>
+            <section class="project_section">
                 <h2 class="concept_title">Concept</h2>
                 <?php echo wp_kses_post($concept); ?>
                 <?php if ($image1) : ?>
-                    <div class="img">
-                        <img src="<?php echo esc_url($image1['url']); ?>" alt="<?php echo esc_attr($image1['alt']); ?>">
-                    </div>
-                <?php endif; ?>
-                <?php if ($image2) : ?>
-                    <div class="img">
-                        <img src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>">
-                    </div>
-                <?php endif; ?>
+                <div class="img_concept">
+                    <img class="image_concept" src="<?php echo esc_url($image1['url']); ?>"
+                         alt="<?php echo esc_attr($image1['alt']); ?>">
+
+                    <?php endif; ?>
+                    <?php if ($image2) : ?>
+
+                    <img class="image_concept" src="<?php echo esc_url($image2['url']); ?>"
+                         alt="<?php echo esc_attr($image2['alt']); ?>">
+                </div>
+            <?php endif; ?>
             </section>
-            <section>
+            <section class="project_section">
                 <h2 class="realisation_title">Réalisation</h2>
-                <p class="realisation_explication"><?php echo wp_kses_post($realisation) ?></p>
+                <?php echo wp_kses_post($realisation) ?>
             </section>
 
+            <section class="project_section">
+                <h2 class="result">Résultat</h2>
+            </section>
+            <section class="project_section">
+                <h2 class="other_project">D'autres projets</h2>
+            </section>
 
             <?php break; ?>
         <?php endif;

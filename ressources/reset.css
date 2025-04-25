@@ -84,3 +84,10 @@ table {
     font-weight: normal;
     src: local('Orbitron Black'), url('../Font/orbitron-webfont/orbitron-black.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'Exo Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Exo Light'), url('../Font/exo/Exo-Light.ttf') format('truetype');
+}

@@ -565,12 +565,92 @@ aside {
     position: relative;
   }
 }
-.project_name_single_page {
+.project_section, .project_name_single_page {
   color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.desription_project {
-  color: white;
+.project_name_single_page {
+  font-size: 32px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+}
+
+.project_section p {
+  font-size: 18px;
+  font-family: "Exo-Light", sans-serif;
+  max-width: 100%;
+  margin-bottom: 60px;
+  margin-top: 24px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.project_section h2 {
+  font-size: 32px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.img_concept {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.image_concept {
+  max-width: 200px;
+  height: auto;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .project_section p {
+    font-size: 14px;
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .project_section h2 {
+    font-size: 24px;
+  }
+  .project_name_single_page {
+    font-size: 24px;
+  }
+  .img_concept {
+    gap: 10px;
+  }
+  .image_concept {
+    max-width: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .project_section p {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    word-spacing: normal;
+  }
+  .project_section h2 {
+    font-size: 16px;
+  }
+  .project_name_single_page {
+    font-size: 16px;
+  }
+  .img_concept {
+    gap: 5px;
+  }
+  .image_concept {
+    max-width: 120px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
