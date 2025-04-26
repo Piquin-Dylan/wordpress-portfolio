@@ -98,36 +98,6 @@ main {
 
 
 
-/*
-!* Code quand le js est désactiver *!
-
-.no-js .arrow {
-  display: none;
-}
-
-.no-js .carousel {
-  display: block;
-  transform: none;
-}
-
-.no-js .carousel article {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: none;
-}
-
-.no-js .carousel .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-
-  .no-js .carousel .slide p {
-    display: block;
-    margin-top: 5px;
-    font-size: 1.2rem;
-  }
-*/
 
 
 @media screen and (max-width: 700px) {

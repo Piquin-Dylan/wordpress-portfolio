@@ -348,36 +348,6 @@ main {
   text-align: center;
 }
 
-/*
-!* Code quand le js est désactiver *!
-
-.no-js .arrow {
-  display: none;
-}
-
-.no-js .carousel {
-  display: block;
-  transform: none;
-}
-
-.no-js .carousel article {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: none;
-}
-
-.no-js .carousel .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-
-  .no-js .carousel .slide p {
-    display: block;
-    margin-top: 5px;
-    font-size: 1.2rem;
-  }
-*/
 @media screen and (max-width: 700px) {
   .scene {
     overflow: hidden;
@@ -575,13 +545,13 @@ aside {
 
 .project_name_single_page {
   font-size: 32px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron bold", serif;
   font-weight: bold;
 }
 
 .project_section p {
   font-size: 18px;
-  font-family: "Exo-Light", sans-serif;
+  font-family: "Exo Light", serif;
   max-width: 100%;
   margin-bottom: 60px;
   margin-top: 24px;
@@ -591,7 +561,7 @@ aside {
 
 .project_section h2 {
   font-size: 32px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron bold", serif;
   font-weight: bold;
   text-align: left;
 }

@@ -4,6 +4,7 @@
  */
 
 get_header();
+
 // Récupère le slug du projet depuis l'URL
 $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
@@ -22,6 +23,9 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             $realisation = get_sub_field('realisation');
             $image3 = get_sub_field('realisation_image_1');
             $image4 = get_sub_field('realisation_image_2');
+            $image5 = get_sub_field('autre_projet_image_1');
+            $image6 = get_sub_field('autre_projet_image_2');
+            $image7 = get_sub_field('autre_projet_image_3');
             ?>
             <h1 class="project_name_single_page">Projet <?php echo esc_html($title); ?></h1>
             <section class="project_section">
@@ -52,10 +56,24 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             <section class="project_section">
                 <h2 class="result">Résultat</h2>
             </section>
+
+
             <section class="project_section">
                 <h2 class="other_project">D'autres projets</h2>
-            </section>
+                <article>
+                    <h3 class="hidden"><?php echo $title ?>></h3>
+                    <img src="<?php echo esc_url($image5['url']) ?>" alt="<?php echo esc_attr($image5['alt']); ?>"
+                </article>
+                <article>
+                    <h3 class="hidden">Projet site Cv</h3>
+                    <img src="<?php echo esc_url($image6['url']) ?>" alt="<?php echo esc_attr($image6['alt']) ?>"
+                </article>
+                <article>
+                    <h3 class="hidden">Projet site Client</h3>
+                    <img src="<?php echo esc_url($image7['url']) ?>" alt="<?php echo esc_attr($image7['alt']) ?>"
+                </article>
 
+            </section>
             <?php break; ?>
         <?php endif;
     endwhile;

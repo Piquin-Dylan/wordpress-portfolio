@@ -15,7 +15,7 @@ get_header();
     </div>
 
     <?php if (have_rows('projets')) : ?>
-        <div class="projects-container"> <!-- SECTION FLEX GLOBALE -->
+        <div class="projects-container">
             <?php while (have_rows('projets')) : the_row();
                 $image = get_sub_field('image_projet');
                 $title = get_sub_field('project_name');
