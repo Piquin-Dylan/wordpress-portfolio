@@ -23,6 +23,9 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             $realisation = get_sub_field('realisation');
             $image3 = get_sub_field('realisation_image_1');
             $image4 = get_sub_field('realisation_image_2');
+            $result = get_sub_field('result');
+            $resultat_image_1 = get_sub_field('resultat_image_1');
+            $resultat_image_2 = get_sub_field('resultat_image_2');
             $image5 = get_sub_field('autre_projet_image_1');
             $image6 = get_sub_field('autre_projet_image_2');
             $image7 = get_sub_field('autre_projet_image_3');
@@ -50,29 +53,66 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             </section>
             <section class="project_section">
                 <h2 class="realisation_title">Réalisation</h2>
-                <?php echo wp_kses_post($realisation) ?>
+                <?php echo wp_kses_post($realisation); ?>
+                <?php if ($image3) : ?>
+                <div class="img_concept">
+                    <img class="image_concept" src="<?php echo esc_url($image3['url']); ?>"
+                         alt="<?php esc_attr($image3['alt']) ?>">
+                    <?php endif;
+                    ?>
+
+
+                    <?php if ($image4) : ?>
+                        <img class="image_concept" src="<?php echo esc_url($image4['url']) ?>"
+                             alt="<?php esc_attr($image5['alt']) ?>">
+                    <?php endif; ?>
+                </div>
             </section>
 
             <section class="project_section">
                 <h2 class="result">Résultat</h2>
+                <?php echo wp_kses_post($result) ?>
+                <?php if ($resultat_image_1): ?>
+                <div class="img_concept">
+                    <img class="image_concept" src="<?php echo esc_url($resultat_image_1['url']) ?>"
+                         alt="<?php esc_attr($resultat_image_1['alt']) ?>">
+                    <?php endif;
+                    ?>
+                    <?php if ($resultat_image_2) : ?>
+                        <img class="image_concept" src="<?php echo esc_url($resultat_image_2['url']) ?>"
+                             alt="<?php esc_attr($resultat_image_2['alt']) ?>">
+
+                    <?php endif; ?>
+                </div>
+
             </section>
 
 
             <section class="project_section">
                 <h2 class="other_project">D'autres projets</h2>
-                <article>
-                    <h3 class="hidden"><?php echo $title ?>></h3>
-                    <img src="<?php echo esc_url($image5['url']) ?>" alt="<?php echo esc_attr($image5['alt']); ?>"
-                </article>
-                <article>
-                    <h3 class="hidden">Projet site Cv</h3>
-                    <img src="<?php echo esc_url($image6['url']) ?>" alt="<?php echo esc_attr($image6['alt']) ?>"
-                </article>
-                <article>
-                    <h3 class="hidden">Projet site Client</h3>
-                    <img src="<?php echo esc_url($image7['url']) ?>" alt="<?php echo esc_attr($image7['alt']) ?>"
-                </article>
-
+                <div class="container_card">
+                    <article class="card">
+                        <div class="card_1">
+                            <h3 class="hidden"><?php echo $title ?>></h3>
+                            <img src="<?php echo esc_url($image5['url']) ?>"
+                                 alt="<?php echo esc_attr($image5['alt']); ?>"
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card_2">
+                            <h3 class="hidden">Projet site Cv</h3>
+                            <img src="<?php echo esc_url($image6['url']) ?>"
+                                 alt="<?php echo esc_attr($image6['alt']) ?>"
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card_3">
+                            <h3 class="hidden">Projet site Client</h3>
+                            <img src="<?php echo esc_url($image7['url']) ?>"
+                                 alt="<?php echo esc_attr($image7['alt']) ?>"
+                        </div>
+                    </article>
+                </div>
             </section>
             <?php break; ?>
         <?php endif;
