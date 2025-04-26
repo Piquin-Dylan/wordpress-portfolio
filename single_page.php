@@ -60,19 +60,29 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
 
             <section class="project_section">
                 <h2 class="other_project">D'autres projets</h2>
-                <article>
-                    <h3 class="hidden"><?php echo $title ?>></h3>
-                    <img src="<?php echo esc_url($image5['url']) ?>" alt="<?php echo esc_attr($image5['alt']); ?>"
-                </article>
-                <article>
-                    <h3 class="hidden">Projet site Cv</h3>
-                    <img src="<?php echo esc_url($image6['url']) ?>" alt="<?php echo esc_attr($image6['alt']) ?>"
-                </article>
-                <article>
-                    <h3 class="hidden">Projet site Client</h3>
-                    <img src="<?php echo esc_url($image7['url']) ?>" alt="<?php echo esc_attr($image7['alt']) ?>"
-                </article>
-
+                <div class="container_card">
+                    <article class="card">
+                        <div class="card_1">
+                            <h3 class="hidden"><?php echo $title ?>></h3>
+                            <img src="<?php echo esc_url($image5['url']) ?>"
+                                 alt="<?php echo esc_attr($image5['alt']); ?>"
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card_2">
+                            <h3 class="hidden">Projet site Cv</h3>
+                            <img src="<?php echo esc_url($image6['url']) ?>"
+                                 alt="<?php echo esc_attr($image6['alt']) ?>"
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card_3">
+                            <h3 class="hidden">Projet site Client</h3>
+                            <img src="<?php echo esc_url($image7['url']) ?>"
+                                 alt="<?php echo esc_attr($image7['alt']) ?>"
+                        </div>
+                    </article>
+                </div>
             </section>
             <?php break; ?>
         <?php endif;

@@ -14,7 +14,7 @@
 
 .project_section p {
   font-size: 18px;
-  font-family: "Exo Light",serif;
+  font-family: "Exo Light", serif;
   max-width: 100%;
   margin-bottom: 60px;
   margin-top: 24px;
@@ -44,6 +44,53 @@
   height: auto;
   margin: 0 10px;
 }
+
+.container_card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+article.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style général des cartes */
+.card_1, .card_2, .card_3 {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; /* texte en bas */
+}
+
+/* Style de l'image */
+.card_1 img,  {
+  position: absolute;
+  max-width: 211.5px;
+  right: 0;
+  top: 9px;
+}
+
+.card_2 img {
+  position: absolute;
+  max-width: 313.5px;
+  top: -38.5px;
+  left: -35px;
+}
+
+/* Style du texte sur l'image */
+.card_1 h3, .card_2 h3, .card_3 h3 {
+
+}
+
 
 @media screen and (max-width: 700px) {
   .project_section p {
