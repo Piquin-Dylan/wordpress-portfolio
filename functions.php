@@ -33,14 +33,40 @@ add_filter('nav_menu_css_class', function ($classes, $item, $args) {
 add_filter('nav_menu_item_id', function ($id, $item, $args) {
     return '';
 }, 10, 3);
-
-
-function mortal_theme()
+function mytheme_register_menus()
 {
-    wp_enqueue_style('style', get_template_directory_uri() . '/ressources/scss/main.css');
+    register_nav_menus(
+        array(
+            'main-menu' => __('Menu Principal')
+        )
+    );
 }
 
-add_action('wp_enqueue_scripts', 'mortal_theme');
+add_action('after_setup_theme', 'mytheme_register_menus');
+
+
+/*function mortal_theme()
+{
+    wp_enqueue_style('style', get_template_directory_uri() . '/ressources/scss/main.css');
+}*/
+
+/*add_action('wp_enqueue_scripts', 'mortal_theme');*/
+
+
+/*$languages = pll_the_languages(array('raw' => 1)); // récupérer toutes les langues
+$current_lang = pll_current_language(); // récupérer la langue actuelle*/
+
+/*if ($languages):
+    foreach ($languages as $lang):
+        if ($lang['slug'] != $current_lang): // afficher uniquement si c'est une autre langue
+            echo '<a href="' . esc_url($lang['url']) . '">';
+            echo esc_html($lang['name']); // affiche le nom de la langue (Français, Anglais, etc.)
+            echo '</a>';
+        endif;
+    endforeach;
+endif;*/
+
+
 
 
 function allow_svg_upload($mimes)
@@ -54,8 +80,6 @@ add_filter('upload_mimes', 'allow_svg_upload');
 add_action('init', function () {
     remove_filter('the_content', 'wpautop');
 });
-
-
 
 
 session_write_close();

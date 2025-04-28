@@ -1,5 +1,4 @@
-<?php get_header(); ?>
-
+<?php get_header() ?>
 
 <script src="<?php echo get_template_directory_uri(); ?>/ressources/js/main.js" defer></script>
 <title>Document</title>

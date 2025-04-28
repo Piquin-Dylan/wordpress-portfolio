@@ -253,16 +253,9 @@ ul {
 @media screen and (max-width: 300px) {
   .navigation_footer {
     font-size: 12px;
+    color: red !important;
   }
 }
-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
 .scene {
   perspective: 1000px;
   width: 300px;
@@ -547,6 +540,7 @@ aside {
   font-family: "Orbitron bold", serif;
   font-weight: bold;
   letter-spacing: 3px;
+  margin-top: 32px;
 }
 
 .project_section p {
@@ -629,48 +623,14 @@ article.card {
   margin-bottom: 1.5em; /* 24 / 16 */
 }
 
-.container_card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
-  align-items: stretch;
+.back {
+  font-size: 20px;
+  font-family: "Orbitron", serif;
+  text-decoration: none;
+  margin-left: 100px;
+  margin-bottom: 32px;
 }
 
-article.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Style général des cartes */
-.card_1, .card_2, .card_3 {
-  position: relative;
-  background-color: white;
-  border-radius: 10px;
-  width: 250px;
-  height: 300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-end; /* texte en bas */
-}
-
-/* Style de l'image */
-.card_1 img {
-  position: absolute;
-  max-width: 211.5px;
-  right: 0;
-  top: 9px;
-}
-
-.card_2 img {
-  position: absolute;
-  max-width: 313.5px;
-  top: -38.5px;
-  left: -35px;
-}
-
-/* Style du texte sur l'image */
 @media screen and (max-width: 700px) {
   .project_section, .project_name_single_page {
     padding: 0 50px;

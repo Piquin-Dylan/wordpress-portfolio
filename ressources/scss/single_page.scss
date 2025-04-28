@@ -10,6 +10,7 @@
   font-family: "Orbitron bold", serif;
   font-weight: bold;
   letter-spacing: 3px;
+  margin-top: 32px;
 }
 
 .project_section p {
@@ -93,7 +94,18 @@ article.card {
 }
 
 
+.back  {
+  font-size: 20px;
+  font-family: "Orbitron", serif;
+  text-decoration: none;
+  margin-left: 100px;
+  margin-bottom: 32px;
+}
+
+
 @media screen and (max-width: 700px) {
+
+
   .project_section, .project_name_single_page {
     padding: 0 50px;
   }
@@ -103,6 +115,7 @@ article.card {
     max-width: 100%;
     margin-left: 1.42em; /* 20 / 14 */
     margin-right: 1.42em; /* 20 / 14 */
+
   }
 
   .project_section h2 {
