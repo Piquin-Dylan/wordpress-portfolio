@@ -77,9 +77,9 @@ article.card {
 /* Style de l'image */
 .card_1 img, .card_3 img {
   position: absolute;
-  max-width: 13.1875em; /* 211 / 16 */
+  max-width: 12em; /* 211 / 16 */
   right: 0;
-  top: 0.5625em; /* 9 / 16 */
+  top: 2em; /* 9 / 16 */
 }
 
 .card_2 img {
@@ -94,18 +94,32 @@ article.card {
 }
 
 
-.back  {
+.back {
   font-size: 20px;
   font-family: "Orbitron", serif;
   text-decoration: none;
   margin-left: 100px;
   margin-bottom: 32px;
+  color: white;
+}
+
+.title_other_project {
+  font-family: "Orbitron Bold", serif;
+  text-align: left;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 70px;
+  margin-top: 8px;
 }
 
 
 @media screen and (max-width: 700px) {
 
-
+  .back{
+    margin-left: 50px;
+    font-size: 16px;
+  }
   .project_section, .project_name_single_page {
     padding: 0 50px;
   }
@@ -119,29 +133,35 @@ article.card {
   }
 
   .project_section h2 {
-    font-size: 1.5em;/* 24 / 16 */
+    font-size: 1.5em; /* 24 / 16 */
   }
   .project_name_single_page {
-    font-size: 1.5em;/* 24 / 16 */
+    font-size: 1.5em; /* 24 / 16 */
   }
 
   .img_concept {
-    gap: 0.625em;/* 10 / 16 */
+    gap: 0.625em; /* 10 / 16 */
   }
 
   .image_concept {
-    max-width: 9.375em;/* 150 / 16 */
+    max-width: 9.375em; /* 150 / 16 */
   }
 }
 
+
+
+
 @media screen and (max-width: 500px) {
+  .back{
+    margin-left: 25px;
+  }
   .project_section, .project_name_single_page {
     padding: 0 25px;
   }
   .project_section p {
     font-size: 0.75em; /* 12 / 16 */
-    margin-left: 0.83em;/* 10 / 12 */
-    margin-right: 0.83em;/* 10 / 12 */
+    margin-left: 0.83em; /* 10 / 12 */
+    margin-right: 0.83em; /* 10 / 12 */
     word-spacing: normal;
   }
   .project_section h2 {
@@ -149,14 +169,14 @@ article.card {
   }
 
   .project_name_single_page {
-    font-size: 1em;/* 16 / 16 */
+    font-size: 1em; /* 16 / 16 */
   }
 
   .img_concept {
-    gap: 3.125em;/* 50 / 16 */
+    gap: 3.125em; /* 50 / 16 */
   }
 
   .image_concept {
-    max-width: 7.5em;/* 120 / 16 */
+    max-width: 7.5em; /* 120 / 16 */
   }
 }

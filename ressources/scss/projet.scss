@@ -1,4 +1,8 @@
-
+main.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .scene {
   perspective: 1000px;

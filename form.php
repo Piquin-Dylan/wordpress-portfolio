@@ -3,19 +3,34 @@
  * Template Name: Page de contact
  */
 
-
+session_start();
 get_header();
 ?>
 
 <div class="container">
-    <form action="<?php echo get_template_directory_uri(); ?>/form_validation.php" method="post">
+    <form action="<?php echo get_template_directory_uri(); ?>/process.php" method="post" novalidate>
         <section class="container_form">
             <h2 class="title_form">Contactez-moi </h2>
             <label for="name">Nom complet</label>
-            <input class="input_form" type="text" name="name" id="name" placeholder="Ex: Jean Dupont" required>
-            <label for="email">Adresse mail</label>
-            <input class="input_form" type="email" name="email" id="email" placeholder=" Ex: jeandupont@example.com"
+            <input class="input_form"
+                   type="text"
+                   name="name"
+                   id="name"
+
+                   placeholder="Ex: Jean Dupont"
+
                    required>
+            <label for="email">Adresse mail</label>
+            <input class="input_form"
+                   type="email"
+                   name="email"
+                   id="email"
+                   value="<?php echo $_SESSION['old']['email'] ?? ''; ?>"
+                   placeholder="Ex: jeandupont@example.com"
+                   required>
+            <?php if (!empty($_SESSION['errors']['email'])) : ?>
+                <p class="error_email"><?php echo $_SESSION['errors']['email']; ?></p>
+            <?php endif; ?>
             <label for="tel">Numéros de téléphone</label>
             <input class="input_form" type="tel" name="tel" id="tel" placeholder="+ 32 451 20 67 90 " required>
             <label for="subject">Sujet</label>
@@ -43,5 +58,8 @@ get_header();
         </ul>
     </aside>
 </div>
-
 <?php get_footer(); ?>
+<?php
+$_SESSION['old'] = null;
+$_SESSION['errors'] = null;
+?>

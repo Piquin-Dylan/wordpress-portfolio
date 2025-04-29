@@ -256,6 +256,12 @@ ul {
     color: red !important;
   }
 }
+main.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .scene {
   perspective: 1000px;
   width: 300px;
@@ -607,9 +613,9 @@ article.card {
 /* Style de l'image */
 .card_1 img, .card_3 img {
   position: absolute;
-  max-width: 13.1875em; /* 211 / 16 */
+  max-width: 12em; /* 211 / 16 */
   right: 0;
-  top: 0.5625em; /* 9 / 16 */
+  top: 2em; /* 9 / 16 */
 }
 
 .card_2 img {
@@ -629,9 +635,24 @@ article.card {
   text-decoration: none;
   margin-left: 100px;
   margin-bottom: 32px;
+  color: white;
+}
+
+.title_other_project {
+  font-family: "Orbitron Bold", serif;
+  text-align: left;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 70px;
+  margin-top: 8px;
 }
 
 @media screen and (max-width: 700px) {
+  .back {
+    margin-left: 50px;
+    font-size: 16px;
+  }
   .project_section, .project_name_single_page {
     padding: 0 50px;
   }
@@ -655,6 +676,9 @@ article.card {
   }
 }
 @media screen and (max-width: 500px) {
+  .back {
+    margin-left: 25px;
+  }
   .project_section, .project_name_single_page {
     padding: 0 25px;
   }

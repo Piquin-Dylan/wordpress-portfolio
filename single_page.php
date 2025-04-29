@@ -100,7 +100,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                     <div class="container_card">
                         <article class="card">
                             <div class="card_1">
-                                <h3 class="hidden"><?php echo $title ?>></h3>
+                                <h3 class="title_other_project">Projet site portfolio</h3>
                                 <a href="#" itemprop="url">
                                     <img src="<?php echo esc_url($image5['url']) ?>" itemprop="image"
                                          alt="<?php echo esc_attr($image5['alt']); ?>"
@@ -109,7 +109,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                         </article>
                         <article class="card">
                             <div class="card_2">
-                                <h3 class="hidden">Projet site Cv</h3>
+                                <h3 class="title_other_project">Projet site Cv</h3>
 
                                 <a href="#" itemprop="url">
                                     <img src="<?php echo esc_url($image6['url']) ?>" itemprop="image"
@@ -119,7 +119,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                         </article>
                         <article class="card">
                             <div class="card_3">
-                                <h3 class="hidden">Projet site Client</h3>
+                                <h3 class="title_other_project">Projet site Client</h3>
                                 <a href="#" itemprop="url">
                                     <img src="<?php echo esc_url($image7['url']) ?>" itemprop="image"
                                          alt="<?php echo esc_attr($image7['alt']) ?>"
