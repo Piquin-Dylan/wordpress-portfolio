@@ -16,10 +16,14 @@ get_header();
                    type="text"
                    name="name"
                    id="name"
-
+                   value="<?php echo $_SESSION['old']['name'] ?? '' ?>"
                    placeholder="Ex: Jean Dupont"
-
                    required>
+            <?php if (!empty($_SESSION['errors']['name'])) : ?>
+                <p class="error_validation"><?php echo $_SESSION['errors']['name']; ?></p>
+            <?php endif; ?>
+
+
             <label for="email">Adresse mail</label>
             <input class="input_form"
                    type="email"
@@ -29,15 +33,41 @@ get_header();
                    placeholder="Ex: jeandupont@example.com"
                    required>
             <?php if (!empty($_SESSION['errors']['email'])) : ?>
-                <p class="error_email"><?php echo $_SESSION['errors']['email']; ?></p>
+                <p class="error_validation"><?php echo $_SESSION['errors']['email']; ?></p>
             <?php endif; ?>
-            <label for="tel">Numéros de téléphone</label>
-            <input class="input_form" type="tel" name="tel" id="tel" placeholder="+ 32 451 20 67 90 " required>
+            <label for="phone">Numéros de téléphone</label>
+            <input class="input_form"
+                   type="tel"
+                   name="phone"
+                   id="phone"
+                   value="<?php echo $_SESSION['old']['phone'] ?? ''; ?>"
+                   placeholder="+ 32 451 20 67 90 "
+                    required>
+            <?php if (!empty($_SESSION['errors']['phone'])) : ?>
+                <p class="errors_validation"><?php echo $_SESSION['errors']['phone']; ?></p>
+            <?php endif; ?>
+
             <label for="subject">Sujet</label>
-            <input class="input_form" type="text" id="subject" name="subject" placeholder="Ex: Sujet du mail" required>
+            <input class="input_form"
+                   type="text" id="subject"
+                   name="subject"
+                   value="<?php echo $_SESSION['old']['subject'] ?? ''?>"
+                   placeholder="Ex: Sujet du mail"
+                   required>
+            <?php if (!empty($_SESSION['errors']['subject']))  : ?>
+            <p class="errors_validation"><?php echo $_SESSION['errors']['subject']; ?></p>
+            <?php endif; ?>
             <label for="area">Votre message</label>
-            <textarea name="area" id="area" cols="30" rows="10" placeholder="Ex: Entre votre message"
-                      required></textarea>
+            <textarea name="area"
+                      id="area"
+                      cols="30"
+                      rows="10"
+                      placeholder="Ex: Entrez votre message"
+                      required><?php echo $_SESSION['old']['area'] ?? ''; ?></textarea>
+            <?php if (!empty($_SESSION['errors']['area'])) : ?>
+                <p class="error_validation"><?php echo $_SESSION['errors']['area']; ?></p>
+            <?php endif; ?>
+
 
             <input type="submit" value="Envoyer">
         </section>
