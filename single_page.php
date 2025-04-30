@@ -4,7 +4,6 @@
  */
 
 get_header();
-
 // Récupère le slug du projet depuis l'URL
 $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
@@ -30,14 +29,13 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             $image6 = get_sub_field('autre_projet_image_2');
             $image7 = get_sub_field('autre_projet_image_3');
             ?>
-
             <main itemscope itemtype="https://schema.org/CreativeWork">
-                <a class="back" href="<?php echo get_permalink(get_page_by_path('projet')); ?>">
-                    <span>Revenir sur les projets</span>
-                </a>
-                <h1 class="project_name_single_page" itemprop="name">Projet <?php echo esc_html($title); ?></h1>
+                <a title="Revenir sur la page Projet" class="back"
+                   href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
+                <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
+                    Projet <?php echo esc_html($title); ?></h1>
                 <section class="project_section">
-                    <h2 class="hidden" itemprop="description">Description Projet</h2>
+                    <h2 class="hidden" itemprop="description" aria-level="2" role="heading">Description Projet</h2>
                     <?php echo wp_kses_post($description); ?>
                 </section>
                 <section class="project_section">
@@ -46,13 +44,13 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                     <?php if ($image1) : ?>
                     <div class="img_concept">
                         <img class="image_concept" src="<?php echo esc_url($image1['url']); ?>" itemprop="image"
-                             alt="<?php echo esc_attr($image1['alt']); ?>">
+                             alt="<?php echo esc_attr($image1['alt']); ?>"/>
 
                         <?php endif; ?>
                         <?php if ($image2) : ?>
 
                         <img class="image_concept" src="<?php echo esc_url($image2['url']); ?>" itemprop="image"
-                             alt="<?php echo esc_attr($image2['alt']); ?>">
+                             alt="<?php echo esc_attr($image2['alt']); ?>"/>
                     </div>
                 <?php endif; ?>
                 </section>
@@ -62,14 +60,14 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                     <?php if ($image3) : ?>
                     <div class="img_concept">
                         <img class="image_concept" src="<?php echo esc_url($image3['url']); ?>" itemprop="image"
-                             alt="<?php esc_attr($image3['alt']) ?>">
+                             alt="<?php esc_attr($image3['alt']) ?>"/>
                         <?php endif;
                         ?>
 
 
                         <?php if ($image4) : ?>
                             <img class="image_concept" src="<?php echo esc_url($image4['url']) ?>" itemprop="image"
-                                 alt="<?php esc_attr($image5['alt']) ?>">
+                                 alt="<?php esc_attr($image5['alt']) ?>"/>
                         <?php endif; ?>
                     </div>
                 </section>
@@ -81,13 +79,13 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                     <div class="img_concept">
                         <img class="image_concept" src="<?php echo esc_url($resultat_image_1['url']) ?>"
                              itemprop="image"
-                             alt="<?php esc_attr($resultat_image_1['alt']) ?>">
+                             alt="<?php esc_attr($resultat_image_1['alt']) ?>"/>
                         <?php endif;
                         ?>
                         <?php if ($resultat_image_2) : ?>
                             <img class="image_concept" src="<?php echo esc_url($resultat_image_2['url']) ?>"
                                  itemprop="image"
-                                 alt="<?php esc_attr($resultat_image_2['alt']) ?>">
+                                 alt="<?php esc_attr($resultat_image_2['alt']) ?>"/>
 
                         <?php endif; ?>
                     </div>
@@ -95,15 +93,16 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                 </section>
 
 
-                <section class="project_section">
-                    <h2 class="other_project">D'autres projets</h2>
+                <section class="project_section" itemprop="knowsAbout" itemscope
+                         itemtype="https://schema.org/CreativeWork">
+                    <h2 aria-level="2" role="heading" class="other_project">D'autres projets</h2>
                     <div class="container_card">
                         <article class="card">
                             <div class="card_1">
-                                <h3 class="title_other_project">Projet site portfolio</h3>
-                                <a href="#" itemprop="url">
+                                <h3 class="title_other_project" itemprop="name">Projet site portfolio</h3>
+                                <a href="#" title="Allez sur le site portfolio">
                                     <img src="<?php echo esc_url($image5['url']) ?>" itemprop="image"
-                                         alt="<?php echo esc_attr($image5['alt']); ?>"
+                                         alt="<?php echo esc_attr($image5['alt']); ?>"/>
                                 </a>
                             </div>
                         </article>
@@ -111,18 +110,18 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                             <div class="card_2">
                                 <h3 class="title_other_project">Projet site Cv</h3>
 
-                                <a href="#" itemprop="url">
+                                <a title="Allez sur le projet site Cv" href="http://wordpress-portfolio.test/single_page/?project=site-cv">
                                     <img src="<?php echo esc_url($image6['url']) ?>" itemprop="image"
-                                         alt="<?php echo esc_attr($image6['alt']) ?>"
+                                         alt="<?php echo esc_attr($image6['alt']) ?>"/>
                                 </a>
                             </div>
                         </article>
                         <article class="card">
                             <div class="card_3">
                                 <h3 class="title_other_project">Projet site Client</h3>
-                                <a href="#" itemprop="url">
+                                <a aria-label="Allez sur le site projet client" title="Allez sur le site projet client" href="http://wordpress-portfolio.test/single_page/?project=site-client">
                                     <img src="<?php echo esc_url($image7['url']) ?>" itemprop="image"
-                                         alt="<?php echo esc_attr($image7['alt']) ?>"
+                                         alt="<?php echo esc_attr($image7['alt']) ?>"/>
                                 </a>
                             </div>
                         </article>

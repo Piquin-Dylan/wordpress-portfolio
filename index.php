@@ -86,22 +86,4 @@
 <footer class="test">
     <h2 class="hidden">Menu de navigation de bas de page</h2>
     <?php get_footer(); ?>
-</footer>
 
-</body>
-</html>
-
-
-<!--let angle = 0;
-const carousel = document.getElementById('carousel');
-
-function rotateCarousel(direction) {
-angle += direction * 120;
-carousel.style.transform = `rotateY(${angle}deg)`;
-}
-
-// On attend que le DOM soit chargé
-document.addEventListener("DOMContentLoaded", () => {
-document.querySelector(".arrow.left").addEventListener("click", () => rotateCarousel(-1));
-document.querySelector(".arrow.right").addEventListener("click", () => rotateCarousel(1));
-});-->

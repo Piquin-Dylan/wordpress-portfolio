@@ -60,7 +60,7 @@ get_header();
             <label for="area">Votre message</label>
             <textarea name="area"
                       id="area"
-                      cols="30"
+                      cols="40"
                       rows="10"
                       placeholder="Ex: Entrez votre message"
                       required><?php echo $_SESSION['old']['area'] ?? ''; ?></textarea>
@@ -69,7 +69,7 @@ get_header();
             <?php endif; ?>
 
 
-            <input type="submit" value="Envoyer">
+            <input class="btn_submit" type="submit" value="Envoyer">
         </section>
     </form>
     <aside>
