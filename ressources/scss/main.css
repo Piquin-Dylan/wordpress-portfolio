@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("variable.scss");
 html {
   background-color: #0A192F;
 }
@@ -365,128 +366,52 @@ main.content {
     top: 1000px;
   }
 }
-/*
-form {
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  margin-bottom: 48px;
-}
-
-
-.container_form {
- color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  padding:24px;
-  border-radius: 20px;
-  border:1px solid #4ec3ff;
-  background:linear-gradient(145deg, #0a0f2c, #1b1f47);
-}
-
-
-.title_form {
-  font-family: "Orbitron Bold",sans-serif;
-  font-size: 24px;
-  margin-left: 50px;
-}
-
-
-.input_form{
+body {
   color: white;
-  padding: 20px 16px;
-  width: 300px;
-  height: 15px;
-  border-radius: 12px;
-  background-color: #0D2436;
-  border: 1px solid #314E63;
-  resize: vertical;
-  box-sizing: border-box;
 }
 
-
-
-
-
-
-
-label{
-  font-size: 16px;
-  font-family: Exo Light,sans-serif;
-}
-.btn_submit{
-  font-size: 16px;
-  padding: 12px 20px;
-  max-width: 150px;
-  text-align: center;
-  font-family: "Orbitron", sans-serif;
-  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
-  color: white;
-  border-radius: 12px;
-}
-
-@media screen and (min-width: 1000px) {
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
-  }
-}
-
-*/
 .title_form, .title_coordonnées {
   font-family: "Orbitron Bold", sans-serif;
-  font-size: 20px;
+  font-size: var(--font-size-title);
   text-align: center;
-  color: white;
 }
 
 .container_form {
-  color: white;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1em;
   justify-content: center;
-  padding: 24px;
-  border-radius: 20px;
+  padding: 1.5em; /*  24  /16  */
+  border-radius: var(--border-radius);
   border: 1px solid #4ec3ff;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 24px;
+  margin: 0 1.5em 1.5em; /* 24 / 16 */
 }
 
 label {
-  font-size: 16px;
+  font-size: var(--font-size-text);
   font-family: Exo Light, sans-serif;
 }
 
 .btn_submit {
-  font-size: 16px;
-  padding: 12px 20px;
-  min-width: 150px;
+  font-size: var(--font-size-text);
+  padding: 0.75em 1.25em; /* 12 / 16  20 / 16 */
+  min-width: 9.375em; /* 150  /16 */
   text-align: center;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
   color: white;
-  border-radius: 12px;
+  border-radius: 0.75em; /* 12 / 16 */
+  cursor: pointer;
 }
 
 .input_form {
   color: white;
-  padding: 20px 16px;
+  padding: 1.25em 1em; /* 20 / 16  16 / 16 */
   width: 100%;
   height: 15px;
-  border-radius: 12px;
+  border-radius: 0.75em; /* 12 / 16 */
   background-color: #0D2436;
   border: 1px solid #314E63;
   resize: vertical;
@@ -496,26 +421,24 @@ label {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5em; /* 24  / 16 */
   justify-content: left;
-  margin-left: 24px;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
-  padding: 24px;
+  padding: 1.5em; /* 24 / 16 */
   border-radius: 20px;
-  margin-right: 24px;
+  margin: 0 1.5em; /* 24  /16 */
 }
 
 .item {
   text-decoration: none;
   display: block;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 1em 0;
   color: white;
 }
 
 .liste_cord {
-  font-size: 16px;
+  font-size: var(--font-size-text);
   color: white;
   font-weight: bolder;
   font-family: Exo Light, sans-serif;
@@ -527,11 +450,10 @@ aside {
 
 @media screen and (min-width: 420px) {
   .container_form {
-    margin-left: 32px;
-    margin-right: 32px;
+    margin: 0 2em; /* 32 / 2 */
   }
   aside {
-    margin: 24px 32px;
+    margin: 1.5em 2em; /* 24 / 16   32 / 16 */
     text-align: left;
   }
 }
@@ -539,7 +461,7 @@ aside {
   .container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 1.5em; /* 24 / 16 */
     justify-content: center;
     align-items: flex-start;
   }
@@ -547,7 +469,7 @@ aside {
     margin-right: 0;
   }
   aside {
-    margin: 0 24px;
+    margin: 0 1.5em;
   }
 }
 .projects-container {
@@ -815,6 +737,11 @@ article.card {
   .image_concept {
     max-width: 7.5em; /* 120 / 16 */
   }
+}
+:root {
+  --font-size-title: 1.25em; /* 20 /16 */
+  --font-size-text: 1em; /* 16 / 16 */
+  --border-radius: 1.25em; /* 20 / 16 */
 }
 
 /*# sourceMappingURL=main.css.map */
