@@ -7,7 +7,7 @@ get_header();
 
 <section class="container_project">
     <h2 class="project_title">Mes projets</h2>
-    <div class="navigation_project">
+    <div clas   s="navigation_project">
         <a href="#" title="Voir tous les projets">Tout</a>
         <a href="#" title="Voir les projets Web">Web</a>
         <a href="#" title="Voir les projets 3D">3D</a>

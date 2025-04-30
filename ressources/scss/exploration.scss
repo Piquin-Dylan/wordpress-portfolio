@@ -1,0 +1,136 @@
+@import "variable";
+
+
+.container_about{
+  display: flex;
+  flex-direction: column;
+  margin: 0 24px;
+  justify-content: left;
+
+}
+.image_presentation{
+  height: auto;
+  object-fit: contain;
+  order: -1;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.title_exploration,.parcours,.title_competence,.compétences{
+font-size: var(--font-size-title);
+font-family: "Orbitron Bold",sans-serif;
+font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+  /*
+  margin: 0 auto;
+  */
+  box-sizing: border-box;
+  margin-bottom:  16px;
+  margin-top: 32px;
+}
+
+.description_exploration {
+  font-size: var(--font-size-text);
+  font-family: 'Exo', sans-serif;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  width: 100%;
+  max-width: 700px;
+  /*
+  margin: 0 auto;
+  */
+  box-sizing: border-box;
+}
+
+.parcours{
+  margin: 32px 24px;
+}
+
+.parcours-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: left;
+    margin: 0 24px;
+}
+
+.year {
+  font-size: var(--font-size-title);
+  font-family: "Orbitron Bold",sans-serif;
+  margin-bottom: 16px;
+}
+.description_year{
+  font-size: var(--font-size-text);
+  font-family: Exo Light,sans-serif;
+}
+.item_description{
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+
+
+.container_competences {
+  margin: 32px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.item_competence {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.top_competence {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.img_competences {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.title_competence {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.compétences{
+  margin: 32px 24px;
+}
+.description_competence {
+  font-size: 1rem;
+  color: white;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .parcours-container{
+    margin: 0 50px;
+  }
+  .container_competences {
+    margin: 32px 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .parcours-container{
+    margin: 0 100px;
+  }
+}
