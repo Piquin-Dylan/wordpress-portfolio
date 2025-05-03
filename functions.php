@@ -55,7 +55,6 @@ function mortal_theme()
 
 
 
-
 function allow_svg_upload($mimes)
 {
     $mimes['svg'] = 'image/svg+xml';

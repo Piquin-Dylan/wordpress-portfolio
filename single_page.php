@@ -39,7 +39,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                     <?php echo wp_kses_post($description); ?>
                 </section>
                 <section class="project_section">
-                    <h2 class="concept_title">Concept</h2>
+                    <h2 class="projet_title_single_page">Concept</h2>
                     <?php echo wp_kses_post($concept); ?>
                     <?php if ($image1) : ?>
                     <div class="img_concept">
@@ -55,7 +55,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                 <?php endif; ?>
                 </section>
                 <section class="project_section">
-                    <h2 class="realisation_title">Réalisation</h2>
+                    <h2 class="projet_title_single_page">Réalisation</h2>
                     <?php echo wp_kses_post($realisation); ?>
                     <?php if ($image3) : ?>
                     <div class="img_concept">
@@ -73,7 +73,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                 </section>
 
                 <section class="project_section">
-                    <h2 class="result">Résultat</h2>
+                    <h2 class="projet_title_single_page">Résultat</h2>
                     <?php echo wp_kses_post($result) ?>
                     <?php if ($resultat_image_1): ?>
                     <div class="img_concept">

@@ -1,113 +1,99 @@
 
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.project_title {
-  font-family: 'Orbitron Bold', serif;
-  font-size: 2em;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  font-weight: bolder;
-  color: white;
+.navigation_project a{
+  font-family: Orbitron-light,sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 16px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 80px;
+  max-width: 80px;
   text-align: center;
-  flex-wrap: wrap;
+  color: white;
 }
-
-.navigation_project {
+.navigation_project{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
   align-items: center;
-  gap: 16px;
   margin: 24px 0;
 }
 
-.navigation_project a {
-  text-decoration: none;
-  font-size: 14px;
-  color: white;
-  font-family: "Orbitron Light", serif;
-  padding: 8px 24px; /* 16 / 24   48 / 24 */
-  border: 1px solid white;
-  border-radius: 1em; /* 24 / 24 */
+.project-card {
+  background-color: #0E122E;
+  border: 2px solid #ccc; /* Bordure */
+  padding: 20px 20px 0;
+  border-radius: 8px; /* Coins arrondis */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 24px 24px;
+  max-width: 250px;
 }
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 24px;
 
+}
 
 .image_project {
-  background-color: #0E122E;
-  border: 1px solid white;
-  border-radius: 12px;
-}
-
-
-.name_project {
-  font-size: 16px;
-  position: relative;
-  color: white;
-  font-family: 'Orbitron Black', serif;
-  top: 50px;
-  left: 35px;
-}
-
-.image_project img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
 }
+.name_project{
+    font-size: 20px;
+  font-family: "Orbitron Bold",sans-serif;
+  text-align: left;
+  margin-right: 50px;
+  margin-bottom: 16px;
+}
+.project_title{
+  font-size: 20px;
+  font-family: "Orbitron Bold",sans-serif;
+  margin: 24px auto;
+  text-align: left;
+}
+@media screen and (min-width: 450px) {
+  .navigation_project{
+    flex-wrap: nowrap;
+  }
+}
+.container_project {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
+@media screen and (min-width: 768px) {
+  .project_title,.navigation_project{
+    margin-left: 25px;
+  }
+}
 
-
-
-@media (max-width: 280px) {
+@media screen and (min-width: 1000px) {
   .project_title {
-    font-size: 1.5em;
+    margin-left: 50px;
+  }
+  .navigation_project{
+    padding: 20px;
+    margin: 0 32px auto;
+    justify-content: left;
   }
 
   .navigation_project a {
-    font-size: 12px;
-    padding: 6px 16px;
-  }
-}
-
-
-@media screen and (min-width: 320px) {
-
-  .navigation_project {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-}
-
-@media screen and (min-width: 720px) {
-  .navigation_project a {
-
-    font-size: 1em;
-    font-family: "Orbitron Light", serif;
-    text-decoration: none;
-    padding: 16px 48px;
-    border: 1px solid white;
-    border-radius: 1em;
-  }
-  .projects-container {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 150px;
-    margin-right: 150px;
-    position: relative;
+    width: 150px;
+    max-width: 200px;
+    padding: 20px;
   }
 }

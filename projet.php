@@ -2,12 +2,13 @@
 /**
  * Template Name: Projet
  */
+the_post_thumbnail('project-thumb');
 get_header();
 ?>
 
 <section class="container_project">
     <h2 class="project_title">Mes projets</h2>
-    <div clas   s="navigation_project">
+    <div class="navigation_project">
         <a href="#" title="Voir tous les projets">Tout</a>
         <a href="#" title="Voir les projets Web">Web</a>
         <a href="#" title="Voir les projets 3D">3D</a>
@@ -24,17 +25,17 @@ get_header();
                 <article class="project-card">
                     <h3 class="hidden"><?php echo esc_html($title); ?></h3>
                     <?php if ($image) : ?>
+                        <div class="image_project_wrapper">
                         <p class="name_project"><?php echo esc_html($title); ?></p>
                         <a href="<?php echo site_url('/single_page/?project=' . sanitize_title($title)); ?>">
-                            <div class="image_project_wrapper">
                                 <img
                                         src="<?php echo esc_url($image['url']); ?>"
                                         alt="<?php echo esc_attr($image['alt']); ?>"
-                                        width="260" height="360"
                                         class="image_project"
-                                        title="<?php echo esc_attr($title); ?>">
-                            </div>
+                                        title="<?php echo esc_attr($title); ?>"
+                                     
                         </a>
+                        </div>
                     <?php endif; ?>
                 </article>
             <?php endwhile; ?>

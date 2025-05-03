@@ -13,8 +13,10 @@ $image_presentation = get_field('image_presentation')
 
     <section>
         <div class="container_about">
+            <div class="container_content">
             <h2 class="title_exploration"><?php echo $presentation ?></h2>
             <div class="description_exploration"><?= $description ?></div>
+            </div>
             <?php if ($image_presentation) : ?>
                 <img class="image_presentation" src="<?php echo esc_url($image_presentation['url']) ?>"
                      alt="<?php echo esc_attr($image_presentation['alt']) ?>">
@@ -22,7 +24,7 @@ $image_presentation = get_field('image_presentation')
         </div>
     </section>
 
-    <section>
+    <section class="section_parcours">
         <?php if (have_rows('parcours')) : ?>
             <h2 class="parcours">Mon parcours</h2>
             <div class="parcours-container">
@@ -31,15 +33,15 @@ $image_presentation = get_field('image_presentation')
                     $description_year = get_sub_field('description_year');
                     ?>
                     <article class="item_description">
-                        <h3 class="year"><?php echo esc_html($year); ?></h3>
-                        <p class="description_year"><?php echo esc_html( wp_strip_all_tags( $description_year ) ); ?></p>
+                            <h3 class="year"><?php echo esc_html($year); ?></h3>
+                            <p class="description_year"><?php echo esc_html(wp_strip_all_tags($description_year)); ?></p>
                     </article>
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
     </section>
 
-    <section>
+    <section class="mes_competences">
         <h2 class="compétences">Mes compétences</h2>
         <?php if (have_rows('competences')) : ?>
             <div class="container_competences">
