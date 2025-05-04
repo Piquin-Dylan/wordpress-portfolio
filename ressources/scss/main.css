@@ -572,184 +572,22 @@ aside {
     padding: 20px;
   }
 }
-/*
-
-
-.project_name_single_page {
-  font-size: 2em; !* 32 / 16 *!
-  font-family: "Orbitron bold", serif;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-top: 32px;
-}
-
-.project_section p {
-  font-size: 1.125em; !* 18 / 16 *!
-  font-family: "Exo Light", serif;
-  max-width: 100%;
-  margin-bottom: 3.333em; !* 60 / 18 *!
-  margin-top: 1.333em; !* 24 / 18 *!
-  line-height: 1.6;
-  text-align: left;
-}
-
-.project_section h2 {
-  font-size: 2em; !* 32 / 16 *!
-  font-family: "Orbitron bold", serif;
-  font-weight: bold;
-  text-align: left;
-  letter-spacing: 3px;
-}
-
-.img_concept {
-  display: flex;
-  flex-direction: row;
-  gap: 3.125em; !* 50 / 16 *!
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 1.5em; !* 24 / 16 *!
-}
-
-.image_concept {
-  max-width: 12.5em; !* 200 / 16 *!
-  height: auto;
-  margin: 0 0.625em; !* 10 / 16 *!
-}
-
-.container_card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3.125em; !* 50 / 16 *!
-  justify-content: center;
-  align-items: stretch;
-}
-
-article.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-!* Style général des cartes *!
-.card_1, .card_2, .card_3 {
-  position: relative;
-  background-color: #0E122E;
-  border: 1px solid white;
-  border-radius: 0.625em; !* 10 / 16 *!
-  width: 15.625em; !* 250 / 16 *!
-  height: 18.75em; !* 300  /16 *!
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-end; !* texte en bas *!
-}
-
-!* Style de l'image *!
-.card_1 img, .card_3 img {
-  position: absolute;
-  max-width: 12em; !* 211 / 16 *!
-  right: 0;
-  top: 2em; !* 9 / 16 *!
-}
-
-.card_2 img {
-  position: absolute;
-  max-width: 19.5625em; !* 313 / 16 *!
-  top: -38.5px;
-  left: -35px;
-}
-
-.other_project {
-  margin-bottom: 1.5em; !* 24 / 16 *!
-}
-
-
-
-
-.title_other_project {
-  font-family: "Orbitron Bold", serif;
-  text-align: left;
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin-right: 70px;
-  margin-top: 8px;
-}
-
-
-@media screen and (max-width: 700px) {
-
-  .back{
-    margin-left: 50px;
-    font-size: 16px;
-  }
-  .project_section, .project_name_single_page {
-    padding: 0 50px;
-  }
-
-  .project_section p {
-    font-size: 0.875em; !* 14 / 16 *!
-    max-width: 100%;
-    margin-left: 1.42em; !* 20 / 14 *!
-    margin-right: 1.42em; !* 20 / 14 *!
-
-  }
-
-  .project_section h2 {
-    font-size: 1.5em; !* 24 / 16 *!
-  }
-  .project_name_single_page {
-    font-size: 1.5em; !* 24 / 16 *!
-  }
-
-  .img_concept {
-    gap: 0.625em; !* 10 / 16 *!
-  }
-
-  .image_concept {
-    max-width: 9.375em; !* 150 / 16 *!
-  }
-}
-
-
-
-
-@media screen and (max-width: 500px) {
-  .back{
-    margin-left: 25px;
-  }
-  .project_section, .project_name_single_page {
-    padding: 0 25px;
-  }
-  .project_section p {
-    font-size: 0.75em; !* 12 / 16 *!
-    margin-left: 0.83em; !* 10 / 12 *!
-    margin-right: 0.83em; !* 10 / 12 *!
-    word-spacing: normal;
-  }
-  .project_section h2 {
-    font-size: 1em; !* 16 / 16 *!
-  }
-
-  .project_name_single_page {
-    font-size: 1em; !* 16 / 16 *!
-  }
-
-  .img_concept {
-    gap: 3.125em; !* 50 / 16 *!
-  }
-
-  .image_concept {
-    max-width: 7.5em; !* 120 / 16 *!
-  }
-}
-*/
 .back {
   font-size: 16px;
   font-family: "Orbitron Light", sans-serif;
   text-decoration: none;
   margin: 32px 24px;
   color: white;
+}
+
+.project_section p {
+  font-size: 1.125em;
+  font-family: "Exo Light", serif;
+  max-width: 100%;
+  margin-bottom: 3.333em;
+  margin-top: 1.333em;
+  line-height: 1.6;
+  text-align: left;
 }
 
 .project_name_single_page {
@@ -762,7 +600,6 @@ article.card {
   font-size: 16px;
   font-family: Exo-Light, sans-serif;
   margin: 32px 24px;
-  max-width: 500px;
 }
 
 .projet_title_single_page {
@@ -781,30 +618,77 @@ article.card {
   gap: 24px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .project_section p {
   margin-bottom: 24px;
+  max-width: 1000px;
 }
 
 .container_card {
-  background-color: #0E122E;
-  border: 2px solid #ccc; /* Bordure */
-  padding: 20px 20px 0;
-  border-radius: 8px; /* Coins arrondis */
+  padding: 24px 32px 0;
   display: flex;
-  flex-direction: row;
+  gap: 24px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 24px 24px;
-  max-width: 250px;
 }
 
-.container_card img {
+.card_1, .card_2, .card_3 {
+  max-width: 200px;
+  background: #0E122E;
+  border: 1px solid white;
+  border-radius: 8px; /* Coins arrondis */
+  padding: 0 20px;
+}
+
+.card_1 img, .card_2 img, .card_3 img {
   max-width: 200px;
 }
 
+.title_other_project {
+  font-size: 16px;
+  font-family: "Orbitron Bold", sans-serif;
+  margin: 24px 12px;
+}
+
+.other_project_title {
+  text-align: left;
+  font-size: 24px; /* tu peux augmenter la taille pour un H2 */
+  font-family: "Orbitron Bold", sans-serif;
+  margin: 24px auto;
+}
+
+.project-title_wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* code permetant de gérer les gros écrans */
+.container_max_width {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container_card {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .img_concept {
+    flex-direction: row;
+  }
+  .project_section {
+    margin: 32px 50px;
+  }
+}
 :root {
   --font-size-title: 1.25em; /* 20 /16 */
   --font-size-text: 1em; /* 16 / 16 */

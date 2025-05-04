@@ -32,6 +32,7 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             <main itemscope itemtype="https://schema.org/CreativeWork">
                 <a title="Revenir sur la page Projet" class="back"
                    href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
+                <div class="container_max_width">
                 <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
                     Projet <?php echo esc_html($title); ?></h1>
                 <section class="project_section">
@@ -89,13 +90,15 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
 
                         <?php endif; ?>
                     </div>
-
                 </section>
+                </div>
 
 
-                <section class="project_section" itemprop="knowsAbout" itemscope
+                <section class="other_project" itemprop="knowsAbout" itemscope
                          itemtype="https://schema.org/CreativeWork">
-                    <h2 aria-level="2" role="heading" class="other_project">D'autres projets</h2>
+                    <div class="project-title_wrapper">
+                    <h2 aria-level="2" role="heading" class="other_project_title">D'autres projets</h2>
+                    </div>
                     <div class="container_card">
                         <article class="card">
                             <div class="card_1">
@@ -110,7 +113,8 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                             <div class="card_2">
                                 <h3 class="title_other_project">Projet site Cv</h3>
 
-                                <a title="Allez sur le projet site Cv" href="http://wordpress-portfolio.test/single_page/?project=site-cv">
+                                <a title="Allez sur le projet site Cv"
+                                   href="http://wordpress-portfolio.test/single_page/?project=site-cv">
                                     <img src="<?php echo esc_url($image6['url']) ?>" itemprop="image"
                                          alt="<?php echo esc_attr($image6['alt']) ?>"/>
                                 </a>
@@ -119,7 +123,8 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
                         <article class="card">
                             <div class="card_3">
                                 <h3 class="title_other_project">Projet site Client</h3>
-                                <a aria-label="Allez sur le site projet client" title="Allez sur le site projet client" href="http://wordpress-portfolio.test/single_page/?project=site-client">
+                                <a aria-label="Allez sur le site projet client" title="Allez sur le site projet client"
+                                   href="http://wordpress-portfolio.test/single_page/?project=site-client">
                                     <img src="<?php echo esc_url($image7['url']) ?>" itemprop="image"
                                          alt="<?php echo esc_attr($image7['alt']) ?>"/>
                                 </a>
