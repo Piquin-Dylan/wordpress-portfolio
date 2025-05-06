@@ -103,7 +103,10 @@ footer{
   color: white;
   margin: 8px 0;
 }
-
+footer{
+  background: black;
+  max-width: 600px;
+}
 
 @media screen and (min-width: 768px) {
   .footer-menu{
