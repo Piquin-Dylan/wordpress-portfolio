@@ -82,7 +82,7 @@ footer{
   color: white;
   text-decoration: none;
 }
-a[href="http://wordpress-portfolio.test/category/non-classe-fr/"] {
+#menu-footer > li:nth-child(3) > a  {
   font-size: 20px;
   font-family: "Orbitron Bold",sans-serif;
   font-weight: 700;
@@ -103,15 +103,22 @@ a[href="http://wordpress-portfolio.test/category/non-classe-fr/"] {
   color: white;
   margin: 8px 0;
 }
-footer{
-  background: red;
-}
+
 
 @media screen and (min-width: 768px) {
   .footer-menu{
     display: flex;
     gap: 24px;
     justify-content: center;
-    margin: 24px 0;
+    margin: 24px 24px;
+    flex-wrap: nowrap;
   }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer-menu{
+    margin: 48px 12px 48px 0;
+    gap: 141px;
+  }
+  
 }
