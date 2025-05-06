@@ -295,6 +295,10 @@ a[href="http://wordpress-portfolio.test/category/non-classe-fr/"] {
   margin: 8px 0;
 }
 
+footer {
+  background: red;
+}
+
 @media screen and (min-width: 768px) {
   .footer-menu {
     display: flex;
