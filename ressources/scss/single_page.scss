@@ -8,7 +8,7 @@
 }
 
 .project_section p {
-  font-size: 1.125em;
+  font-size: 16px;
   font-family: "Exo Light", serif;
   max-width: 100%;
   margin-bottom: 3.333em;
@@ -24,8 +24,8 @@
 }
 
 .project_section {
-  font-size: 16px;
-  font-family: Exo-Light, sans-serif;
+  font-size: 20px;
+  font-family: "Orbitron Bold", sans-serif;
   margin: 32px 24px;
 }
 
@@ -51,6 +51,7 @@
 .project_section p {
   margin-bottom: 24px;
   max-width: 1000px;
+  margin-right: 24px;
 }
 
 
@@ -121,3 +122,9 @@
   }
 }
 
+@media screen and (min-width: 1000px) {
+  .project_name_single_page {
+
+    margin: 32px 48px;
+  }
+}

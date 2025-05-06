@@ -30,10 +30,10 @@ if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
             $image7 = get_sub_field('autre_projet_image_3');
             ?>
             <main itemscope itemtype="https://schema.org/CreativeWork">
-                <a title="Revenir sur la page Projet" class="back"
-                   href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
                 <div class="container_max_width">
-                <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
+                    <a title="Revenir sur la page Projet" class="back"
+                       href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
+                    <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
                     Projet <?php echo esc_html($title); ?></h1>
                 <section class="project_section">
                     <h2 class="hidden" itemprop="description" aria-level="2" role="heading">Description Projet</h2>

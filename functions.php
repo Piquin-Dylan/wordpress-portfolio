@@ -54,6 +54,15 @@ function mortal_theme()
 
 
 
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'footer_menu' => __( 'Menu Footer' ),
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
+
 
 function allow_svg_upload($mimes)
 {
@@ -67,5 +76,6 @@ add_action('init', function () {
     remove_filter('the_content', 'wpautop');
 });
 
-
+// Désactive la barre d’admin pour tous les utilisateurs (même admins)
+add_filter('show_admin_bar', '__return_false');
 session_write_close();
