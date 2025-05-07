@@ -6,7 +6,7 @@
 session_start();
 get_header();
 ?>
-
+<h2>spannn</h2>
 <div class="container">
     <form action="<?php echo get_template_directory_uri(); ?>/process.php" method="post" novalidate>
         <section class="container_form">
