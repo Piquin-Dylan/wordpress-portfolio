@@ -108,21 +108,25 @@ canvas#my-canvas {
   color: white;
   display: flex;
   flex-direction: column;
-  margin-left: 3.125em; /* 50 / 16 */
+  margin-left: 24px; /* 50 / 16 */
   margin-bottom: 332px; /* 332 / 16 */
   margin-top: 4.6875em; /* 75 / 16 */
   padding-right: 2em; /* 32 / 16 */
 }
 
+.presentation {
+  line-height: 1.25em;
+  max-width: 400px;
+}
+
 .name {
   font-size: 3em; /* 48 / 16 */
-  margin-bottom: 0.3333em; /* 16 / 48 */
   font-weight: bold;
+  line-height: 1.1em;
 }
 
 .job {
   font-size: 1.5em; /* 24 / 16 */
-  margin-bottom: 0.6666em; /* 16 / 24 */
 }
 
 .container_btn {
@@ -137,7 +141,7 @@ canvas#my-canvas {
   padding: 12px;
   max-width: 150px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
@@ -185,6 +189,27 @@ canvas#my-canvas {
   position: absolute;
 }
 
+.container_max_width_presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .container_btn {
+    justify-content: left;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container_max_width_presentation {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
 /*
 
 
@@ -295,11 +320,6 @@ footer{
   margin: 8px 0;
 }
 
-footer {
-  background: black;
-  max-width: 600px;
-}
-
 @media screen and (min-width: 768px) {
   .footer-menu {
     display: flex;
@@ -311,7 +331,7 @@ footer {
 }
 @media screen and (min-width: 1000px) {
   .footer-menu {
-    margin: 48px 12px 48px 0;
+    margin: 48px 24px 48px 24px;
     gap: 141px;
   }
 }
@@ -326,6 +346,7 @@ main.content {
   width: 300px;
   height: 300px;
   position: relative;
+  overflow: hidden;
 }
 
 .carousel {
@@ -358,10 +379,11 @@ main.content {
 }
 
 .carousel .slide img {
-  width: 200px;
-  height: 250px;
+  width: 150px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
+  margin-left: 12px;
 }
 
 .carousel .slide a {
@@ -377,27 +399,35 @@ main.content {
 }
 
 .arrow {
-  position: absolute; /* Utilisation de `absolute` pour les flèches */
-  font-size: 2em;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 1em;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.2);
   z-index: 10;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .left {
-  left: 10px; /* Colle la flèche gauche au bord de l'écran */
-  top: 1000px;
+  left: 10px;
+  top: 1050px;
 }
 
 .right {
-  right: 10px; /* Colle la flèche droite au bord de l'écran */
-  top: 1000px;
+  right: 10px;
+  top: 1050px;
 }
 
 .title_project {
@@ -406,22 +436,21 @@ main.content {
   text-align: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 768px) {
   .scene {
-    overflow: hidden;
-  }
-  .carousel .slide img {
-    width: 150px;
-    height: 200px;
+    overflow: visible;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 1000px) {
   .left {
-    left: 0;
-    top: 1000px;
+    left: calc(50% - 400px);
+    top: 1050px;
+    transform: translateY(-50%);
   }
   .right {
-    top: 1000px;
+    right: calc(50% - 400px);
+    top: 1050px;
+    transform: translateY(-50%);
   }
 }
 body {
@@ -716,7 +745,7 @@ aside {
 
 .other_project_title {
   text-align: left;
-  font-size: 24px; /* tu peux augmenter la taille pour un H2 */
+  font-size: 24px;
   font-family: "Orbitron Bold", sans-serif;
   margin: 24px auto;
 }

@@ -20,22 +20,26 @@ canvas#my-canvas {
   color: white;
   display: flex;
   flex-direction: column;
-  margin-left: 3.125em; /* 50 / 16 */
+  margin-left: 24px; /* 50 / 16 */
   margin-bottom: 332px; /* 332 / 16 */
   margin-top: 4.6875em; /* 75 / 16 */
   padding-right: 2em; /* 32 / 16 */
 }
 
+.presentation{
+  line-height: 1.25em;
+  max-width: 400px;
+}
+
 .name {
   font-size: 3em; /* 48 / 16 */
-  margin-bottom: 0.3333em; /* 16 / 48 */
   font-weight: bold;
+  line-height: 1.10em;
 
 }
 
 .job {
   font-size: 1.5em; /* 24 / 16 */
-  margin-bottom: 0.6666em; /* 16 / 24 */
 }
 
 
@@ -52,7 +56,7 @@ canvas#my-canvas {
   padding: 12px;
   max-width: 150px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
@@ -101,3 +105,28 @@ canvas#my-canvas {
   position: absolute;
 }
 
+.container_max_width_presentation{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .container_btn{
+    justify-content: left;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+
+  .container_max_width_presentation{
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}

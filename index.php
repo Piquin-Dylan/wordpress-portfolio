@@ -15,12 +15,13 @@
     <?php if (is_front_page()) : ?>
     <h2 class="hidden">Présentation</h2>
     <div class="Présentation__Projet">
+        <div class="container_max_width_presentation">
         <span class="name"><?php the_field('first_name'); ?></span>
         <span class="job"><?php the_field('Job'); ?></span>
         <span class="presentation"><?php the_field('presentation'); ?></span>
-        <div class="container_btn">
             <button class="btn_header">Exploration</button>
         </div>
+
     </div>
 
 </section>
