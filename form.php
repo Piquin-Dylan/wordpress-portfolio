@@ -4,6 +4,7 @@
  */
 
 session_start();
+echo 'Session ID: ' . session_id();  // Vérifier si une session est démarrée
 get_header();
 ?>
 <h2>spannn</h2>

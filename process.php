@@ -1,15 +1,14 @@
 <?php
-
 session_start();
 
 $email = '';
 
-//Validation pour le nom complet
+// Validation pour le nom complet
 if (empty(trim($_POST['name']))) {
     $_SESSION['errors']['name'] = 'Le champs nom est requis';
 }
 
-//Validation pour l'email
+// Validation pour l'email
 if (array_key_exists('email', $_REQUEST)) {
     $email = trim($_REQUEST['email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -20,7 +19,7 @@ if (array_key_exists('email', $_REQUEST)) {
     }
 }
 
-//Validation pour le numéros de téléphone
+// Validation pour le numéro de téléphone
 if (empty(trim($_POST['phone']))) {
     $_SESSION['errors']['phone'] = 'Le champs numéro de téléphone est requis';
 } elseif (
@@ -30,28 +29,29 @@ if (empty(trim($_POST['phone']))) {
     $_SESSION['errors']['phone'] = 'Le format du téléphone n’est pas reconnu';
 }
 
-//Validation du champs  sujet
+// Validation du champ sujet
 if (empty(trim($_POST['subject']))) {
     $_SESSION['errors']['subject'] = 'Le champs sujet est requis';
 }
 
-//Validation pour le champs message
-if (empty(trim($_POST['area']))){
+// Validation pour le champ message
+if (empty(trim($_POST['area']))) {
     $_SESSION['errors']['area'] = 'Le champs message est requis';
 }
 
-//Si des erreurs existent, on redirige vers la page du formulaire
+// Si des erreurs existent, on redirige vers la page du formulaire
 if (!empty($_SESSION['errors'])) {
     // Sauvegarder les anciennes données dans $_SESSION pour pouvoir les réutiliser après redirection
     $_SESSION['old'] = $_REQUEST;
 
-    // Rediriger vers la page de contact
-    header('Location: /contact');
-    exit;
+    // Déboguer la session avant de rediriger
+    echo '<pre>';
+    var_dump($_SESSION); // Affiche le contenu de la session
+    echo '</pre>';
+    exit; // Arrêter l'exécution pour examiner le contenu de la session
 }
 
-// Si aucune erreur, poursuivre le traitement du formulaire (par exemple envoyer l'email, enregistrer les données, etc.)
-
-
-
+// Rediriger vers la page de contact si aucune erreur
+header('Location: /contact');
+exit;
 ?>
