@@ -76,6 +76,19 @@ add_action('init', function () {
     remove_filter('the_content', 'wpautop');
 });
 
+// Ajouter un hook pour traiter le formulaire après sa soumission
+add_action('init', 'process_contact_form');
+
+function process_contact_form() {
+    // Vérifie que la requête est une requête POST et que le formulaire a été soumis
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
+
+        // Inclure le fichier process.php (assure-toi que le chemin est correct)
+        include get_template_directory() . '/process.php';
+    }
+}
+
+
 // Désactive la barre d’admin pour tous les utilisateurs (même admins)
 add_filter('show_admin_bar', '__return_false');
 session_write_close();
