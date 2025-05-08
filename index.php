@@ -5,11 +5,6 @@
 
 ?>
 <?php get_header() ?>
-
-<script src="<?php echo get_template_directory_uri(); ?>/ressources/js/main.js" defer></script>
-<title>Document</title>
-<html class="no-js">
-<body>
 <canvas id="my-canvas"></canvas>
 <section class="header">
     <?php if (is_front_page()) : ?>

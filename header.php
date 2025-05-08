@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ressources/reset.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ressources/scss/main.css">
+    <script src="<?php echo get_template_directory_uri(); ?>/ressources/js/main.js" defer></script>
+
     <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
 </head>
 <body>
