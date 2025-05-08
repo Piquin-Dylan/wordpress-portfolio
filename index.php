@@ -5,7 +5,6 @@
 
 ?>
 <?php get_header() ?>
-<canvas id="my-canvas"></canvas>
 <section class="header">
     <?php if (is_front_page()) : ?>
     <h2 class="hidden">Présentation</h2>

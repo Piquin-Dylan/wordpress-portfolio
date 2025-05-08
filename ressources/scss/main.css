@@ -614,7 +614,7 @@ a.item, span.item {
   gap: 32px;
   justify-content: flex-start;
   align-items: center;
-  margin: 24px 0;
+  margin: 24px 12px;
 }
 
 .project-card {
@@ -637,7 +637,6 @@ a.item, span.item {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  gap: 24px;
 }
 
 .image_project {

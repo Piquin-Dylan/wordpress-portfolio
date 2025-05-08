@@ -19,6 +19,7 @@
 
     <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
 </head>
+<canvas id="my-canvas"></canvas>add
 <body>
 <header>
     <svg class="logo" width="208" height="105" viewBox="0 0 208 105" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -32,7 +32,7 @@ get_header();
                                             src="<?php echo esc_url($image['url']); ?>"
                                             alt="<?php echo esc_attr($image['alt']); ?>"
                                             class="image_project"
-                                            title="<?php echo esc_attr($title); ?>"
+                                            title="<?php echo esc_attr($title); ?>"/>
 
                                 </a>
                             </div>
