@@ -2,10 +2,8 @@
 
 session_start();
 
-/*
- * Valider les deux champs
- */
 $email = '';
+
 //Validation pour le nom complet
 if (empty(trim($_POST['name']))) {
     $_SESSION['errors']['name'] = 'Le champs nom est requis';
@@ -37,23 +35,23 @@ if (empty(trim($_POST['subject']))) {
     $_SESSION['errors']['subject'] = 'Le champs sujet est requis';
 }
 
-
 //Validation pour le champs message
-
 if (empty(trim($_POST['area']))){
     $_SESSION['errors']['area'] = 'Le champs message est requis';
 }
 
-/*
-* S’il y a des erreurs, on redirige vers la page du formulaire, en mémorisant le temps d'une requête les erreurs et les anciennes données
-*/
-{
-    if (isset($_SESSION['errors'])) {
-        $_SESSION['old'] = $_REQUEST;
-        header('Location: /contact');
-        exit;
-    }
+//Si des erreurs existent, on redirige vers la page du formulaire
+if (!empty($_SESSION['errors'])) {
+    // Sauvegarder les anciennes données dans $_SESSION pour pouvoir les réutiliser après redirection
+    $_SESSION['old'] = $_REQUEST;
+
+    // Rediriger vers la page de contact
+    header('Location: /contact');
+    exit;
 }
+
+// Si aucune erreur, poursuivre le traitement du formulaire (par exemple envoyer l'email, enregistrer les données, etc.)
+
 
 
 ?>

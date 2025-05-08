@@ -15,78 +15,175 @@ html {
   border: 0;
 }
 
-.nav__container a {
-  color: white;
-  text-decoration: none;
-  position: sticky;
-}
+/* .logo {
+    position: absolute;
+    max-width: 75px;
+    left: 42%;
+    margin-top: 15px;
+    cursor: pointer;
+  }
 
-.nav__container {
-  font-size: 1em; /* 16 / 16 */
-  padding: 3.75em; /* 60 / 16*/
-  display: flex;
-  flex-direction: row;
-  gap: 2em; /* 32 / 16 */
-  color: white;
-  text-decoration: none;
-}
-
-.logo {
-  position: absolute;
-  max-width: 75px;
-  left: 50%;
-  margin-top: 15px;
-  cursor: pointer;
-}
-
-#burger-toggle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  appearance: none;
-}
-
-.burger {
-  width: 30px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.burger span {
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  display: none;
-}
-
-
-/*
-Burger menus
-
-
-
-*/
-@media screen and (max-width: 800px) {
-  .nav__container {
+  .nav a {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 100px;
-    max-height: 500px;
-    padding: 0;
+    flex-direction: row;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
   }
+
+
+  !* Burger menu *!
+  .menu_toggle {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+  }
+
+  !* Cache l'input mais garde cliquable *!
+  .menu_toggle input {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  !* Bouton burger *!
   .burger {
-    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 4;
   }
+
+  !* Burger bars *!
   .burger span {
     display: block;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    background: #cdcdcd;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    left: 5px;
   }
-}
+
+  .burger span:nth-child(1) {
+    top: 10px;
+  }
+
+  .burger span:nth-child(2) {
+    top: 18px;
+  }
+
+  .burger span:nth-child(3) {
+    top: 26px;
+  }
+
+  !* Animation croix *!
+  .menu_toggle input:checked + label.burger span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 18px;
+    background: #232323;
+  }
+
+  .menu_toggle input:checked + label.burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu_toggle input:checked + label.burger span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 18px;
+    background: #232323;
+  }
+
+  .nav__container {
+        display: none;
+        flex-direction: column;
+        justify-content: center;  !* Centrage vertical *!
+        align-items: center;      !* Centrage horizontal *!
+        background-color: white;
+        position: absolute;
+        width: 100vh;
+        height: 100vh;             !* Ajouté pour bien centrer verticalement *!
+        padding: 32px 16px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 2;
+        box-sizing: border-box;
+      }
+
+
+
+  .menu_toggle input:checked + label + .nav__container  {
+    display: flex;
+  }
+
+
+  .nav__container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__container li a {
+    display: flex;
+    padding: 10px;
+    color: #232323!important;
+    text-decoration: none;
+  }
+
+
+  label.burger{
+    margin-left: 24px;
+    margin-top: 48px;
+  }
+
+
+  @media screen and (min-width: 900px) {
+    !* Cache le bouton burger *!
+    label.burger,.menu_toggle input{
+      display: none;
+    }
+    div.menu_toggle{
+      width: 0;
+    }
+
+    !* Affiche le menu directement *!
+    .nav__container {
+      display: flex !important;
+      position: static; !* Enlève le absolute *!
+      width: auto;
+      padding: 0;
+      box-shadow: none;
+      flex-direction: row; !* Menu horizontal si tu veux *!
+      gap: 1rem;
+
+    }
+
+    .nav__container ul {
+      display: flex;
+      gap: 1rem;
+      margin-top: 48px;
+      margin-left: 12px;
+    }
+
+    .nav__container li a {
+      padding: 0.5rem 1rem;
+      color: black;
+    }
+  }
+
+*/
 html, body {
   margin: 0;
   padding: 0;
@@ -383,6 +480,7 @@ body {
   font-family: "Orbitron Bold", sans-serif;
   font-size: var(--font-size-title);
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .container_form {
@@ -455,6 +553,20 @@ aside {
 
 .container_form p {
   color: red;
+}
+
+.liste_cord li.item_name {
+  color: white;
+}
+
+.liste_cord li.item_name {
+  font-size: 20px;
+  font-family: "Orbitron Bold", sans-serif;
+}
+
+a.item, span.item {
+  font-size: 16px;
+  font-family: Exo Light, sans-serif;
 }
 
 @media screen and (min-width: 420px) {

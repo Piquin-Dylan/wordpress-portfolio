@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <meta name="author" content="Dylan Piquin">
     <meta name="title" content="Dylan Piquin">
@@ -33,23 +34,29 @@
 
 
     <h1 class="hidden"><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></h1>
-    <input type="checkbox" id="burger-toggle"/>
 
-    <label for="burger-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
+
     <nav class="nav">
-        <?php
-        // Affiche le menu principal
-        wp_nav_menu(array(
-            'theme_location' => 'menu-haut',
-            'container' => false, // Ne pas ajouter un autre <div>
-            'menu_class' => 'nav__container', // Classe de la liste
-            'items_wrap' => '<h2 class="hidden">Menu principal de navigation</h2><ul class="nav__container">%3$s</ul>',
-        ));
+        <div class="menu_toggle">
+            <input type="checkbox" id="burger-toggle"/>
+            <label for="burger-toggle" class="burger" aria-label="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
+            <?php
+            // Affiche le menu principal
+            wp_nav_menu(array(
+                'theme_location' => 'menu-haut',
+                'container' => false, // Ne pas ajouter un autre <div>
+                'menu_class' => 'nav__container', // Classe de la liste
+                'items_wrap' => '<h2 class="hidden">Menu principal de navigation</h2><ul class="nav__container">%3$s</ul>',
+            ));
+            ?>
+
+
+        <?php
         // Code pour afficher le sélecteur de langue
         $languages = pll_the_languages(array('raw' => 1)); // Récupère toutes les langues disponibles
         $current_lang = pll_current_language(); // Récupère la langue actuelle
@@ -66,6 +73,7 @@
             echo '</div>';
         endif;
         ?>
+        </div>
     </nav>
 
 </header>

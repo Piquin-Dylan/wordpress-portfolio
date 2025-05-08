@@ -42,7 +42,7 @@ get_header();
                    id="phone"
                    value="<?php echo $_SESSION['old']['phone'] ?? ''; ?>"
                    placeholder="+ 32 451 20 67 90 "
-                    required>
+                   required>
             <?php if (!empty($_SESSION['errors']['phone'])) : ?>
                 <p class="errors_validation"><?php echo $_SESSION['errors']['phone']; ?></p>
             <?php endif; ?>
@@ -51,11 +51,11 @@ get_header();
             <input class="input_form"
                    type="text" id="subject"
                    name="subject"
-                   value="<?php echo $_SESSION['old']['subject'] ?? ''?>"
+                   value="<?php echo $_SESSION['old']['subject'] ?? '' ?>"
                    placeholder="Ex: Sujet du mail"
                    required>
             <?php if (!empty($_SESSION['errors']['subject']))  : ?>
-            <p class="errors_validation"><?php echo $_SESSION['errors']['subject']; ?></p>
+                <p class="errors_validation"><?php echo $_SESSION['errors']['subject']; ?></p>
             <?php endif; ?>
             <label for="area">Votre message</label>
             <textarea name="area"
@@ -74,19 +74,29 @@ get_header();
     </form>
     <aside>
         <h2 class="title_coordonnées">Mes coordonnées</h2>
-        <ul class="liste_cord">
-            <li>
-                Numéros de téléphone
-                <a class="item" href="#"><?php the_field('num_tel') ?></a>
+        <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
+
+            <li itemprop="telephone" class="item_name">Numéro de téléphone :
+                <a aria-label="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" title="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" class="item" href="tel:"><?php the_field('num_tel') ?></a>
             </li>
-            <li>Adresse mail
-                <a class="item" href="#"><?php the_field('adresse_mail') ?></a>
+
+            <li class="item_name">
+                Adresse mail :
+                <a aria-label="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" title="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" itemprop="email" class="item" href="mailto:<?php the_field('adresse_mail') ?>">
+                    <?php the_field('adresse_mail') ?>
+                </a>
             </li>
-            <li>Adresse Postale
-                <a class="item" href="#"><?php the_field('adresse') ?></a>
+
+            <li class="item_name" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                Adresse postale :
+                <span itemprop="streetAddress" class="item">
+        <?php the_field('adresse') ?>
+      </span>
             </li>
+
         </ul>
     </aside>
+
 </div>
 <?php get_footer(); ?>
 <?php
