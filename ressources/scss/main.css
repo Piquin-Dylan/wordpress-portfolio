@@ -339,6 +339,10 @@ canvas#my-canvas {
   margin: 8px 0;
 }
 
+footer {
+  background: black;
+}
+
 @media screen and (min-width: 768px) {
   .footer-menu {
     display: flex;
