@@ -6,12 +6,13 @@
 session_start();
 get_header();
 ?>
-    <h2>spannn</h2>
+
+
     <div class="container">
         <form action="<?php echo get_template_directory_uri(); ?>/process.php" method="post" novalidate>
             <section class="container_form">
-                <h2 class="title_form">Contactez-moi </h2>
-                <label for="name">Nom complet</label>
+                <h2><?php _e('Contactez-moi', 'mon-theme'); ?></h2>
+                <label for="name"><?php _e('Nom complet', 'mon-theme'); ?></label>
                 <input class="input_form"
                        type="text"
                        name="name"
@@ -77,12 +78,16 @@ get_header();
             <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
 
                 <li itemprop="telephone" class="item_name">Numéro de téléphone :
-                    <a aria-label="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" title="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" class="item" href="tel:"><?php the_field('num_tel') ?></a>
+                    <a aria-label="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56"
+                       title="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" class="item"
+                       href="tel:"><?php the_field('num_tel') ?></a>
                 </li>
 
                 <li class="item_name">
                     Adresse mail :
-                    <a aria-label="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" title="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" itemprop="email" class="item" href="mailto:<?php the_field('adresse_mail') ?>">
+                    <a aria-label="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be"
+                       title="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" itemprop="email"
+                       class="item" href="mailto:<?php the_field('adresse_mail') ?>">
                         <?php the_field('adresse_mail') ?>
                     </a>
                 </li>

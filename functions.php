@@ -54,14 +54,9 @@ function mortal_theme()
 
 
 
-function register_my_menus() {
-    register_nav_menus(
-        array(
-            'footer_menu' => __( 'Menu Footer' ),
-        )
-    );
-}
-add_action( 'init', 'register_my_menus' );
+register_nav_menus(array(
+    'footer' => __('Menu du pied de page', 'ton-theme'),
+));
 
 
 function allow_svg_upload($mimes)
@@ -87,7 +82,10 @@ function process_contact_form() {
         include get_template_directory() . '/process.php';
     }
 }
-
+function mon_theme_load_textdomain() {
+    load_theme_textdomain('mon-theme', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'mon_theme_load_textdomain');
 
 // Désactive la barre d’admin pour tous les utilisateurs (même admins)
 add_filter('show_admin_bar', '__return_false');

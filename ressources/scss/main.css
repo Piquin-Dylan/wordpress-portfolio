@@ -307,6 +307,17 @@ html, body {
   text-decoration: none;
 }
 
+#menu-footer-en > li:nth-child(1) > a,
+#menu-footer-en > li:nth-child(2) > a,
+#menu-footer-en > li:nth-child(3) > a,
+#menu-footer-en > li:nth-child(4) > a {
+  font-size: 20px;
+  font-family: "Orbitron Bold", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
 .sub-menu {
   color: white;
   font-size: 16px;
