@@ -8,10 +8,14 @@
 
     <meta name="author" content="Dylan Piquin">
     <meta name="title" content="Dylan Piquin">
-    <meta name="keywords"
-          content="Portfolio,Dylan Piquin, Front-end, Back-end, Développeur web, étudiant à l'HEPL, Wordpress">
-    <meta name="description"
-          content="Portfolio de Dylan Piquin, étudiant à la hepl lors du cours de design web je dois réaliser mon portfolio">
+    <meta name="keywords" content="Portfolio,Dylan Piquin, Front-end, Back-end, Développeur web, étudiant à l'HEPL, Wordpress">
+    <meta name="description" content="Portfolio de Dylan Piquin, étudiant à la hepl lors du cours de design web je dois réaliser mon portfolio">
+    <meta property="og:description" content="Portfolio de Dylan Piquin, étudiant en infographie à la Hepl. Découvrez mes projets que j'ai réalisé durant mon cursus.">
+    <meta property="og:locale" content="fr_BE"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Dylan Piquin - Etudiant en Web à la Hepl"/>
+    <meta property="og:url" content="https://dylan-piquin.com"/>
+
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ressources/reset.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ressources/scss/main.css">
@@ -19,7 +23,7 @@
 
     <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
 </head>
-<canvas id="my-canvas"></canvas>add
+<canvas id="my-canvas"></canvas>
 <body>
 <header>
     <svg class="logo" width="208" height="105" viewBox="0 0 208 105" fill="none" xmlns="http://www.w3.org/2000/svg">
