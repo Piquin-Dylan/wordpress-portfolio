@@ -12,172 +12,118 @@
     padding: 0;
     border: 0;
   }
- /* .logo {
-    position: absolute;
-    max-width: 75px;
-    left: 42%;
-    margin-top: 15px;
-    cursor: pointer;
+  .nav__container a[href*="single_page"] {
+    display: none;
   }
+ .logo{
+   max-width: 75px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .svg_container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+.language_selector{
+  display: flex;
+  justify-content: right;
+}
 
-  .nav a {
+a.lang-link{
+  position: relative;
+  top: -60px;
+  left: 80%;
+  color: white;
+  text-decoration: none;
+}
+
+  /* Cache le menu par défaut */
+  .nav__container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 320px;
+    background-color: white;
+    transition: left 0.3s ease;
+    padding-top: 80px; /* pour laisser de l'espace pour le burger */
+    z-index: 9;
     display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    position: relative;
-    font-size: 20px;
-    color: white;
-    top: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Affiche le menu quand toggle est activé */
+  .menu_toggle:has(#burger-toggle:checked) .nav__container {
     left: 0;
-    right: 0;
   }
 
-
-  !* Burger menu *!
-  .menu_toggle {
-    position: relative;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-  }
-
-  !* Cache l'input mais garde cliquable *!
-  .menu_toggle input {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 5;
-  }
-
-  !* Bouton burger *!
+  /* Style du burger */
   .burger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    z-index: 4;
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
   }
 
-  !* Burger bars *!
   .burger span {
     display: block;
-    position: absolute;
-    height: 4px;
-    width: 30px;
-    background: #cdcdcd;
-    border-radius: 2px;
-    transition: all 0.4s ease;
-    left: 5px;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s ease;
   }
 
-  .burger span:nth-child(1) {
-    top: 10px;
+  /* Animation du burger (X) */
+  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
-
-  .burger span:nth-child(2) {
-    top: 18px;
-  }
-
-  .burger span:nth-child(3) {
-    top: 26px;
-  }
-
-  !* Animation croix *!
-  .menu_toggle input:checked + label.burger span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 18px;
-    background: #232323;
-  }
-
-  .menu_toggle input:checked + label.burger span:nth-child(2) {
+  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(2) {
     opacity: 0;
   }
-
-  .menu_toggle input:checked + label.burger span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 18px;
-    background: #232323;
+  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
-  .nav__container {
-        display: none;
-        flex-direction: column;
-        justify-content: center;  !* Centrage vertical *!
-        align-items: center;      !* Centrage horizontal *!
-        background-color: white;
-        position: absolute;
-        width: 100vh;
-        height: 100vh;             !* Ajouté pour bien centrer verticalement *!
-        padding: 32px 16px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 2;
-        box-sizing: border-box;
-      }
-
-
-
-  .menu_toggle input:checked + label + .nav__container  {
-    display: flex;
+  /* Cache la checkbox */
+  #burger-toggle {
+    display: none;
   }
 
-
+  /* Menu liens */
   .nav__container ul {
     list-style: none;
     padding: 0;
-    margin: 0;
   }
 
   .nav__container li a {
-    display: flex;
-    padding: 10px;
-    color: #232323!important;
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    color: #0A192F;
     text-decoration: none;
   }
 
-
-  label.burger{
-    margin-left: 24px;
-    margin-top: 48px;
+  .nav__container li a:hover {
+    background-color: #f0f0f0;
+    width: 100%;
+    text-align: center;
+  }
+  /* Quand menu ouvert, les barres du burger deviennent noires */
+  .menu_toggle:has(#burger-toggle:checked) .burger span {
+    background-color: #000;
   }
 
 
-  @media screen and (min-width: 900px) {
-    !* Cache le bouton burger *!
-    label.burger,.menu_toggle input{
-      display: none;
-    }
-    div.menu_toggle{
-      width: 0;
+  @media screen and (min-width:1000px ) {
+    a.lang-link{
+      left: 90%;
     }
 
-    !* Affiche le menu directement *!
-    .nav__container {
-      display: flex !important;
-      position: static; !* Enlève le absolute *!
-      width: auto;
-      padding: 0;
-      box-shadow: none;
-      flex-direction: row; !* Menu horizontal si tu veux *!
-      gap: 1rem;
-
     }
-
-    .nav__container ul {
-      display: flex;
-      gap: 1rem;
-      margin-top: 48px;
-      margin-left: 12px;
-    }
-
-    .nav__container li a {
-      padding: 0.5rem 1rem;
-      color: black;
-    }
-  }
-
-*/
