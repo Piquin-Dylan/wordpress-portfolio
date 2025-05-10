@@ -33,7 +33,7 @@
 
 a.lang-link{
   position: relative;
-  top: -60px;
+  top: -82px;
   left: 80%;
   color: white;
   text-decoration: none;
@@ -62,14 +62,15 @@ a.lang-link{
 
   /* Style du burger */
   .burger {
-    position: fixed;
-    top: 40px;
+    position: relative;
+    top: -62px;
     left: 20px;
     z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    max-width: 50px;
   }
 
   .burger span {
