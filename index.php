@@ -13,7 +13,7 @@
         <span class="name"><?php the_field('first_name'); ?></span>
         <span class="job"><?php the_field('Job'); ?></span>
         <span class="presentation"><?php the_field('presentation'); ?></span>
-            <button class="btn_header">Exploration</button>
+            <a href="/exploration" class="btn_header">Exploration</a>
         </div>
 
     </div>

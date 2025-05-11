@@ -124,10 +124,6 @@ a.lang-link {
   background-color: #000;
 }
 
-a.lang-link {
-  left: 90%;
-}
-
 @media screen and (min-width: 1000px) {
   .nav__container {
     display: flex;
@@ -235,6 +231,7 @@ html, body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .btn_header:before {
