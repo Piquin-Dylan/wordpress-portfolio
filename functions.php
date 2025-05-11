@@ -87,6 +87,7 @@ function mon_theme_load_textdomain() {
 }
 add_action('after_setup_theme', 'mon_theme_load_textdomain');
 
+
 // Désactive la barre d’admin pour tous les utilisateurs (même admins)
 add_filter('show_admin_bar', '__return_false');
 session_write_close();
