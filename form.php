@@ -36,7 +36,7 @@ get_header();
                 <?php if (!empty($_SESSION['errors']['email'])) : ?>
                     <p class="error_validation"><?php echo $_SESSION['errors']['email']; ?></p>
                 <?php endif; ?>
-                <label for="phone">Numéros de téléphone</label>
+                <label for="phone"><?php _e('Numéro de téléphone', 'theme-de-test-hepl'); ?></label>
                 <input class="input_form"
                        type="tel"
                        name="phone"
@@ -48,22 +48,22 @@ get_header();
                     <p class="errors_validation"><?php echo $_SESSION['errors']['phone']; ?></p>
                 <?php endif; ?>
 
-                <label for="subject">Sujet</label>
+                <label for="subject"><?php _e('Sujet', 'theme-de-test-hepl'); ?></label>
                 <input class="input_form"
                        type="text" id="subject"
                        name="subject"
                        value="<?php echo $_SESSION['old']['subject'] ?? '' ?>"
-                       placeholder="Ex: Sujet du mail"
+                       placeholder="Ex: <?php _e('Sujet du mail', 'theme-de-test-hepl'); ?>"
                        required>
                 <?php if (!empty($_SESSION['errors']['subject']))  : ?>
                     <p class="errors_validation"><?php echo $_SESSION['errors']['subject']; ?></p>
                 <?php endif; ?>
-                <label for="area">Votre message</label>
+                <label for="area"><?php _e('Votre Message', 'theme-de-test-hepl'); ?></label>
                 <textarea name="area"
                           id="area"
                           cols="40"
                           rows="10"
-                          placeholder="Ex: Entrez votre message"
+                          placeholder="Ex: <?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>"
                           required><?php echo $_SESSION['old']['area'] ?? ''; ?></textarea>
                 <?php if (!empty($_SESSION['errors']['area'])) : ?>
                     <p class="error_validation"><?php echo $_SESSION['errors']['area']; ?></p>
@@ -74,17 +74,17 @@ get_header();
             </section>
         </form>
         <aside>
-            <h2 class="title_coordonnées">Mes coordonnées</h2>
+            <h2 class="title_coordonnées"><?php _e('Mes coordonnées', 'theme-de-test-hepl'); ?></h2>
             <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
 
-                <li itemprop="telephone" class="item_name">Numéro de téléphone :
+                <li itemprop="telephone" class="item_name"><?php _e('Numéro de téléphone', 'theme-de-test-hepl'); ?> :
                     <a aria-label="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56"
                        title="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" class="item"
                        href="tel:"><?php the_field('num_tel') ?></a>
                 </li>
 
                 <li class="item_name">
-                    Adresse mail :
+                    <?php _e('Adresse mail', 'theme-de-test-hepl'); ?>
                     <a aria-label="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be"
                        title="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" itemprop="email"
                        class="item" href="mailto:<?php the_field('adresse_mail') ?>">
@@ -93,7 +93,7 @@ get_header();
                 </li>
 
                 <li class="item_name" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                    Adresse postale :
+                    <?php _e('Adresse postale', 'theme-de-test-hepl'); ?>
                     <span itemprop="streetAddress" class="item">
         <?php the_field('adresse') ?>
       </span>
