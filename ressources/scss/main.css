@@ -147,7 +147,7 @@ a.lang-link {
     padding: 0;
     position: relative;
     top: -75px;
-    left: -365px;
+    left: -300px;
   }
   .nav__container li {
     margin: 0;
@@ -162,6 +162,15 @@ a.lang-link {
   }
   .nav__container li a {
     color: white;
+  }
+  a.lang-link {
+    top: -110px;
+    left: 90%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav__container ul {
+    gap: 2em;
   }
 }
 html, body {
