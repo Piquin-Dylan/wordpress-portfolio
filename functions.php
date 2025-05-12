@@ -83,7 +83,10 @@ function process_contact_form() {
     }
 }
 function mon_theme_load_textdomain() {
-    load_theme_textdomain('mon-theme', get_template_directory() . '/languages');
+    $locale = get_locale(); // Récupère la locale active.
+
+    // Charge le fichier de traduction en fonction de la locale
+    load_textdomain('theme-de-test-hepl', get_template_directory() . '/languages/theme-de-test-hepl-' . $locale . '.mo');
 }
 add_action('after_setup_theme', 'mon_theme_load_textdomain');
 

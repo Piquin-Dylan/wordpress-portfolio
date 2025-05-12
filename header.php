@@ -24,10 +24,14 @@
     <script src="<?php echo get_template_directory_uri(); ?>/ressources/js/main.js" defer></script>
 
     <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
+
 </head>
 <canvas id="my-canvas"></canvas>
 <body>
 <header>
+    <?php
+    echo __('Hello, this is a test', 'theme-de-test-hepl');
+    ?>
     <div class="svg_container">
         <a href="/">
     <svg class="logo" width="208" height="105" viewBox="0 0 208 105" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -11,8 +11,8 @@ get_header();
     <div class="container">
         <form action="<?php echo get_template_directory_uri(); ?>/process.php" method="post" novalidate>
             <section class="container_form">
-                <h2><?php _e('Contactez-moi', 'mon-theme'); ?></h2>
-                <label for="name"><?php _e('Nom complet', 'mon-theme'); ?></label>
+                <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
+                <label for="name"><?php _e('Nom complet', 'theme-de-test-hepl'); ?></label>
                 <input class="input_form"
                        type="text"
                        name="name"
@@ -25,7 +25,7 @@ get_header();
                 <?php endif; ?>
 
 
-                <label for="email">Adresse mail</label>
+                <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
                 <input class="input_form"
                        type="email"
                        name="email"
