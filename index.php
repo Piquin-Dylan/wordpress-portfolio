@@ -85,6 +85,5 @@
 </main>
 <?php endif; ?>
 <footer class="test">
-    <h2 class="hidden">Menu de navigation de bas de page</h2>
     <?php get_footer(); ?>
 

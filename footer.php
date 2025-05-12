@@ -18,6 +18,7 @@
         }
     }
     ?>
+    <h2 class="hidden">Menus de navigation de bas de page </h2>
 </footer>
 </body>
 </html>

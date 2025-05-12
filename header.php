@@ -29,9 +29,7 @@
 <canvas id="my-canvas"></canvas>
 <body>
 <header>
-    <?php
-    echo __('Hello, this is a test', 'theme-de-test-hepl');
-    ?>
+
     <div class="svg_container">
         <a href="/">
     <svg class="logo" width="208" height="105" viewBox="0 0 208 105" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,8 +68,7 @@
                 'items_wrap' => '<h2 class="hidden">Menu principal de navigation</h2><ul class="nav__container">%3$s</ul>',
             ));
             ?>
-
-
+            <h2 class="hidden">Menus principal de Navigation </h2>
             <?php
             // Code pour afficher le sélecteur de langue
             $languages = pll_the_languages(array('raw' => 1)); // Récupère toutes les langues disponibles
