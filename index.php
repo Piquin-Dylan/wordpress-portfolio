@@ -84,6 +84,5 @@
     <button class="arrow right">▶</button>
 </main>
 <?php endif; ?>
-<footer class="test">
     <?php get_footer(); ?>
 

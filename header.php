@@ -26,8 +26,8 @@
     <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
 
 </head>
-<canvas id="my-canvas"></canvas>
 <body>
+<canvas id="my-canvas"></canvas>
 <header>
 
     <div class="svg_container">
