@@ -35,7 +35,7 @@
                         <?php
                         $image = get_field('image_projet');
                         if ($image): ?>
-                            <img title="Vers projet site Cv" class="image_project_1"
+                            <img title="Vers projet site Cv" id="image_project_1"
                                  src="<?php echo esc_url($image['url']); ?>" width="260"
                                  height="360"
                                  alt="<?php echo esc_attr($image['alt']); ?>">
@@ -52,7 +52,7 @@
                         <?php
                         $image = get_field('image_projet');
                         if ($image): ?>
-                            <img title="Vers projet site Cv" class="image_project_1"
+                            <img title="Vers projet site Cv" id="image_project_2"
                                  src="<?php echo esc_url($image['url']); ?>" width="260"
                                  height="360"
                                  alt="<?php echo esc_attr($image['alt']); ?>">
@@ -68,7 +68,7 @@
                         <?php
                         $image = get_field('image_project');
                         if ($image): ?>
-                            <img title="Vers projet site Cv" class="image_project_1"
+                            <img title="Vers projet site Cv" id="image_project_3"
                                  src="<?php echo esc_url($image['url']); ?>" width="260"
                                  height="360"
                                  alt="<?php echo esc_attr($image['alt']); ?>">

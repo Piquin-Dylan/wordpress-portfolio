@@ -45,9 +45,12 @@ main.content {
   width: 150px;
   height: 180px;
   border-radius: 10px;
-  object-fit: cover;
   margin-left: 12px;
+  position: relative;
+  top: 30px;
+  left: 0;
 }
+
 
 .carousel .slide a {
   margin-top: 10px;
@@ -90,7 +93,7 @@ main.content {
 }
 
 .right {
-  right: 10px; 
+  right: 10px;
   top: 1050px;
 }
 
@@ -99,6 +102,11 @@ main.content {
   font-size: 32px;
   color: white;
   text-align: center;
+  margin-bottom: 32px;
+}
+
+.image_project_1{
+  max-width: 300px;
 }
 
 
