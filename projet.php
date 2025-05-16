@@ -22,43 +22,17 @@ $page_url = $page_obj ? get_permalink($page_obj->ID) : '#';
 ?>
 
 <section class="container_project">
-    <h2 class="project_title"><?php echo pll__('Mes projets'); ?></h2>
+    <h2 class="project_title"><?php _e('Mes projets', 'theme-de-test-hepl'); ?></h2>
     <div class="navigation_project">
-        <a href="?categorie=tout" class="<?php echo ($categorie_choisie === 'tout') ? 'active' : ''; ?>"><?php echo pll__('Tout'); ?></a>
-        <a href="?categorie=Web" class="<?php echo ($categorie_choisie === 'Web') ? 'active' : ''; ?>"><?php echo pll__('Web'); ?></a>
-        <a href="?categorie=3D" class="<?php echo ($categorie_choisie === '3D') ? 'active' : ''; ?>"><?php echo pll__('3D'); ?></a>
-        <a href="?categorie=Mobile" class="<?php echo ($categorie_choisie === 'Mobile') ? 'active' : ''; ?>"><?php echo pll__('Mobile'); ?></a>
+        <a href="?categorie=tout" class="<?php echo ($categorie_choisie === 'tout') ? 'active' : ''; ?>"><?php echo _e('Tout', 'theme-de-test-hepl'); ?></a>
+        <a href="?categorie=Web" class="<?php echo ($categorie_choisie === 'Web') ? 'active' : ''; ?>"><?php echo _e('Web'); ?></a>
+        <a href="?categorie=3D" class="<?php echo ($categorie_choisie === '3D') ? 'active' : ''; ?>"><?php echo _e('3D'); ?></a>
+        <a href="?categorie=Mobile" class="<?php echo ($categorie_choisie === 'Mobile') ? 'active' : ''; ?>"><?php echo _e('Mobile'); ?></a>
     </div>
+    <?php
+    include(locate_template('project_loop.php'));
+    ?>
 
-    <?php if (have_rows('projets')) : ?>
-        <div class="projects-container">
-            <?php while (have_rows('projets')) : the_row();
-                $image = get_sub_field('image_projet');
-                $title = get_sub_field('project_name');
-                $categorie = get_sub_field('categorie');
-
-                if ($categorie_choisie === 'tout' || $categorie_choisie === $categorie) :
-                    ?>
-                    <article class="project-card">
-                        <h3 class="hidden"><?php echo esc_html($title); ?></h3>
-                        <?php if ($image) : ?>
-                            <div class="image_project_wrapper">
-                                <p class="name_project"><?php echo esc_html($title); ?></p>
-                                <a href="<?php echo esc_url($page_url . '?project=' . sanitize_title($title)); ?>">
-                                    <img
-                                            src="<?php echo esc_url($image['url']); ?>"
-                                            alt="<?php echo esc_attr($image['alt']); ?>"
-                                            class="image_project"
-                                            title="<?php echo esc_attr($title); ?>"/>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    </article>
-                <?php
-                endif;
-            endwhile; ?>
-        </div>
-    <?php endif; ?>
 </section>
 
 <?php get_footer(); ?>

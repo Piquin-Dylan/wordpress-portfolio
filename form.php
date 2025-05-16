@@ -70,7 +70,7 @@ get_header();
                 <?php endif; ?>
 
 
-                <input class="btn_submit" type="submit" value="Envoyer">
+                <input class="btn_submit" type="submit" value="<?php _e('Envoyer', 'theme-de-test-hepl'); ?>">
             </section>
         </form>
         <aside>

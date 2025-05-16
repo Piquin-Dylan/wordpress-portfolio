@@ -615,6 +615,7 @@ a.item, span.item {
     margin: 0 1.5em;
   }
 }
+/* === BOUTONS DE NAVIGATION === */
 .navigation_project a {
   font-family: Orbitron-light, sans-serif;
   display: inline-block;
@@ -639,41 +640,59 @@ a.item, span.item {
   margin: 24px 12px;
 }
 
+.navigation_project a:hover {
+  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
+}
+
 .project-card {
-  background-color: #0E122E;
-  border: 2px solid #ccc; /* Bordure */
-  padding: 20px 20px 0;
-  border-radius: 8px; /* Coins arrondis */
+  width: 250px;
+  height: 320px;
+  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
+  border: 2px solid #4ec3ff;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  margin: 24px;
   text-align: center;
-  margin: 24px 24px;
-  max-width: 250px;
+  box-shadow: 0 0 8px rgba(78, 195, 255, 0.4);
+}
+
+.project-card:hover {
+  box-shadow: 0 0 30px #4ec3ff;
+}
+
+.image_project {
+  width: 90%;
+  height: 280px; /* Taille fixe des images */
+  display: block;
+  border-radius: 6px;
+  position: relative;
+  left: 15px;
+}
+
+.name_project {
+  font-size: 18px;
+  font-family: "Orbitron Bold", sans-serif;
+  margin: 12px 0 0 0;
+  padding: 0 8px;
+  color: white;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
-}
-
-.image_project {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-.name_project {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  text-align: left;
-  margin-right: 50px;
-  margin-bottom: 16px;
+  gap: 24px;
 }
 
 .project_title {
@@ -695,7 +714,8 @@ a.item, span.item {
 }
 
 @media screen and (min-width: 768px) {
-  .project_title, .navigation_project {
+  .project_title,
+  .navigation_project {
     margin-left: 25px;
   }
 }

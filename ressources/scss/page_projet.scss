@@ -1,6 +1,6 @@
-
-.navigation_project a{
-  font-family: Orbitron-light,sans-serif;
+/* === BOUTONS DE NAVIGATION === */
+.navigation_project a {
+  font-family: Orbitron-light, sans-serif;
   display: inline-block;
   text-decoration: none;
   font-size: 16px;
@@ -13,7 +13,8 @@
   text-align: center;
   color: white;
 }
-.navigation_project{
+
+.navigation_project {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -22,52 +23,79 @@
   margin: 24px 12px;
 }
 
-.project-card {
-  background-color: #0E122E;
-  border: 2px solid #ccc; /* Bordure */
-  padding: 20px 20px 0;
-  border-radius: 8px; /* Coins arrondis */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 24px 24px;
-  max-width: 250px;
+.navigation_project a:hover {
+  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
 }
+
+
+
+
+
+.project-card {
+  width: 250px;
+  height: 320px;
+  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
+  border: 2px solid #4ec3ff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 24px;
+  text-align: center;
+  box-shadow: 0 0 8px #4ec3ff66;
+
+}
+
+.project-card:hover{
+  box-shadow: 0 0 30px #4ec3ff;
+}
+
+.image_project {
+  width: 90%;
+  height: 280px; /* Taille fixe des images */
+  display: block;
+  border-radius: 6px;
+  position: relative;
+  left: 15px;
+}
+
+.name_project {
+  font-size: 18px;
+  font-family: "Orbitron Bold", sans-serif;
+  margin: 12px 0 0 0;
+  padding: 0 8px;
+  color: white;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
-
+  gap: 24px;
 }
 
-.image_project {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-.name_project{
-    font-size: 20px;
-  font-family: "Orbitron Bold",sans-serif;
-  text-align: left;
-  margin-right: 50px;
-  margin-bottom: 16px;
-}
-.project_title{
+.project_title {
   font-size: 20px;
-  font-family: "Orbitron Bold",sans-serif;
+  font-family: "Orbitron Bold", sans-serif;
   margin: 24px auto;
   text-align: left;
 }
+
 @media screen and (min-width: 450px) {
-  .navigation_project{
+  .navigation_project {
     flex-wrap: nowrap;
   }
 }
+
 .container_project {
   max-width: 1200px;
   margin: 0 auto;
@@ -75,7 +103,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .project_title,.navigation_project{
+  .project_title,
+  .navigation_project {
     margin-left: 25px;
   }
 }
@@ -84,7 +113,8 @@
   .project_title {
     margin-left: 50px;
   }
-  .navigation_project{
+
+  .navigation_project {
     padding: 20px;
     margin: 0 32px auto;
     justify-content: left;
