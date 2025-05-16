@@ -4,16 +4,24 @@
  */
 
 get_header();
+
 // Récupère le slug du projet depuis l'URL
 $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
-// Récupère la page qui contient les projets
-$page = get_page_by_path('single_page');
+// Détermine la langue actuelle
+$current_lang = pll_current_language();
+
+// Choisit la bonne page en fonction de la langue
+$page_slug = ($current_lang === 'fr') ? 'single_page' : 'single_page_english';
+$page = get_page_by_path($page_slug);
 $page_id = $page ? $page->ID : null;
+
+// Vérifie s'il y a des projets sur la bonne page
 if ($project_slug && $page_id && have_rows('single_page', $page_id)) :
     while (have_rows('single_page', $page_id)) : the_row();
         $slug = get_sub_field('project_slug');
         if ($slug === $project_slug) :
+            // Récupère tous les champs du projet
             $title = get_sub_field('project_title');
             $description = get_sub_field('description_project');
             $concept = get_sub_field('concept');
