@@ -57,7 +57,7 @@
                             <?php
                             $image = get_field('image_projet_2');
                             if ($image):
-                            $slug_2 = get_field('slug_1'); // assure-toi que cette variable existe
+                            $slug_2 = get_field('slug_2'); // assure-toi que cette variable existe
                             $link_2 = site_url('/single_page/?project=' . sanitize_title($slug_2));
                             ?>
                             <a href="<?php echo esc_url($link_2); ?>" title="Vers la page du projet site client">
@@ -77,14 +77,18 @@
                         <div class="slide" style="transform: rotateY(240deg) translateZ(300px);">
                             <?php
                             $image = get_field('image_projet_3');
-                            if ($image): ?>
-                                <img title="Vers projet site Cv" id="image_project_3"
+                            if ($image):
+                            $slug_3 = get_field('slug_3'); // assure-toi que cette variable existe
+                            $link_3 = site_url('/single_page/?project=' . sanitize_title($slug_3));
+                            ?>
+                            <a href="<?php echo esc_url($link_3); ?>" title="Vers la page du projet site client">
+                                <img title="Vers la page du projet site client" id="image_project_3"
                                      src="<?php echo esc_url($image['url']); ?>" width="260"
                                      height="360"
                                      alt="<?php echo esc_attr($image['alt']); ?>">
-                            <?php endif; ?>
-                            <a href="#"><p title="Vers le projet site  Portfolio"
-                                           class="title_project_3"><?php the_field('title_project_3'); ?></p></a>
+                                <?php endif; ?>
+                                <p title="Vers le projet site  Portfolio"
+                                   class="title_project_3"><?php the_field('title_project_3'); ?></p></a>
                         </div>
                     </article>
                 </div>
