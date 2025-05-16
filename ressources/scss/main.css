@@ -413,6 +413,8 @@ main.content {
   font-size: 2rem;
   text-decoration: none;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .carousel .slide a .title_project_3 {
@@ -461,6 +463,12 @@ main.content {
 
 .image_project_1 {
   max-width: 300px;
+}
+
+#image_project_3 {
+  width: 90px;
+  left: -20px;
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 768px) {
