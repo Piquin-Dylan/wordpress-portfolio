@@ -420,6 +420,7 @@ main.content {
 .carousel .slide a .title_project_3 {
   position: relative;
   top: -20px;
+  margin-top: 8px;
 }
 
 .arrow {
@@ -465,9 +466,14 @@ main.content {
   max-width: 300px;
 }
 
+#image_project_2 {
+  width: 90px;
+  left: -15px;
+}
+
 #image_project_3 {
   width: 90px;
-  left: -20px;
+  left: -10px;
   margin-bottom: 16px;
 }
 
