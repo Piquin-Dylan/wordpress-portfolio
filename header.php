@@ -70,22 +70,37 @@
             ?>
             <h2 class="hidden">Menus principal de Navigation </h2>
             <?php
-            // Code pour afficher le sélecteur de langue
-            $languages = pll_the_languages(array('raw' => 1)); // Récupère toutes les langues disponibles
-            $current_lang = pll_current_language(); // Récupère la langue actuelle
+            $current_lang = pll_current_language();
+            $languages = pll_the_languages(['raw' => 1]); // Assure-toi d’avoir ce tableau disponible
+
+            // Vérifie si on est sur la page "single_page" ou "single_page_english"
+            $current_page = get_post();
+            $current_slug = $current_page ? $current_page->post_name : '';
+            $is_single_page = in_array($current_slug, ['single_page', 'single_page_english']);
+
+            // Récupère le paramètre de projet si présent
+            $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
             if ($languages):
-                echo '<div class="language-selector">'; // On peut ajouter une classe pour styliser le sélecteur de langue
+                echo '<div class="language-selector">';
                 foreach ($languages as $lang):
-                    if ($lang['slug'] != $current_lang): // Affiche uniquement si c'est une autre langue
-                        echo '<a href="' . esc_url($lang['url']) . '" class="lang-link">';
-                        echo esc_html($lang['name']); // Affiche le nom de la langue
+                    if ($lang['slug'] != $current_lang):
+                        $lang_url = $lang['url'];
+
+                        // S'il s'agit de la page single, ajoute ?project=...
+                        if ($is_single_page && $project_slug) {
+                            $lang_url = add_query_arg('project', $project_slug, $lang['url']);
+                        }
+
+                        echo '<a href="' . esc_url($lang_url) . '" class="lang-link">';
+                        echo esc_html($lang['name']);
                         echo '</a>';
                     endif;
                 endforeach;
                 echo '</div>';
             endif;
             ?>
+
         </div>
     </nav>
 

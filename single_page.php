@@ -5,13 +5,11 @@
 
 get_header();
 
-// Récupère le slug du projet depuis l'URL
 $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
-// Détermine la langue actuelle
 $current_lang = pll_current_language();
 
-// Choisit la bonne page en fonction de la langue
+
 $page_slug = ($current_lang === 'fr') ? 'single_page' : 'single_page_english';
 $page = get_page_by_path($page_slug);
 $page_id = $page ? $page->ID : null;
