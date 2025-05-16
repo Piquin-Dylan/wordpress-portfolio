@@ -7,7 +7,7 @@ get_header();
 <?php
 $presentation = get_field('presentation');
 $description = get_field('description');
-$image_presentation = get_field('image_presentation')
+$image_presentation = get_field('image_presentation');
 ?>
 
 
@@ -26,7 +26,7 @@ $image_presentation = get_field('image_presentation')
 
     <section class="section_parcours">
         <?php if (have_rows('parcours')) : ?>
-            <h2 class="parcours">Mon parcours</h2>
+            <h2 class="parcours"><?php echo  get_field('section_parcours') ?></h2>
             <div class="parcours-container">
                 <?php while (have_rows('parcours')) : the_row();
                     $year = get_sub_field('year');
@@ -42,7 +42,7 @@ $image_presentation = get_field('image_presentation')
     </section>
 
     <section class="mes_competences">
-        <h2 class="compétences">Mes compétences</h2>
+        <h2 class="compétences"><?php echo get_field('section_competences') ?></h2>
         <?php if (have_rows('competences')) : ?>
             <div class="container_competences">
                 <?php while (have_rows('competences')) : the_row();
@@ -64,6 +64,7 @@ $image_presentation = get_field('image_presentation')
             </div>
         <?php endif; ?>
     </section>
+
 
 <?php
 get_footer();

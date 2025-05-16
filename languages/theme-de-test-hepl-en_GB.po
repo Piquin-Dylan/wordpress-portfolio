@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-05-12 15:01+0200\n"
-"PO-Revision-Date: 2025-05-12 15:03+0200\n"
+"POT-Creation-Date: 2025-05-16 16:54+0200\n"
+"PO-Revision-Date: 2025-05-16 16:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -46,6 +46,10 @@ msgstr "Your message"
 msgid "Entrer votre message"
 msgstr "Enter your message"
 
+#: form.php:73
+msgid "Envoyer"
+msgstr "Sent"
+
 #: form.php:77
 msgid "Mes coordonnées"
 msgstr "My contact details"
@@ -62,6 +66,30 @@ msgstr ""
 msgid "Menu du pied de page"
 msgstr ""
 
-#: header.php:33
-msgid "Hello, this is a test"
-msgstr "Bonjour ceci est un test"
+#: projet.php:25
+msgid "Mes projets"
+msgstr "My projects"
+
+#: projet.php:27
+msgid "Tout"
+msgstr "All"
+
+#: projet.php:28
+msgid "Web"
+msgstr ""
+
+#: projet.php:29
+msgid "3D"
+msgstr ""
+
+#: projet.php:30
+msgid "Mobile"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Mes coordonnées"
+#~ msgid "Mes compétences"
+#~ msgstr "My contact details"
+
+#~ msgid "Hello, this is a test"
+#~ msgstr "Bonjour ceci est un test"

@@ -50,7 +50,6 @@ if (!empty($_SESSION['errors'])) {
     exit;
 }
 
-// Si aucune erreur, poursuivre le traitement du formulaire (par exemple envoyer l'email, enregistrer les données, etc.)
 
 
 
