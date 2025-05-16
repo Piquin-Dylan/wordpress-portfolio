@@ -71,14 +71,12 @@
             <h2 class="hidden">Menus principal de Navigation </h2>
             <?php
             $current_lang = pll_current_language();
-            $languages = pll_the_languages(['raw' => 1]); // Assure-toi d’avoir ce tableau disponible
+            $languages = pll_the_languages(['raw' => 1]);
 
-            // Vérifie si on est sur la page "single_page" ou "single_page_english"
             $current_page = get_post();
             $current_slug = $current_page ? $current_page->post_name : '';
             $is_single_page = in_array($current_slug, ['single_page', 'single_page_english']);
 
-            // Récupère le paramètre de projet si présent
             $project_slug = isset($_GET['project']) ? sanitize_title($_GET['project']) : '';
 
             if ($languages):
@@ -87,7 +85,6 @@
                     if ($lang['slug'] != $current_lang):
                         $lang_url = $lang['url'];
 
-                        // S'il s'agit de la page single, ajoute ?project=...
                         if ($is_single_page && $project_slug) {
                             $lang_url = add_query_arg('project', $project_slug, $lang['url']);
                         }
