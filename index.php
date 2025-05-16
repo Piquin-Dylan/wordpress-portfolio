@@ -60,13 +60,13 @@
                             $slug_2 = get_field('slug_2'); // assure-toi que cette variable existe
                             $link_2 = site_url('/single_page/?project=' . sanitize_title($slug_2));
                             ?>
-                            <a href="<?php echo esc_url($link_2); ?>" title="Vers la page du projet site client">
-                                <img title="Vers la page du projet site client" id="image_project_2"
+                            <a href="<?php echo esc_url($link_2); ?>" title="Vers la page du projet portfolio">
+                                <img title="Vers la page du projet portfolio" id="image_project_2"
                                      src="<?php echo esc_url($image['url']); ?>" width="260"
                                      height="360"
                                      alt="<?php echo esc_attr($image['alt']); ?>">
                                 <?php endif; ?>
-                                <p title="Vers le projet site Client"
+                                <p title="Vers la page du projet portfolio"
                                    class="title_project_1"><?php the_field('title_project_2'); ?></p>
                             </a>
                         </div>
@@ -87,7 +87,7 @@
                                      height="360"
                                      alt="<?php echo esc_attr($image['alt']); ?>">
                                 <?php endif; ?>
-                                <p title="Vers le projet site  Portfolio"
+                                <p title="Vers la page du projet site client"
                                    class="title_project_3"><?php the_field('title_project_3'); ?></p></a>
                         </div>
                     </article>
