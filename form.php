@@ -1,96 +1,75 @@
+<?php /* Template Name: Page "Contact" */ ?>
+
+<?php get_header(); ?>
+    <aside>
+        <h2>Contactez-moi</h2>
+    </aside>
 <?php
-/**
- * Template Name: Page de contact
- */
-session_start();
-get_header();
-?>
+// On ouvre "la boucle" (The Loop), la structure de contrôle
+// de contenu propre à Wordpress:
+if(have_posts()): while(have_posts()): the_post(); ?>
 
-<?php
-if (have_posts()) : while (have_posts()) : the_post();
+    <section class="contact">
+        <div class="contact__left"><?= get_the_content(); ?></div>
+        <div class="contact__right">
+            <?php
+            $errors = $_SESSION['contact_form_errors'] ?? [];
+            unset($_SESSION['contact_form_errors']);
+            $success = $_SESSION['contact_form_success'] ?? false;
+            unset($_SESSION['contact_form_success']);
 
-    // Récupérer les messages de session
-    $errors = $_SESSION['contact_form_errors'] ?? [];
-    unset($_SESSION['contact_form_errors']);
-
-    $old = $_SESSION['contact_form_old'] ?? [];
-    unset($_SESSION['contact_form_old']);
-
-    $success = $_SESSION['contact_form_success'] ?? false;
-    unset($_SESSION['contact_form_success']);
-    ?>
-
-    <div class="contact__left"><?= get_the_content(); ?></div>
-    <div class="contact__right">
-        <?php if ($success): ?>
-            <div class="contact__success">
-                <p><?= esc_html($success); ?></p>
-            </div>
-        <?php else: ?>
-            <div class="container">
-                <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
-                    <input type="hidden" name="action" value="dw_submit_contact_form">
-
-                    <section class="container_form">
-                        <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
-
-                        <label for="firstname"><?php _e('Prénom', 'theme-de-test-hepl'); ?></label>
-                        <input class="input_form" type="text" name="firstname" id="firstname"
-                               value="<?= esc_attr($old['firstname'] ?? '') ?>"
-                               placeholder="Ex: Jean" required>
-                        <?php if (!empty($errors['firstname'])): ?>
-                            <p class="error_validation"><?= esc_html($errors['firstname']); ?></p>
-                        <?php endif; ?>
-
-                        <label for="lastname"><?php _e('Nom', 'theme-de-test-hepl'); ?></label>
-                        <input class="input_form" type="text" name="lastname" id="lastname"
-                               value="<?= esc_attr($old['lastname'] ?? '') ?>"
-                               placeholder="Ex: Dupont" required>
-                        <?php if (!empty($errors['lastname'])): ?>
-                            <p class="error_validation"><?= esc_html($errors['lastname']); ?></p>
-                        <?php endif; ?>
-
-                        <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
-                        <input class="input_form" type="email" name="email" id="email"
-                               value="<?= esc_attr($old['email'] ?? '') ?>"
-                               placeholder="Ex: jeandupont@example.com" required>
-                        <?php if (!empty($errors['email'])): ?>
-                            <p class="error_validation"><?= esc_html($errors['email']); ?></p>
-                        <?php endif; ?>
-
-                        <label for="message"><?php _e('Votre Message', 'theme-de-test-hepl'); ?></label>
-                        <textarea class="input_form" name="message" id="message" cols="40" rows="6"
-                                  placeholder="<?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>"
-                                  required><?= esc_textarea($old['message'] ?? '') ?></textarea>
-                        <?php if (!empty($errors['message'])): ?>
-                            <p class="error_validation"><?= esc_html($errors['message']); ?></p>
-                        <?php endif; ?>
-
-                        <input class="btn_submit" type="submit" value="<?php _e('Envoyer', 'theme-de-test-hepl'); ?>">
-                    </section>
+            if($success): ?>
+                <div class="contact__success">
+                    <p><?= $success; ?></p>
+                </div>
+            <?php else: ?>
+                <form action="<?= admin_url('admin-post.php'); ?>" method="POST" class="form">
+                    <fieldset class="form__fields">
+                        <div class="field">
+                            <label for="firstname" class="field__label">Prénom</label>
+                            <input type="text" name="firstname" id="firstname" class="field__input">
+                            <?php if(isset($errors['firstname'])): ?>
+                                <p class="field__error"><?= $errors['firstname']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="field">
+                            <label for="lastname" class="field__label">Nom</label>
+                            <input type="text" name="lastname" id="lastname" class="field__input">
+                            <?php if(isset($errors['lastname'])): ?>
+                                <p class="field__error"><?= $errors['lastname']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="field">
+                            <label for="email" class="field__label">Adresse mail</label>
+                            <input type="email" name="email" id="email" class="field__input">
+                            <?php if(isset($errors['email'])): ?>
+                                <p class="field__error"><?= $errors['email']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="field">
+                            <label for="message" class="field__label">Message</label>
+                            <textarea name="message" id="message" class="field__input"></textarea>
+                            <?php if(isset($errors['message'])): ?>
+                                <p class="field__error"><?= $errors['message']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </fieldset>
+                    <div class="form__submit">
+                        <?php
+                        // ce champ "hidden" permet à WP d'identifier la requête et de la transmettre
+                        // à notre fonction définie dans functions.php via "add_action('admin_post_[nom-action]')"
+                        ?>
+                        <input type="hidden" name="action" value="dw_submit_contact_form">
+                        <button type="submit" class="btn">Envoyer</button>
+                    </div>
                 </form>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </section>
 
-        <aside>
-            <h2 class="title_coordonnées"><?php _e('Mes coordonnées', 'theme-de-test-hepl'); ?></h2>
-            <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
-                <li itemprop="telephone" class="item_name"><?php _e('Numéro de téléphone', 'theme-de-test-hepl'); ?> :
-                    <a class="item" href="tel:<?php the_field('num_tel'); ?>"><?php the_field('num_tel'); ?></a>
-                </li>
-                <li class="item_name"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?>
-                    <a class="item" href="mailto:<?php the_field('adresse_mail'); ?>"><?php the_field('adresse_mail'); ?></a>
-                </li>
-                <li class="item_name" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                    <?php _e('Adresse postale', 'theme-de-test-hepl'); ?>
-                    <span class="item"><?php the_field('adresse'); ?></span>
-                </li>
-            </ul>
-        </aside>
-    </div>
-
-<?php endwhile; else: ?>
-    <p><?php _e('La page est vide.', 'theme-de-test-hepl'); ?></p>
+<?php
+    // On ferme "la boucle" (The Loop):
+endwhile; else: ?>
+    <p>La page est vide.</p>
 <?php endif; ?>
-
 <?php get_footer(); ?>
