@@ -53,7 +53,6 @@ function mortal_theme()
 /*add_action('wp_enqueue_scripts', 'mortal_theme');*/
 
 
-
 register_nav_menus(array(
     'footer' => __('Menu du pied de page', 'ton-theme'),
 ));
@@ -79,12 +78,14 @@ function process_contact_form() {
         include get_template_directory() . '/process.php';
     }
 }*/
-function mon_theme_load_textdomain() {
+function mon_theme_load_textdomain()
+{
     $locale = get_locale(); // Récupère la locale active.
 
     // Charge le fichier de traduction en fonction de la locale
     load_textdomain('theme-de-test-hepl', get_template_directory() . '/languages/theme-de-test-hepl-' . $locale . '.mo');
 }
+
 add_action('after_setup_theme', 'mon_theme_load_textdomain');
 
 
@@ -92,7 +93,9 @@ add_action('after_setup_theme', 'mon_theme_load_textdomain');
 add_filter('show_admin_bar', '__return_false');
 
 
-function register_post_type_projet() {
+//function pour ajouter un cpt projets
+function register_post_type_projet()
+{
     register_post_type('projet', array(
         'label' => 'Projets',
         'public' => true,
@@ -100,10 +103,24 @@ function register_post_type_projet() {
         'rewrite' => array('slug' => 'projets'),
         'menu_icon' => 'dashicons-portfolio',
         'supports' => array('title', 'editor', 'thumbnail'),
-        'show_in_rest' => true, // pour compatibilité avec l'éditeur Gutenberg ou l'API REST
+        'show_in_rest' => true,
     ));
 }
+function register_taxonomy_categorie_projet() {
+    register_taxonomy('categorie_projet', 'projet', [
+        'label' => 'Catégories Projet',
+        'hierarchical' => true, // comme les catégories classiques
+        'show_ui' => true,
+        'show_in_rest' => true, // pour Gutenberg et API REST
+        'rewrite' => ['slug' => 'categorie-projet'],
+    ]);
+}
+add_action('init', 'register_taxonomy_categorie_projet');
+
 add_action('init', 'register_post_type_projet');
+
+
+require_once get_template_directory() . '/template-projet.php';
 
 
 session_write_close();

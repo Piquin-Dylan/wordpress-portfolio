@@ -101,8 +101,9 @@ get_header();
 
             </ul>
         </aside>
-
     </div>
+
+
 <?php get_footer(); ?>
 <?php
 $_SESSION['old'] = null;
