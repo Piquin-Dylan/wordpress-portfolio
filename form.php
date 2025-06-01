@@ -6,10 +6,11 @@
 session_start();
 get_header();
 ?>
-
-
     <div class="container">
-        <form action="<?php echo get_template_directory_uri(); ?>/process.php" method="post" novalidate>
+        <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
+            <input type="hidden" name="action" value="dw_submit_contact_form">
+            <!-- le reste du formulaire -->
+
             <section class="container_form">
                 <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
                 <label for="name"><?php _e('Nom complet', 'theme-de-test-hepl'); ?></label>
@@ -106,6 +107,8 @@ get_header();
 
 <?php get_footer(); ?>
 <?php
+
 $_SESSION['old'] = null;
 $_SESSION['errors'] = null;
+$_SESSION['success'] = null;
 ?>

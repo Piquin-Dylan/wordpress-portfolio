@@ -1,10 +1,66 @@
 <?php
 
+add_action('init', function () {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+});
 
-// Vérifier si la session est active ("started") ?
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+function dw_handle_contact_form() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $_SESSION['errors'] = [];
+    $_SESSION['old'] = $_POST;
+
+    $email   = trim($_POST['email'] ?? '');
+    $name    = trim($_POST['name'] ?? '');
+    $phone   = trim($_POST['phone'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $area    = trim($_POST['area'] ?? '');
+
+    // Validation
+    if (empty($name)) {
+        $_SESSION['errors']['name'] = 'Le champ nom est requis';
+    }
+
+    if (empty($email)) {
+        $_SESSION['errors']['email'] = 'Le champ email est requis';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['errors']['email'] = 'L’email doit être valide';
+    }
+
+    $sanitized_phone = str_replace(['+', '(', ')', ' '], '', $phone);
+    if (empty($phone)) {
+        $_SESSION['errors']['phone'] = 'Le champ téléphone est requis';
+    } elseif (strlen($sanitized_phone) < 9 || !is_numeric($sanitized_phone)) {
+        $_SESSION['errors']['phone'] = 'Le format du téléphone est invalide';
+    }
+
+    if (empty($subject)) {
+        $_SESSION['errors']['subject'] = 'Le champ sujet est requis';
+    }
+
+    if (empty($area)) {
+        $_SESSION['errors']['area'] = 'Le champ message est requis';
+    }
+
+    // Redirection en cas d'erreurs
+    if (!empty($_SESSION['errors'])) {
+        wp_redirect(wp_get_referer());
+        exit;
+    }
+
+    // Traitement ici si pas d'erreurs (envoi email, etc.)
+    $_SESSION['success'] = 'Votre message a bien été envoyé.';
+    wp_redirect(wp_get_referer());
+    exit;
 }
+add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form');
+add_action('admin_post_dw_submit_contact_form', 'dw_handle_contact_form');
+
+
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
 // il ne nous intéresse pas pour l'utilisation du thème que nous
