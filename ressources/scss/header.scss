@@ -1,37 +1,41 @@
-  html {
-    background-color: #0A192F;
-  }
+html {
+  background-color: #0A192F;
+}
 
-  .hidden{
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-  }
-  .nav__container a[href*="single_page"] {
-    display: none;
-  }
- .logo{
-   max-width: 75px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- .svg_container{
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
-.language_selector{
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.nav__container a[href*="single_page"] {
+  display: none;
+}
+
+.logo {
+  max-width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language_selector {
   display: flex;
   justify-content: right;
 }
 
-a.lang-link{
+a.lang-link {
   position: relative;
   top: -82px;
   left: 80%;
@@ -39,141 +43,143 @@ a.lang-link{
   text-decoration: none;
 }
 
-  /* Cache le menu par défaut */
-  .nav__container {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 320px;
-    background-color: white;
-    transition: left 0.3s ease;
-    padding-top: 80px; /* pour laisser de l'espace pour le burger */
-    z-index: 9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* Cache le menu par défaut */
+.nav__container {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 320px;
+  background-color: white;
+  transition: left 0.3s ease;
+  padding-top: 80px; /* pour laisser de l'espace pour le burger */
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  /* Affiche le menu quand toggle est activé */
-  .menu_toggle:has(#burger-toggle:checked) .nav__container {
-    left: 0;
-  }
+/* Affiche le menu quand toggle est activé */
+.menu_toggle:has(#burger-toggle:checked) .nav__container {
+  left: 0;
+}
 
-  /* Style du burger */
-  .burger {
-    position: relative;
-    top: -62px;
-    left: 20px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    max-width: 50px;
-  }
+/* Style du burger */
+.burger {
+  position: relative;
+  top: -62px;
+  left: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  max-width: 50px;
+}
 
-  .burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    transition: 0.3s ease;
-  }
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
 
-  /* Animation du burger (X) */
-  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(2) {
-    opacity: 0;
-  }
-  .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+/* Animation du burger (X) */
+.menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
 
-  /* Cache la checkbox */
-  #burger-toggle {
-    display: none;
-  }
+.menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(2) {
+  opacity: 0;
+}
 
-  /* Menu liens */
-  .nav__container ul {
-    list-style: none;
-    padding: 0;
-  }
+.menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
-  .nav__container li a {
-    display: block;
-    padding: 15px;
-    font-size: 18px;
-    color: black;
-    text-decoration: none;
-  }
+/* Cache la checkbox */
+#burger-toggle {
+  display: none;
+}
 
+/* Menu liens */
+.nav__container ul {
+  list-style: none;
+  padding: 0;
+}
 
-  /* Quand menu ouvert, les barres du burger deviennent noires */
-  .menu_toggle:has(#burger-toggle:checked) .burger span {
-    background-color: #000;
-  }
-
-
-@media screen and (min-width: 768px) {
-  
+.nav__container li a {
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 
-    @media screen and (min-width: 1000px) {
-      .nav__container {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        justify-content: center; /* ou flex-start / flex-end selon ton besoin */
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-        height: auto;
-        background: transparent;
-        padding: 0;
-        transition: none;
-      }
+/* Quand menu ouvert, les barres du burger deviennent noires */
+.menu_toggle:has(#burger-toggle:checked) .burger span {
+  background-color: #000;
+}
 
-      .nav__container ul {
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        top: -75px;
-        left: -300px;
-      }
 
-      .nav__container li {
-        margin: 0;
-      }
+@media screen and (min-width: 768px) {
+}
 
-      .nav__container a {
-        color: red;
-        text-decoration: none;
-        font-size: 16px;
-      }
 
-      .burger {
-        display: none;
-      }
-      .nav__container li a {
-        color: white;
-      }
-      a.lang-link{
-      top: -110px;
-        left: 90%;
-
-      }
-    }
-  @media screen and (min-width: 1200px) {
-    .nav__container ul{
-      gap: 2em;
-    }
+@media screen and (min-width: 1000px) {
+  .nav__container {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    justify-content: center; /* ou flex-start / flex-end selon ton besoin */
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    transition: none;
   }
+
+  .nav__container ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -75px;
+    left: -300px;
+  }
+
+  .nav__container li {
+    margin: 0;
+  }
+
+  .nav__container a {
+    color: red;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .burger {
+    display: none;
+  }
+  .nav__container li a {
+    color: white;
+  }
+  a.lang-link {
+    top: -110px;
+    left: 90%;
+
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__container ul {
+    gap: 2em;
+  }
+}

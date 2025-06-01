@@ -37,7 +37,7 @@ function mytheme_register_menus()
 {
     register_nav_menus(
         array(
-            'main-menu' => __('Menu Principal')
+            'main-menu' => __('Menu de navigation principal')
         )
     );
 }
@@ -90,4 +90,20 @@ add_action('after_setup_theme', 'mon_theme_load_textdomain');
 
 // Désactive la barre d’admin pour tous les utilisateurs (même admins)
 add_filter('show_admin_bar', '__return_false');
+
+
+function register_post_type_projet() {
+    register_post_type('projet', array(
+        'label' => 'Projets',
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'projets'),
+        'menu_icon' => 'dashicons-portfolio',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true, // pour compatibilité avec l'éditeur Gutenberg ou l'API REST
+    ));
+}
+add_action('init', 'register_post_type_projet');
+
+
 session_write_close();
