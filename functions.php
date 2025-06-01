@@ -1,12 +1,7 @@
 <?php
 
-add_action('init', function () {
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-});
-
-function dw_handle_contact_form() {
+function dw_handle_contact_form()
+{
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -14,11 +9,11 @@ function dw_handle_contact_form() {
     $_SESSION['errors'] = [];
     $_SESSION['old'] = $_POST;
 
-    $email   = trim($_POST['email'] ?? '');
-    $name    = trim($_POST['name'] ?? '');
-    $phone   = trim($_POST['phone'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
     $subject = trim($_POST['subject'] ?? '');
-    $area    = trim($_POST['area'] ?? '');
+    $area = trim($_POST['area'] ?? '');
 
     // Validation
     if (empty($name)) {
@@ -46,20 +41,19 @@ function dw_handle_contact_form() {
         $_SESSION['errors']['area'] = 'Le champ message est requis';
     }
 
-    // Redirection en cas d'erreurs
     if (!empty($_SESSION['errors'])) {
-        wp_redirect(wp_get_referer());
+        wp_redirect(wp_get_referer() ?: home_url('/contact'));
         exit;
     }
 
-    // Traitement ici si pas d'erreurs (envoi email, etc.)
+    // Si pas d'erreurs, on peut traiter (envoi d'email ou autre)
     $_SESSION['success'] = 'Votre message a bien été envoyé.';
-    wp_redirect(wp_get_referer());
+    wp_redirect(wp_get_referer() ?: home_url('/contact'));
     exit;
 }
+
 add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form');
 add_action('admin_post_dw_submit_contact_form', 'dw_handle_contact_form');
-
 
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
@@ -162,7 +156,9 @@ function register_post_type_projet()
         'show_in_rest' => true,
     ));
 }
-function register_taxonomy_categorie_projet() {
+
+function register_taxonomy_categorie_projet()
+{
     register_taxonomy('categorie_projet', 'projet', [
         'label' => 'Catégories Projet',
         'hierarchical' => true, // comme les catégories classiques
@@ -171,6 +167,7 @@ function register_taxonomy_categorie_projet() {
         'rewrite' => ['slug' => 'categorie-projet'],
     ]);
 }
+
 add_action('init', 'register_taxonomy_categorie_projet');
 
 add_action('init', 'register_post_type_projet');
