@@ -4,73 +4,73 @@
  */
 
 session_start();
-
-// Récupération des anciennes données et erreurs
-$errors = $_SESSION['errors'] ?? [];
-$old = $_SESSION['old'] ?? [];
-$success = $_SESSION['success'] ?? null;
-
-// Nettoyage après usage
-$_SESSION['old'] = null;
-$_SESSION['errors'] = null;
-$_SESSION['success'] = null;
-
-get_header();
 ?>
-<div class="container">
-    <?php if ($success): ?>
-        <p class="success_message"><?php echo $success; ?></p>
-    <?php endif; ?>
 
-    <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
-        <input type="hidden" name="action" value="dw_submit_contact_form">
+<?php get_header(); ?>
+<aside>
+    <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
+</aside>
+<?php
+if(have_posts()): while(have_posts()): the_post();
 
-        <section class="container_form">
-            <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
+    $errors = $_SESSION['contact_form_errors'] ?? [];
+    unset($_SESSION['contact_form_errors']);
+    $old = $_SESSION['contact_form_old'] ?? [];
+    unset($_SESSION['contact_form_old']);
+    $success = $_SESSION['contact_form_success'] ?? false;
+    unset($_SESSION['contact_form_success']);
+    ?>
 
-            <label for="name"><?php _e('Nom complet', 'theme-de-test-hepl'); ?></label>
-            <input class="input_form" type="text" name="name" id="name"
-                   value="<?php echo $old['name'] ?? '' ?>"
-                   placeholder="Ex: Jean Dupont" required>
-            <?php if (!empty($errors['name'])): ?>
-                <p class="error_validation"><?php echo $errors['name']; ?></p>
+    <section class="contact">
+        <div class="contact__left"><?= get_the_content(); ?></div>
+        <div class="contact__right">
+            <?php if($success): ?>
+                <div class="contact__success">
+                    <p><?= esc_html($success); ?></p>
+                </div>
+            <?php else: ?>
+                <form action="<?= esc_url(admin_url('admin-post.php')); ?>" method="post" novalidate>
+                    <input type="hidden" name="action" value="dw_submit_contact_form">
+                    <section class="container_form">
+                        <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
+
+                        <label for="firstname"><?php _e('Prénom', 'theme-de-test-hepl'); ?></label>
+                        <input class="input_form" type="text" name="firstname" id="firstname"
+                               value="<?= esc_attr($old['firstname'] ?? '') ?>"
+                               placeholder="Ex: Jean" required>
+                        <?php if(!empty($errors['firstname'])): ?>
+                            <p class="error_validation"><?= esc_html($errors['firstname']); ?></p>
+                        <?php endif; ?>
+
+                        <label for="lastname"><?php _e('Nom', 'theme-de-test-hepl'); ?></label>
+                        <input class="input_form" type="text" name="lastname" id="lastname"
+                               value="<?= esc_attr($old['lastname'] ?? '') ?>"
+                               placeholder="Ex: Dupont" required>
+                        <?php if(!empty($errors['lastname'])): ?>
+                            <p class="error_validation"><?= esc_html($errors['lastname']); ?></p>
+                        <?php endif; ?>
+
+                        <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
+                        <input class="input_form" type="email" name="email" id="email"
+                               value="<?= esc_attr($old['email'] ?? '') ?>"
+                               placeholder="Ex: jeandupont@example.com" required>
+                        <?php if(!empty($errors['email'])): ?>
+                            <p class="error_validation"><?= esc_html($errors['email']); ?></p>
+                        <?php endif; ?>
+
+                        <label for="message"><?php _e('Votre Message', 'theme-de-test-hepl'); ?></label>
+                        <textarea class="input_form" name="message" id="message" cols="40" rows="10"
+                                  placeholder="<?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>" required><?= esc_textarea($old['message'] ?? '') ?></textarea>
+                        <?php if(!empty($errors['message'])): ?>
+                            <p class="error_validation"><?= esc_html($errors['message']); ?></p>
+                        <?php endif; ?>
+
+                        <input class="btn_submit" type="submit" value="<?php _e('Envoyer', 'theme-de-test-hepl'); ?>">
+                    </section>
+                </form>
             <?php endif; ?>
-
-            <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
-            <input class="input_form" type="email" name="email" id="email"
-                   value="<?php echo $old['email'] ?? ''; ?>"
-                   placeholder="Ex: jeandupont@example.com" required>
-            <?php if (!empty($errors['email'])): ?>
-                <p class="error_validation"><?php echo $errors['email']; ?></p>
-            <?php endif; ?>
-
-            <label for="phone"><?php _e('Numéro de téléphone', 'theme-de-test-hepl'); ?></label>
-            <input class="input_form" type="tel" name="phone" id="phone"
-                   value="<?php echo $old['phone'] ?? ''; ?>"
-                   placeholder="+ 32 451 20 67 90" required>
-            <?php if (!empty($errors['phone'])): ?>
-                <p class="error_validation"><?php echo $errors['phone']; ?></p>
-            <?php endif; ?>
-
-            <label for="subject"><?php _e('Sujet', 'theme-de-test-hepl'); ?></label>
-            <input class="input_form" type="text" id="subject" name="subject"
-                   value="<?php echo $old['subject'] ?? '' ?>"
-                   placeholder="<?php _e('Sujet du mail', 'theme-de-test-hepl'); ?>" required>
-            <?php if (!empty($errors['subject'])): ?>
-                <p class="error_validation"><?php echo $errors['subject']; ?></p>
-            <?php endif; ?>
-
-            <label for="area"><?php _e('Votre Message', 'theme-de-test-hepl'); ?></label>
-            <textarea name="area" id="area" cols="40" rows="10"
-                      placeholder="<?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>" required><?php echo $old['area'] ?? ''; ?></textarea>
-            <?php if (!empty($errors['area'])): ?>
-                <p class="error_validation"><?php echo $errors['area']; ?></p>
-            <?php endif; ?>
-
-            <input class="btn_submit" type="submit" value="<?php _e('Envoyer', 'theme-de-test-hepl'); ?>">
-        </section>
-    </form>
-
+        </div>
+    </section>
     <aside>
         <h2 class="title_coordonnées"><?php _e('Mes coordonnées', 'theme-de-test-hepl'); ?></h2>
         <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
@@ -91,6 +91,12 @@ get_header();
             </li>
         </ul>
     </aside>
-</div>
+
+
+
+<?php
+endwhile; else: ?>
+    <p><?php _e('La page est vide.', 'theme-de-test-hepl'); ?></p>
+<?php endif; ?>
 
 <?php get_footer(); ?>

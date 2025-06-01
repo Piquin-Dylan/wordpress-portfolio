@@ -1,60 +1,43 @@
 <?php
-
-function dw_handle_contact_form()
-{
-    if (session_status() === PHP_SESSION_NONE) {
+add_action('init', function() {
+    if (!session_id()) {
         session_start();
     }
+});
 
-    $_SESSION['errors'] = [];
-    $_SESSION['old'] = $_POST;
+register_post_type('contact_message', [
+    'label' => 'Messages de contact',
+    'description' => 'Les envois de formulaire via la page de contact',
+    'menu_position' => 10,
+    'menu_icon' => 'dashicons-email',
+    'public' => false,
+    'show_ui' => true,
+    'has_archive' => false,
+    'supports' => ['title','editor'],
+]);
 
-    $email = trim($_POST['email'] ?? '');
-    $name = trim($_POST['name'] ?? '');
-    $phone = trim($_POST['phone'] ?? '');
-    $subject = trim($_POST['subject'] ?? '');
-    $area = trim($_POST['area'] ?? '');
-
-    // Validation
-    if (empty($name)) {
-        $_SESSION['errors']['name'] = 'Le champ nom est requis';
-    }
-
-    if (empty($email)) {
-        $_SESSION['errors']['email'] = 'Le champ email est requis';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['errors']['email'] = 'L’email doit être valide';
-    }
-
-    $sanitized_phone = str_replace(['+', '(', ')', ' '], '', $phone);
-    if (empty($phone)) {
-        $_SESSION['errors']['phone'] = 'Le champ téléphone est requis';
-    } elseif (strlen($sanitized_phone) < 9 || !is_numeric($sanitized_phone)) {
-        $_SESSION['errors']['phone'] = 'Le format du téléphone est invalide';
-    }
-
-    if (empty($subject)) {
-        $_SESSION['errors']['subject'] = 'Le champ sujet est requis';
-    }
-
-    if (empty($area)) {
-        $_SESSION['errors']['area'] = 'Le champ message est requis';
-    }
-
-    if (!empty($_SESSION['errors'])) {
-        wp_redirect(wp_get_referer() ?: home_url('/contact'));
-        exit;
-    }
-
-    // Si pas d'erreurs, on peut traiter (envoi d'email ou autre)
-    $_SESSION['success'] = 'Votre message a bien été envoyé.';
-    wp_redirect(wp_get_referer() ?: home_url('/contact'));
-    exit;
-}
-
-add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form');
+// Ajouter la fonctionnalité "POST" pour un formulaire de contact personnalisé :
 add_action('admin_post_dw_submit_contact_form', 'dw_handle_contact_form');
+add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form');
 
+// Chargement de notre class qui va gérer ce formulaire
+require_once(__DIR__.'/forms/ContactForm.php');
+function dw_handle_contact_form()
+{
+    $form = (new \DW_Theme\Forms\ContactForm())
+        ->rule('firstname', 'required')
+        ->rule('lastname', 'required')
+        ->rule('email', 'required')
+        ->rule('email', 'email')
+        ->rule('message', 'required')
+        ->rule('message', 'no_test')
+        ->sanitize('firstname', 'sanitize_text_field')
+        ->sanitize('lastname', 'sanitize_text_field')
+        ->sanitize('email', 'sanitize_text_field')
+        ->sanitize('message', 'sanitize_textarea_field');
+
+    return $form->handle($_POST);
+}
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
 // il ne nous intéresse pas pour l'utilisation du thème que nous
