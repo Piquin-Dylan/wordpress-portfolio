@@ -91,7 +91,6 @@ $image7 = get_field('autre_projet_image_3');
     <section class="project_section">
         <h2 class="projet_title_single_page">Autres projets</h2>
         <?php
-        include 'template-projet.php';
         // Appelle ta fonction en excluant le projet en cours
         afficher_projets(3, get_the_ID());
         ?>

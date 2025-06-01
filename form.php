@@ -57,7 +57,7 @@ if (have_posts()): while (have_posts()): the_post();
                         <?php endif; ?>
 
                         <label for="message"><?php _e('Votre Message', 'theme-de-test-hepl'); ?></label>
-                        <textarea class="input_form" name="message" id="message" cols="40" rows="10"
+                        <textarea class="input_form" name="message" id="message" cols="40" rows="40"
                                   placeholder="<?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>"
                                   required><?= esc_textarea($old['message'] ?? '') ?></textarea>
                         <?php if (!empty($errors['message'])): ?>
