@@ -63,6 +63,8 @@ class ContactForm
         $_SESSION['contact_form_success'] = 'Merci, '.$data['firstname'].'! Votre message a bien été envoyé.';
         wp_redirect(home_url('/contact'));
         exit;
+
+
         // Retourner à la page précédente pour afficher les erreurs de validation :
     }
 
