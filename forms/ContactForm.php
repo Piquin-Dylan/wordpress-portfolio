@@ -53,7 +53,7 @@ class ContactForm
 
         // Envoyer un mail de notification.
         wp_mail(
-            to: 'dylan01072004@gmail.com',
+            to: 'toon@whitecube.be',
             subject: 'Nouveau message de contact',
             message: $this->generateEmailContent($data),
         );
@@ -61,11 +61,9 @@ class ContactForm
         // Retourner à la page précédente pour afficher un message de succès.
         // Mettre un message de succès en session pour pouvoir l'afficher sur la page suivante :
         $_SESSION['contact_form_success'] = 'Merci, '.$data['firstname'].'! Votre message a bien été envoyé.';
-        wp_redirect(home_url('/contact'));
-        exit;
-
-
         // Retourner à la page précédente pour afficher les erreurs de validation :
+        wp_safe_redirect($_SERVER['HTTP_REFERER']);
+        exit();
     }
 
     protected function validate(array $data): bool|array

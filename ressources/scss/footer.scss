@@ -1,60 +1,58 @@
-
-.footer-menu {
-  margin-top: 48px;
-  margin-left: 24px;
+.footer {
+  width: 100%;
+  background: var(--background-color);
 }
 
-#menu-footer > li:nth-child(1) > a,
-#menu-footer > li:nth-child(2) > a,
-#menu-footer > li:nth-child(3) > a,
-#menu-footer > li:nth-child(4) > a {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-}
+.footer-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1440px;
 
-#menu-footer-en > li:nth-child(1) > a,
-#menu-footer-en > li:nth-child(2) > a,
-#menu-footer-en > li:nth-child(3) > a,
-#menu-footer-en > li:nth-child(4) > a {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-}
-
-.sub-menu {
-  color: white;
-  font-size: 16px;
-  font-family: Exo Light, sans-serif;
-  margin: 12px 0;
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
-.menu_item a {
+/* Le conteneur de colonnes généré par WP */
+.footer-columns {
   display: flex;
-  text-decoration: none;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Liens */
+.footer-columns a {
+  font-size: 16px;
+  font-family: "Orbitron Bold", sans-serif;
+  font-weight: 700;
   color: white;
+  text-decoration: none;
   margin: 8px 0;
 }
 
+/* Responsive */
 @media screen and (min-width: 768px) {
-  .footer-menu {
-    display: flex;
+  .footer-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-between;
     gap: 40px;
-    justify-content: center;
-    margin: 24px 50px;
-    flex-wrap: nowrap;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .footer-menu {
-    margin: 48px 100px;
-    gap: 141px;
+  .footer-container {
+    padding-left: 100px;
+    padding-right: 100px;
   }
+
+
 }
