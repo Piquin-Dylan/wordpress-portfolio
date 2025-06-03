@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-05-16 16:54+0200\n"
-"PO-Revision-Date: 2025-05-16 16:54+0200\n"
+"POT-Creation-Date: 2025-06-03 15:58+0200\n"
+"PO-Revision-Date: 2025-06-03 15:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -14,39 +14,41 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: form.php:14
+#: form.php:34
 msgid "Contactez-moi"
 msgstr "Contact me"
 
-#: form.php:15
-msgid "Nom complet"
-msgstr "Full name"
+#: form.php:37
+msgid "Prénom"
+msgstr "Firstname"
 
-#: form.php:28 form.php:87
+#: form.php:40
+msgid "Entrer votre prénom ex : Jean"
+msgstr "Enter your first name ex: Jean"
+
+#: form.php:45
+msgid "Nom"
+msgstr "Name"
+
+#: form.php:48
+msgid "Entrer votre nom ex : Dupont"
+msgstr "Enter your name ex : Dupont"
+
+#: form.php:53 form.php:88
 msgid "Adresse mail"
 msgstr "Mail Adress"
 
-#: form.php:39 form.php:80
-msgid "Numéro de téléphone"
-msgstr "telephone numbers"
-
-#: form.php:51
-msgid "Sujet"
-msgstr "Subject"
-
 #: form.php:56
-msgid "Sujet du mail"
-msgstr "Mail subject"
+msgid "Entrer votre email ex : jean@gmail.com"
+msgstr "Enter your email ex : jean@gmail.com"
 
-#: form.php:61
-msgid "Votre Message"
+#: form.php:62
+#, fuzzy
+#| msgid "Votre Message"
+msgid "Message"
 msgstr "Your message"
 
-#: form.php:66
-msgid "Entrer votre message"
-msgstr "Enter your message"
-
-#: form.php:73
+#: form.php:71
 msgid "Envoyer"
 msgstr "Sent"
 
@@ -54,27 +56,31 @@ msgstr "Sent"
 msgid "Mes coordonnées"
 msgstr "My contact details"
 
-#: form.php:96
+#: form.php:80
+msgid "Numéro de téléphone"
+msgstr "telephone numbers"
+
+#: form.php:99
 msgid "Adresse postale"
 msgstr "Postal address"
 
-#: functions.php:40
-msgid "Menu Principal"
+#: functions.php:39
+msgid "Menu de navigation principal"
 msgstr ""
 
-#: functions.php:58
+#: functions.php:56
 msgid "Menu du pied de page"
 msgstr ""
 
-#: projet.php:25
+#: projet.php:22
 msgid "Mes projets"
 msgstr "My projects"
 
-#: projet.php:27
+#: projet.php:25
 msgid "Tout"
 msgstr "All"
 
-#: projet.php:28
+#: projet.php:27
 msgid "Web"
 msgstr ""
 
@@ -82,9 +88,18 @@ msgstr ""
 msgid "3D"
 msgstr ""
 
-#: projet.php:30
+#: projet.php:31
 msgid "Mobile"
 msgstr ""
+
+#~ msgid "Nom complet"
+#~ msgstr "Full name"
+
+#~ msgid "Sujet"
+#~ msgstr "Subject"
+
+#~ msgid "Sujet du mail"
+#~ msgstr "Mail subject"
 
 #, fuzzy
 #~| msgid "Mes coordonnées"

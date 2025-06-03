@@ -33,29 +33,37 @@ get_header();
                         <section class="container_form">
                             <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
 
-                            <label for="firstname" class="field__label">Prénom</label>
+                            <label for="firstname"
+                                   class="field__label"><?php _e('Prénom', 'theme-de-test-hepl'); ?></label>
                             <input type="text" name="firstname" id="firstname" class="input_form"
-                                   value="<?= esc_attr($old['firstname'] ?? '') ?>">
+                                   value="<?= esc_attr($old['firstname'] ?? '') ?>"
+                                   placeholder="<?php _e('Entrer votre prénom ex : Jean', 'theme-de-test-hepl'); ?>">
                             <?php if (isset($errors['firstname'])): ?>
                                 <p class="error_validation"><?= $errors['firstname']; ?></p>
                             <?php endif; ?>
 
-                            <label for="lastname" class="field__label">Nom</label>
+                            <label for="lastname" class="field__label"><?php _e('Nom', 'theme-de-test-hepl'); ?></label>
                             <input type="text" name="lastname" id="lastname" class="input_form"
-                                   value="<?= esc_attr($old['lastname'] ?? '') ?>">
+                                   value="<?= esc_attr($old['lastname'] ?? '') ?>"
+                                   placeholder="<?php _e('Entrer votre nom ex : Dupont', 'theme-de-test-hepl'); ?>">
                             <?php if (isset($errors['lastname'])): ?>
                                 <p class="error_validation"><?= $errors['lastname']; ?></p>
                             <?php endif; ?>
 
                             <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
                             <input type="email" name="email" id="email" class="input_form"
-                                   value="<?= esc_attr($old['email'] ?? '') ?>">
+                                   value="<?= esc_attr($old['email'] ?? '') ?>"
+                                   placeholder="<?php _e('Entrer votre email ex : jean@gmail.com', 'theme-de-test-hepl'); ?>">
                             <?php if (isset($errors['email'])): ?>
                                 <p class="field__error"><?= $errors['email']; ?></p>
                             <?php endif; ?>
 
-                            <label for="message" class="field__label">Message</label>
-                            <textarea name="message" id="message" class="field__input" cols="40" rows="10"><?= esc_textarea($old['message'] ?? '') ?></textarea>
+                            <label for="message"
+                                   class="field__label"><?php _e('Message', 'theme-de-test-hepl'); ?></label>
+                            <textarea name="message" id="message" class="field__input" cols="40"
+                                      rows="10"
+                                      placeholder="<?php _e('Entrer votre message', 'theme-de-test-hepl'); ?>"><?= esc_textarea($old['message'] ?? '') ?>
+</textarea>
                             <?php if (isset($errors['message'])): ?>
                                 <p class="field__error"><?= $errors['message']; ?></p>
                             <?php endif; ?>
