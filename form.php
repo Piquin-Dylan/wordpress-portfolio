@@ -1,105 +1,109 @@
-<?php /* Template Name: Page "Contact" */ ?>
-
-<?php get_header(); ?>
-    <aside>
-        <h2>Contactez-moi</h2>
-    </aside>
 <?php
-// On ouvre "la boucle" (The Loop), la structure de contrôle
-// de contenu propre à Wordpress:
-if (have_posts()): while (have_posts()): the_post(); ?>
+/**
+ * Template Name: Page de contact
+ */
+session_start();
+get_header();
+?>
+
+<?php if (have_posts()): while (have_posts()): the_post(); ?>
 
     <section class="contact">
         <div class="contact__left"><?= get_the_content(); ?></div>
         <div class="contact__right">
+
             <?php
             $errors = $_SESSION['contact_form_errors'] ?? [];
             unset($_SESSION['contact_form_errors']);
+
+            $old = $_SESSION['old'] ?? [];
+            unset($_SESSION['old']);
+
             $success = $_SESSION['contact_form_success'] ?? false;
             unset($_SESSION['contact_form_success']);
+            ?>
 
-            if ($success): ?>
-                <div class="contact__success">
-                    <p><?= $success; ?></p>
-                </div>
-            <?php else: ?>
             <div class="container">
+                <?php if ($success): ?>
+                    <div class="contact__success">
+                        <p><?= $success; ?></p>
+                    </div>
+                <?php else: ?>
+                    <form action="<?= admin_url('admin-post.php'); ?>" method="POST" class="form" novalidate>
+                        <section class="container_form">
+                            <h2><?php _e('Contactez-moi', 'theme-de-test-hepl'); ?></h2>
 
-                <form action="<?= admin_url('admin-post.php'); ?>" method="POST" class="form">
-                    <section class="container_form">
-                        <h2 class="title_form">Contactez-moi </h2>
+                            <label for="firstname" class="field__label">Prénom</label>
+                            <input type="text" name="firstname" id="firstname" class="input_form"
+                                   value="<?= esc_attr($old['firstname'] ?? '') ?>">
+                            <?php if (isset($errors['firstname'])): ?>
+                                <p class="error_validation"><?= $errors['firstname']; ?></p>
+                            <?php endif; ?>
 
-                        <label for="firstname" class="field__label">Prénom</label>
-                        <input type="text" name="firstname" id="firstname" class="field__input">
-                        <?php if (isset($errors['firstname'])): ?>
-                            <p class="field__error"><?= $errors['firstname']; ?></p>
-                        <?php endif; ?>
+                            <label for="lastname" class="field__label">Nom</label>
+                            <input type="text" name="lastname" id="lastname" class="input_form"
+                                   value="<?= esc_attr($old['lastname'] ?? '') ?>">
+                            <?php if (isset($errors['lastname'])): ?>
+                                <p class="error_validation"><?= $errors['lastname']; ?></p>
+                            <?php endif; ?>
 
+                            <label for="email"><?php _e('Adresse mail', 'theme-de-test-hepl'); ?></label>
+                            <input type="email" name="email" id="email" class="input_form"
+                                   value="<?= esc_attr($old['email'] ?? '') ?>">
+                            <?php if (isset($errors['email'])): ?>
+                                <p class="field__error"><?= $errors['email']; ?></p>
+                            <?php endif; ?>
 
-                        <label for="lastname" class="field__label">Nom</label>
-                        <input type="text" name="lastname" id="lastname" class="field__input">
-                        <?php if (isset($errors['lastname'])): ?>
-                            <p class="field__error"><?= $errors['lastname']; ?></p>
-                        <?php endif; ?>
+                            <label for="message" class="field__label">Message</label>
+                            <textarea name="message" id="message" class="field__input" cols="40" rows="10"><?= esc_textarea($old['message'] ?? '') ?></textarea>
+                            <?php if (isset($errors['message'])): ?>
+                                <p class="field__error"><?= $errors['message']; ?></p>
+                            <?php endif; ?>
 
-
-                        <label for="email" class="field__label">Adresse mail</label>
-                        <input type="email" name="email" id="email" class="field__input">
-                        <?php if (isset($errors['email'])): ?>
-                            <p class="field__error"><?= $errors['email']; ?></p>
-                        <?php endif; ?>
-
-
-                        <label for="message" class="field__label">Message</label>
-                        <textarea name="message" id="message" class="field__input"></textarea>
-                        <?php if (isset($errors['message'])): ?>
-                            <p class="field__error"><?= $errors['message']; ?></p>
-                        <?php endif; ?>
-
-                        <?php
-                        // ce champ "hidden" permet à WP d'identifier la requête et de la transmettre
-                        // à notre fonction définie dans functions.php via "add_action('admin_post_[nom-action]')"
-                        ?>
-                        <input type="hidden" name="action" value="dw_submit_contact_form">
-                        <button type="submit" class="btn">Envoyer</button>
-
-                </form>
+                            <input type="hidden" name="action" value="dw_submit_contact_form">
+                            <input class="btn_submit" type="submit"
+                                   value="<?php _e('Envoyer', 'theme-de-test-hepl'); ?>">
+                        </section>
+                    </form>
                 <?php endif; ?>
+
+                <aside>
+                    <h2 class="title_coordonnées"><?php _e('Mes coordonnées', 'theme-de-test-hepl'); ?></h2>
+                    <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
+                        <li itemprop="telephone" class="item_name">
+                            <?php _e('Numéro de téléphone', 'theme-de-test-hepl'); ?> :
+                            <a aria-label="Me contacter à ce numéro : +32 (0)493 96 60 56"
+                               title="Me contacter à ce numéro : +32 (0)493 96 60 56"
+                               class="item"
+                               href="tel:<?php the_field('num_tel') ?>"><?php the_field('num_tel') ?></a>
+                        </li>
+
+                        <li class="item_name">
+                            <?php _e('Adresse mail', 'theme-de-test-hepl'); ?> :
+                            <a aria-label="Envoyez un mail à cette adresse : dylan.piquin@student.hepl.be"
+                               title="Envoyez un mail à cette adresse : dylan.piquin@student.hepl.be"
+                               itemprop="email"
+                               class="item"
+                               href="mailto:<?php the_field('adresse_mail') ?>">
+                                <?php the_field('adresse_mail') ?>
+                            </a>
+                        </li>
+
+                        <li class="item_name" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <?php _e('Adresse postale', 'theme-de-test-hepl'); ?> :
+                            <span itemprop="streetAddress" class="item">
+                                <?php the_field('adresse') ?>
+                            </span>
+                        </li>
+                    </ul>
+                </aside>
             </div>
+
+        </div>
     </section>
-    <aside>
-        <h2 class="title_coordonnées">Mes coordonnées</h2>
-        <ul itemscope itemtype="https://schema.org/Person" class="liste_cord">
 
-            <li itemprop="telephone" class="item_name">Numéro de téléphone :
-                <a aria-label="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56"
-                   title="Me contacter à se numéros de téléphone&nbsp; : +32 (0)0493 96 60 56" class="item"
-                   href="tel:"><?php the_field('num_tel') ?></a>
-            </li>
-
-            <li class="item_name">
-                Adresse mail :
-                <a aria-label="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be"
-                   title="Envoyez un mail à cette adresse&nbsp;: dylan.piquin@student.hepl.be" itemprop="email"
-                   class="item" href="mailto:<?php the_field('adresse_mail') ?>">
-                    <?php the_field('adresse_mail') ?>
-                </a>
-            </li>
-
-            <li class="item_name" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                Adresse postale :
-                <span itemprop="streetAddress" class="item">
-        <?php the_field('adresse') ?>
-      </span>
-            </li>
-
-        </ul>
-    </aside>
-
-<?php
-    // On ferme "la boucle" (The Loop):
-endwhile;
-else: ?>
+<?php endwhile; else: ?>
     <p>La page est vide.</p>
 <?php endif; ?>
+
 <?php get_footer(); ?>

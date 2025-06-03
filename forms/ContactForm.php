@@ -13,7 +13,7 @@ class ContactForm
 
     public function rule(string $field, string $rule): static
     {
-        if(! array_key_exists($field, $this->rules)) {
+        if (!array_key_exists($field, $this->rules)) {
             $this->rules[$field] = [];
         }
 
@@ -32,10 +32,12 @@ class ContactForm
     public function handle(array $data): void
     {
         // Valider les données envoyées.
-        if(is_array($errors = $this->validate($data))) {
-            // Mettre les erreurs de validation en session pour pouvoir les afficher sur la page suivante :
+        if (is_array($errors = $this->validate($data))) {
+            // Mettre les erreurs et les anciennes valeurs en session :
             $_SESSION['contact_form_errors'] = $errors;
-            // Retourner à la page précédente pour afficher les erreurs de validation :
+            $_SESSION['old'] = $data;
+
+            // Retourner à la page précédente pour afficher les erreurs :
             wp_safe_redirect($_SERVER['HTTP_REFERER']);
             exit();
         }
@@ -45,10 +47,10 @@ class ContactForm
 
         // Sauvegarder le formulaire envoyé en base de données.
         wp_insert_post([
-            'post_type' => 'contact_message',
-            'post_title' => $data['firstname'].' '.$data['lastname'],
+            'post_type'    => 'contact_message',
+            'post_title'   => $data['firstname'] . ' ' . $data['lastname'],
             'post_content' => $this->generateEmailContent($data),
-            'post_status' => 'publish',
+            'post_status'  => 'publish',
         ]);
 
         // Envoyer un mail de notification.
@@ -58,10 +60,14 @@ class ContactForm
             message: $this->generateEmailContent($data),
         );
 
-        // Retourner à la page précédente pour afficher un message de succès.
-        // Mettre un message de succès en session pour pouvoir l'afficher sur la page suivante :
-        $_SESSION['contact_form_success'] = 'Merci, '.$data['firstname'].'! Votre message a bien été envoyé.';
-        // Retourner à la page précédente pour afficher les erreurs de validation :
+        // Mettre un message de succès en session :
+        $_SESSION['contact_form_success'] = 'Merci, ' . $data['firstname'] . '! Votre message a bien été envoyé.';
+
+        // Nettoyer les anciennes données :
+        unset($_SESSION['old']);
+        unset($_SESSION['contact_form_errors']);
+
+        // Rediriger pour afficher le message de succès :
         wp_safe_redirect($_SERVER['HTTP_REFERER']);
         exit();
     }
@@ -72,9 +78,9 @@ class ContactForm
 
         foreach ($this->rules as $field => $rules) {
             foreach ($rules as $rule) {
-                $method = 'check_'.$rule;
+                $method = 'check_' . $rule;
                 $validation = $this->$method($field, $data[$field] ?? null);
-                if($validation === true) continue;
+                if ($validation === true) continue;
                 $errors[$field] = $validation;
                 break;
             }
@@ -85,7 +91,7 @@ class ContactForm
 
     protected function check_required(string $field, mixed $value): bool|string
     {
-        if($value || $value == 0) {
+        if ($value || $value == 0) {
             return true;
         }
 
@@ -94,7 +100,7 @@ class ContactForm
 
     protected function check_email(string $field, mixed $value): bool|string
     {
-        if(filter_var($value, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return true;
         }
 
@@ -103,11 +109,11 @@ class ContactForm
 
     protected function check_no_test(string $field, mixed $value): bool|string
     {
-        if(! is_string($value)) {
+        if (!is_string($value)) {
             return true;
         }
 
-        if(strpos($value, 'test') === false) {
+        if (strpos($value, 'test') === false) {
             return true;
         }
 
@@ -118,7 +124,7 @@ class ContactForm
     {
         $cleaned = [];
 
-        foreach($this->sanitizers as $field => $callback) {
+        foreach ($this->sanitizers as $field => $callback) {
             $cleaned[$field] = call_user_func($callback, $data[$field] ?? null);
         }
 
@@ -127,11 +133,10 @@ class ContactForm
 
     protected function generateEmailContent(array $data): string
     {
-        return 'Bonjour,'.PHP_EOL
-            .'Vous avez un nouveau message de '.$data['firstname'].' '.$data['lastname'].':'.PHP_EOL
-            .$data['message'].PHP_EOL.PHP_EOL
-            .'----'.PHP_EOL
-            .'Adresse mail: '.$data['email'];
+        return 'Bonjour,' . PHP_EOL
+            . 'Vous avez un nouveau message de ' . $data['firstname'] . ' ' . $data['lastname'] . ':' . PHP_EOL
+            . $data['message'] . PHP_EOL . PHP_EOL
+            . '----' . PHP_EOL
+            . 'Adresse mail: ' . $data['email'];
     }
-
 }
