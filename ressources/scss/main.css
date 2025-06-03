@@ -2,7 +2,6 @@
 @import url("variable.scss");
 html {
   background-color: #0A192F;
-  font-family: sans-serif;
 }
 
 .hidden {
@@ -16,53 +15,37 @@ html {
   border: 0;
 }
 
-/* ==== Layout principal ==== */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
+.nav__container a[href*=single_page] {
+  display: none;
 }
 
-/* === Logo centré === */
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   max-width: 75px;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* === Langue à droite === */
+.svg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .language_selector {
-  z-index: 11;
+  display: flex;
+  justify-content: right;
 }
 
 a.lang-link {
+  position: relative;
+  top: -82px;
+  left: 80%;
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  padding-right: 1rem;
 }
 
-/* === Burger à gauche === */
-.burger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 11;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: 0.3s ease;
-}
-
-/* === Menu mobile (caché) === */
+/* Cache le menu par défaut */
 .nav__container {
   position: fixed;
   top: 0;
@@ -71,22 +54,40 @@ a.lang-link {
   width: 320px;
   background-color: white;
   transition: left 0.3s ease;
-  padding-top: 80px;
+  padding-top: 80px; /* pour laisser de l'espace pour le burger */
   z-index: 9;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Affiche le menu quand toggle est activé */
 .menu_toggle:has(#burger-toggle:checked) .nav__container {
   left: 0;
 }
 
-#burger-toggle {
-  display: none;
+/* Style du burger */
+.burger {
+  position: relative;
+  top: -62px;
+  left: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  max-width: 50px;
 }
 
-/* === Animation burger (X) === */
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+
+/* Animation du burger (X) */
 .menu_toggle:has(#burger-toggle:checked) .burger span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -99,19 +100,15 @@ a.lang-link {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.menu_toggle:has(#burger-toggle:checked) .burger span {
-  background-color: black;
+/* Cache la checkbox */
+#burger-toggle {
+  display: none;
 }
 
-/* === Liens menu mobile === */
+/* Menu liens */
 .nav__container ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-.nav__container li {
-  margin: 0;
 }
 
 .nav__container li a {
@@ -122,40 +119,58 @@ a.lang-link {
   text-decoration: none;
 }
 
-/* ==== DESKTOP (à partir de 1000px) ==== */
+/* Quand menu ouvert, les barres du burger deviennent noires */
+.menu_toggle:has(#burger-toggle:checked) .burger span {
+  background-color: #000;
+}
+
 @media screen and (min-width: 1000px) {
-  .header {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1rem 0;
-  }
-  .burger {
-    display: none;
-  }
   .nav__container {
+    display: flex;
     position: static;
+    flex-direction: row;
+    justify-content: center; /* ou flex-start / flex-end selon ton besoin */
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
     height: auto;
-    width: auto;
     background: transparent;
     padding: 0;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    left: 0;
     transition: none;
   }
   .nav__container ul {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -75px;
+    left: -300px;
+  }
+  .nav__container li {
+    margin: 0;
+  }
+  .nav__container a {
+    color: red;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .burger {
+    display: none;
   }
   .nav__container li a {
     color: white;
-    font-size: 16px;
-    text-decoration: none;
   }
   a.lang-link {
-    font-size: 16px;
+    top: -110px;
+    left: 90%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav__container ul {
+    gap: 2em;
   }
 }
 html, body {
