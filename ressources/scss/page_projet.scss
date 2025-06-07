@@ -24,7 +24,7 @@
 }
 
 .navigation_project a:hover {
-  background: linear-gradient(145deg, #0a0f2c, #1b1f47);
+  background: #4ec3ff;
 }
 
 
@@ -89,6 +89,16 @@
   margin: 24px auto;
   text-align: left;
 }
+
+
+
+.navigation_project a.active {
+  color: white; /* couleur orange vif active */
+  background: #4ec3ff;
+  font-weight: bold;
+}
+
+
 
 @media screen and (min-width: 450px) {
   .navigation_project {
