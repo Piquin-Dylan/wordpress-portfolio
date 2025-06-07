@@ -306,34 +306,43 @@ html, body {
     align-items: normal;
   }
 }
+/* Universel pour éviter les bugs de dimension */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Footer principal */
 .footer {
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
   background: var(--background-color);
 }
 
+/* Conteneur général du footer */
 .footer-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  max-width: 1440px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* Le conteneur de colonnes généré par WP */
+/* Colonnes générées par WordPress */
 .footer-columns {
   display: flex;
   flex-direction: column;
   gap: 24px;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-/* Liens */
+/* Liens du footer */
 .footer-columns a {
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Orbitron Bold", sans-serif;
   font-weight: 700;
   color: white;
@@ -341,7 +350,27 @@ html, body {
   margin: 8px 0;
 }
 
-/* Responsive */
+/* Items du menu */
+li.menu_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Sous-menus */
+.sub-menu a {
+  color: white;
+  font-size: 16px;
+  font-family: "Exo Light", sans-serif;
+}
+
+/* Effet feu sur hover */
+.sub-menu a:hover {
+  color: #f62727;
+  text-shadow: 0 0 2px #fb3030, 0 0 10px #ff3f3f;
+}
+
+/* Responsive : tablettes */
 @media screen and (min-width: 768px) {
   .footer-container {
     padding-left: 50px;
@@ -353,10 +382,17 @@ html, body {
     gap: 40px;
   }
 }
+/* Responsive : grands écrans */
 @media screen and (min-width: 1000px) {
   .footer-container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 100px;
+  }
+}
+/* Hack pour Chrome uniquement (si nécessaire) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .footer-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 }
 main.content {
@@ -506,7 +542,7 @@ body {
   font-family: "Orbitron Bold", sans-serif;
   font-size: var(--font-size-title);
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: var(--margin-24px);
 }
 
 .container_form {
@@ -514,16 +550,19 @@ body {
   flex-direction: column;
   gap: 1em;
   justify-content: center;
-  padding: 1.5em; /*  24  /16  */
+  padding: var(--padding-24px); /*  24  /16  */
   border-radius: var(--border-radius);
   border: 1px solid #4ec3ff;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  margin: 0 1.5em 1.5em; /* 24 / 16 */
+}
+
+.form {
+  padding: 0 var(--padding-24px);
 }
 
 label {
   font-size: var(--font-size-text);
-  font-family: Exo Light, sans-serif;
+  font-family: var(--font-familly-Exo), sans-serif;
 }
 
 .btn_submit {
@@ -535,16 +574,16 @@ label {
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
   color: white;
-  border-radius: 0.75em; /* 12 / 16 */
+  border-radius: 0.75em;
   cursor: pointer;
 }
 
 .input_form {
   color: white;
-  padding: 1.25em 1em; /* 20 / 16  16 / 16 */
+  padding: var(--padding-24px);
   width: 100%;
   height: 15px;
-  border-radius: 0.75em; /* 12 / 16 */
+  border-radius: 0.75em;
   background-color: #0D2436;
   border: 1px solid #314E63;
   resize: vertical;
@@ -558,7 +597,7 @@ aside {
   justify-content: left;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
-  padding: 1.5em; /* 24 / 16 */
+  padding: var(--padding-24px); /* 24 / 16 */
   border-radius: 20px;
   margin: 0 1.5em; /* 24  /16 */
 }
@@ -585,16 +624,6 @@ aside {
   color: white;
 }
 
-.liste_cord li.item_name {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-}
-
-a.item, span.item {
-  font-size: 16px;
-  font-family: Exo Light, sans-serif;
-}
-
 @media screen and (min-width: 420px) {
   .container_form {
     margin: 0 2em; /* 32 / 2 */
@@ -619,6 +648,7 @@ a.item, span.item {
     margin: 0 1.5em;
   }
 }
+
 /* === BOUTONS DE NAVIGATION === */
 .navigation_project a {
   font-family: Orbitron-light, sans-serif;
@@ -865,12 +895,20 @@ a.item, span.item {
   --font-size-title: 1.25em; /* 20 /16 */
   --font-size-text: 1em; /* 16 / 16 */
   --border-radius: 1.25em; /* 20 / 16 */
+  --font-familly-Orbitron: "Orbitron Bold", sans-serif;
+  --font-familly-Exo: "Exo Light", sans-serif;
+  --margin-24px: 1.5em;
+  --padding-24px: 1.5em;
 }
 
 :root {
   --font-size-title: 1.25em; /* 20 /16 */
   --font-size-text: 1em; /* 16 / 16 */
   --border-radius: 1.25em; /* 20 / 16 */
+  --font-familly-Orbitron: "Orbitron Bold", sans-serif;
+  --font-familly-Exo: "Exo Light", sans-serif;
+  --margin-24px: 1.5em;
+  --padding-24px: 1.5em;
 }
 
 .container_about {

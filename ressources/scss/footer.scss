@@ -1,32 +1,40 @@
+/* Universel pour éviter les bugs de dimension */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Footer principal */
 .footer {
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
   background: var(--background-color);
 }
 
+/* Conteneur général du footer */
 .footer-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  max-width: 1440px;
-
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* Le conteneur de colonnes généré par WP */
+/* Colonnes générées par WordPress */
 .footer-columns {
   display: flex;
   flex-direction: column;
   gap: 24px;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-/* Liens */
+/* Liens du footer */
 .footer-columns a {
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Orbitron Bold", sans-serif;
   font-weight: 700;
   color: white;
@@ -34,7 +42,27 @@
   margin: 8px 0;
 }
 
-/* Responsive */
+/* Items du menu */
+li.menu_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Sous-menus */
+.sub-menu a {
+  color: white;
+  font-size: 16px;
+  font-family: "Exo Light", sans-serif;
+}
+
+/* Effet feu sur hover */
+.sub-menu a:hover {
+  color: #f62727;
+  text-shadow: 0 0 2px #fb3030, 0 0 10px #ff3f3f;
+}
+
+/* Responsive : tablettes */
 @media screen and (min-width: 768px) {
   .footer-container {
     padding-left: 50px;
@@ -48,11 +76,17 @@
   }
 }
 
+/* Responsive : grands écrans */
 @media screen and (min-width: 1000px) {
   .footer-container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 100px;
   }
+}
 
-
+/* Hack pour Chrome uniquement (si nécessaire) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .footer-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
 }
