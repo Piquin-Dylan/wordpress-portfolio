@@ -12,6 +12,23 @@ html {
   padding: 0;
   border: 0;
 }
+.page_item a {
+  color: black;  /* couleur par défaut */
+  text-decoration: none;
+}
+.page_item a:hover {
+  color: #4ec3ff;
+  border: none;
+}
+
+.page_item.current_page_item a,
+.page_item.current-menu-item a {
+  color: #4ec3ff;
+  font-weight: bold;
+}
+
+
+
 
 .nav__container a[href*="single_page"] {
   display: none;
@@ -42,6 +59,9 @@ a.lang-link {
   color: white;
   text-decoration: none;
 }
+
+
+
 
 /* Cache le menu par défaut */
 .nav__container {

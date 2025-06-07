@@ -15,6 +15,22 @@ html {
   border: 0;
 }
 
+.page_item a {
+  color: black; /* couleur par défaut */
+  text-decoration: none;
+}
+
+.page_item a:hover {
+  color: #4ec3ff;
+  border: none;
+}
+
+.page_item.current_page_item a,
+.page_item.current-menu-item a {
+  color: #4ec3ff;
+  font-weight: bold;
+}
+
 .nav__container a[href*=single_page] {
   display: none;
 }
@@ -321,7 +337,7 @@ html, body {
 /* Conteneur général du footer */
 .footer-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1187px;
   margin: 0 auto;
   padding: 24px;
   display: flex;
@@ -370,29 +386,22 @@ li.menu_item {
   text-shadow: 0 0 2px #fb3030, 0 0 10px #ff3f3f;
 }
 
-/* Responsive : tablettes */
 @media screen and (min-width: 768px) {
   .footer-container {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px;
   }
+}
+@media screen and (min-width: 1200px) {
+  .footer-container {
+    padding: 0;
+  }
+}
+/* Responsive : tablettes */
+@media screen and (min-width: 900px) {
   .footer-columns {
     flex-direction: row;
     justify-content: space-between;
     gap: 40px;
-  }
-}
-/* Responsive : grands écrans */
-@media screen and (min-width: 1000px) {
-  .footer-container {
-    padding: 100px;
-  }
-}
-/* Hack pour Chrome uniquement (si nécessaire) */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .footer-container {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
   }
 }
 main.content {
@@ -913,19 +922,20 @@ aside {
 
 .container_about {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  margin: 0 24px;
+  margin: 0 var(--margin-24px);
   justify-content: left;
 }
 
 .image_presentation {
   height: auto;
   object-fit: contain;
-  order: -1;
   position: relative;
   width: 100%;
   z-index: 1;
-  max-width: 300px;
+  max-width: 450px;
 }
 
 .title_exploration, .parcours, .title_competence, .compétences {
@@ -934,9 +944,6 @@ aside {
   font-weight: 700;
   line-height: 1.2em;
   letter-spacing: 0.1em;
-  /*
-  margin: 0 auto;
-  */
   box-sizing: border-box;
   margin-bottom: 16px;
   margin-top: 32px;
@@ -949,21 +956,19 @@ aside {
   letter-spacing: 0.02em;
   width: 100%;
   max-width: 700px;
-  /*
-  margin: 0 auto;
-  */
   box-sizing: border-box;
 }
 
-.parcours {
+.parcours, .compétences {
   margin: 32px 24px;
 }
 
 .parcours-container {
   display: flex;
   flex-direction: column;
+  align-items: left;
+  justify-content: center;
   gap: 24px;
-  justify-content: left;
   margin: 0 24px;
 }
 
@@ -981,13 +986,15 @@ aside {
 .item_description {
   border: 1px solid white;
   border-radius: 8px;
-  padding: 24px;
+  padding: var(--padding-24px);
 }
 
 .container_competences {
   margin: 32px 24px 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
   overflow: hidden;
   overflow-x: auto;
@@ -1004,7 +1011,9 @@ aside {
 
 .top_competence {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   gap: 16px;
 }
 
@@ -1029,6 +1038,11 @@ aside {
   width: 200px;
 }
 
+.container_image {
+  text-align: center;
+  order: -1;
+}
+
 @media screen and (min-width: 768px) {
   .parcours-container {
     margin: 0 50px;
@@ -1043,13 +1057,17 @@ aside {
     flex-wrap: wrap;
   }
   .item_competence {
-    height: 150px;
+    height: 180px;
   }
   .container_about {
+    display: flex;
     flex-direction: row;
-    justify-content: left;
     align-items: center;
-    margin: 0 50px;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 50px;
   }
   .parcours, .compétences {
     margin: 50px 50px;
@@ -1072,16 +1090,6 @@ aside {
   .image_presentation {
     max-width: 500px;
     max-height: 500px;
-  }
-  .parcours, .compétences, .parcours-container {
-    margin: 50px 100px;
-  }
-  .container_about {
-    max-width: 1080px;
-    margin: 0 auto;
-    width: 100%;
-    max-height: 300px;
-    padding-bottom: 112px;
   }
   .section_parcours {
     max-width: 1300px;

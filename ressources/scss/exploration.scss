@@ -1,34 +1,31 @@
 @import "variable";
+@import "mixin";
 
+.container_about {
 
-.container_about{
-  display: flex;
-  flex-direction: column;
-  margin: 0 24px;
+  @include flex-center;
+  margin: 0 var(--margin-24px);
   justify-content: left;
 
 }
-.image_presentation{
+
+.image_presentation {
   height: auto;
   object-fit: contain;
-  order: -1;
   position: relative;
   width: 100%;
   z-index: 1;
-  max-width: 300px;
+  max-width: 450px;
 }
 
-.title_exploration,.parcours,.title_competence,.compétences{
-font-size: var(--font-size-title);
-font-family: "Orbitron Bold",sans-serif;
-font-weight: 700;
+.title_exploration, .parcours, .title_competence, .compétences {
+  font-size: var(--font-size-title);
+  font-family: "Orbitron Bold", sans-serif;
+  font-weight: 700;
   line-height: 1.2em;
   letter-spacing: 0.1em;
-  /*
-  margin: 0 auto;
-  */
   box-sizing: border-box;
-  margin-bottom:  16px;
+  margin-bottom: 16px;
   margin-top: 32px;
 }
 
@@ -39,63 +36,52 @@ font-weight: 700;
   letter-spacing: 0.02em;
   width: 100%;
   max-width: 700px;
-  /*
-  margin: 0 auto;
-  */
   box-sizing: border-box;
 }
 
-.parcours{
+.parcours, .compétences {
   margin: 32px 24px;
 }
 
-.parcours-container{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: left;
-    margin: 0 24px;
+.parcours-container {
+  @include flex(column, left, $gap: 24px);
+  margin: 0 24px;
 }
 
 .year {
   font-size: var(--font-size-title);
-  font-family: "Orbitron Bold",sans-serif;
+  font-family: "Orbitron Bold", sans-serif;
   margin-bottom: 16px;
 }
-.description_year{
+
+.description_year {
   font-size: var(--font-size-text);
-  font-family: Exo Light,sans-serif;
-}
-.item_description{
-  border: 1px solid white;
-  border-radius: 8px;
-  padding: 24px;
+  font-family: Exo Light, sans-serif;
 }
 
+.item_description {
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: var(--padding-24px);
+}
 
 
 .container_competences {
   margin: 32px 24px 0;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
+  @include flex(row, $gap: 24px);
   overflow: hidden;
   overflow-x: auto;
 }
 
 .item_competence {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  @include flex(column, null, null, 12px);
   border: 1px solid #ddd;
   padding: 16px;
   border-radius: 8px;
 }
 
 .top_competence {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  @include flex($align: center, $justify: flex-start, $gap: 16px);
 }
 
 .img_competences {
@@ -107,9 +93,11 @@ font-weight: 700;
   font-size: 1.2rem;
   font-weight: bold;
 }
-.compétences{
+
+.compétences {
   margin: 32px 24px;
 }
+
 .description_competence {
   font-size: 1rem;
   color: white;
@@ -117,74 +105,63 @@ font-weight: 700;
   width: 200px;
 }
 
-
-
-
+.container_image {
+  text-align: center;
+  order: -1;
+}
 
 
 @media screen and (min-width: 768px) {
-  .parcours-container{
+  .parcours-container {
     margin: 0 50px;
   }
   .container_competences {
     margin: 32px 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+    @include flex(row, center, center, 24px);
     flex-wrap: wrap;
   }
-  .item_competence{
-    height: 150px;
+  .item_competence {
+    height: 180px;
   }
 
-  .container_about{
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    margin: 0 50px;
+  .container_about {
+    @include flex($justify: flex-start);
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 50px;
   }
-  .parcours,.compétences{
+  .parcours, .compétences {
     margin: 50px 50px;
   }
-  .container_content{
+  .container_content {
     order: -1;
   }
 }
+
 @media screen and (min-width: 1000px) {
-    .container_competences{
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      max-width: 800px;
-      justify-content: center;
-      margin: 0 auto;
-    }
-   /* .container_about,.section_parcours{
-      margin: 0 100px;
-    }*/
-
-    .image_presentation{
-      max-width: 500px;
-      max-height: 500px
-
-    }
-  .parcours,.compétences,.parcours-container{
-    margin:  50px 100px;
-  }
-  .container_about{
-    max-width: 1080px;
+  .container_competences {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    justify-content: center;
     margin: 0 auto;
-    width: 100%;
-    max-height: 300px;
-    padding-bottom: 112px;
   }
-  .section_parcours{
+  /* .container_about,.section_parcours{
+     margin: 0 100px;
+   }*/
+
+  .image_presentation {
+    max-width: 500px;
+    max-height: 500px
+
+  }
+
+  .section_parcours {
     max-width: 1300px;
     margin: 0 auto;
     width: 100%;
   }
-  h2.compétences{
+  h2.compétences {
 
     max-width: 1100px;
     margin: 32px auto;
