@@ -1,6 +1,5 @@
 <?php get_header();
 
-echo 'Je la page de single-projet';
 
 
 // Récupère les champs ACF du projet courant
@@ -23,7 +22,7 @@ $image7 = get_field('autre_projet_image_3');
 <main itemscope itemtype="https://schema.org/CreativeWork">
     <div class="container_max_width">
         <a title="Revenir sur la page Projet" class="back"
-           href="<?php echo get_post_type_archive_link('projet'); ?>">Revenir sur les projets</a>
+        <a href="<?php echo get_permalink( get_page_by_path('projet') ); ?>">Revenir sur la page de projet</a>
 
         <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
             Projet <?php echo esc_html($title); ?>
@@ -86,15 +85,16 @@ $image7 = get_field('autre_projet_image_3');
                 </div>
             </section>
         <?php endif; ?>
-    </div>
+
 
     <section class="project_section">
         <h2 class="projet_title_single_page">Autres projets</h2>
+    </section>
+    </div>
         <?php
-        // Appelle ta fonction en excluant le projet en cours
+        // Appelle de la function pour afficher 3 projet et en excluant celui cliquer
         afficher_projets(3, get_the_ID());
         ?>
-    </section>
 
 
 

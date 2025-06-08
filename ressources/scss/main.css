@@ -763,14 +763,9 @@ aside {
 }
 
 @media screen and (min-width: 768px) {
-  .project_title,
-  .navigation_project {
-    margin-left: 25px;
-  }
-}
-@media screen and (min-width: 1000px) {
   .project_title {
-    margin-left: 150px;
+    padding-left: 32px;
+    margin: 0 auto;
   }
   .navigation_project {
     padding: 20px;
@@ -834,8 +829,7 @@ aside {
 
 .project_section p {
   margin-bottom: 24px;
-  max-width: 1000px;
-  margin-right: 24px;
+  max-width: 1183px;
 }
 
 .container_card {
@@ -883,9 +877,8 @@ aside {
 
 /* code permetant de gérer les gros écrans */
 .container_max_width {
-  max-width: 1173px;
+  max-width: 1284px;
   margin: 0 auto;
-  padding: 0 24px;
   width: 100%;
 }
 
@@ -897,13 +890,8 @@ aside {
   .img_concept {
     flex-direction: row;
   }
-  .project_section {
-    margin: 32px 50px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .project_name_single_page {
-    margin: 32px 48px;
+  .container_max_width {
+    padding: 0 24px;
   }
 }
 :root {
@@ -1002,6 +990,7 @@ aside {
   align-items: center;
   justify-content: center;
   gap: 24px;
+  justify-content: normal;
   overflow: hidden;
   overflow-x: auto;
 }
@@ -1013,6 +1002,7 @@ aside {
   border: 1px solid #ddd;
   padding: 16px;
   border-radius: 8px;
+  height: 180px;
 }
 
 .top_competence {

@@ -50,8 +50,7 @@
 
 .project_section p {
   margin-bottom: 24px;
-  max-width: 1000px;
-  margin-right: 24px;
+  max-width: 1183px;
 }
 
 
@@ -101,9 +100,8 @@
 
 /* code permetant de gérer les gros écrans */
 .container_max_width {
-  max-width: 1173px;
+  max-width: 1284px;
   margin: 0 auto;
-  padding: 0 24px;
   width: 100%;
 }
 
@@ -117,14 +115,9 @@
   .img_concept{
     flex-direction: row;
   }
-  .project_section{
-    margin: 32px 50px;
+  .container_max_width{
+    padding: 0 24px;
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .project_name_single_page {
 
-    margin: 32px 48px;
-  }
-}

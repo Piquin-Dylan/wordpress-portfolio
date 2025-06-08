@@ -112,16 +112,12 @@
   padding: 0 16px;
 }
 
-@media screen and (min-width: 768px) {
-  .project_title,
-  .navigation_project {
-    margin-left: 25px;
-  }
-}
 
-@media screen and (min-width: 1000px) {
+
+@media screen and (min-width: 768px) {
   .project_title {
-    margin-left: 150px;
+    padding-left: 32px;
+    margin: 0 auto;
   }
 
   .navigation_project {
