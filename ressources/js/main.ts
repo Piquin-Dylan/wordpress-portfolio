@@ -1,7 +1,13 @@
-import {StarField} from "./Stars";
-import {Slider} from './Slider';
-import {Star} from "./Star"; // note le .js même si c’est un .ts à la base
+import {StarField} from './Stars.js';
+import {Slider} from './Slider.js';
+import {Star} from './Star.js';
 
-
-console.log('bjr les amis')
-new Slider(0, 'carousel');
+console.log('bjr les amis');
+const carouselElement = document.getElementById('carousel');
+if (carouselElement) {
+    new Slider(0, 'carousel');
+}
+window.onload = () => {
+    new Star(0, 0, 0); // Juste pour test, sinon inutile si non utilisé
+    new StarField('my-canvas'); // Donne bien l’ID du canvas
+};

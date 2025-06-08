@@ -1,30 +1,29 @@
-import {Star} from "./Star";
+import {Star} from './Star.js';
 
 export class StarField {
-    private canvas: HTMLCanvasElement;
-    private ctx: CanvasRenderingContext2D;
+    private readonly canvas: HTMLCanvasElement;
+    private readonly ctx: CanvasRenderingContext2D;
     private stars: Star[] = [];
 
-    constructor() {
-        this.canvas = document.getElementById('my-canvas') as HTMLCanvasElement;
-        if (!this.canvas) throw new Error('Canvas introuvable');
-        const context = this.canvas.getContext('2d');
-        if (!context) throw new Error('Impossible d\'obtenir le contexte 2D');
-        this.ctx = context;
+    constructor(myCanvas: string) {
+        this.canvas = document.getElementById('my-canvas') as HTMLCanvasElement
+        this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D
+
 
         this.createStars();
+        this.draw();
     }
 
     private createStars() {
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 500; i++) {
             const x = Math.random() * this.canvas.width;
             const y = Math.random() * this.canvas.height;
-            const radius = Math.random() * 1.5 + 0.5;
+            const radius = Math.random() * 2 + 1.5;
             this.stars.push(new Star(x, y, radius));
         }
     }
 
-    draw() {
+    private draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.stars.forEach(star => star.draw(this.ctx));
     }
