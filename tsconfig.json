@@ -6,7 +6,9 @@
     "moduleResolution": "node",
     "rootDir": "../portfolio/ressources/js",
     "outDir": "../portfolio/ressources/js/src",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "ressources/js/**/*"

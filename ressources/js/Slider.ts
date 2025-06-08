@@ -8,12 +8,9 @@ export class Slider {
         this.angle = 0
         this.carousel = document.getElementById(carouselId)
         this.rotateCarousel(0);
+        this.Arrow()
 
 
-        // @ts-ignore
-        document.querySelector(".arrow.left").addEventListener("click", () => this.rotateCarousel(-1));
-        // @ts-ignore
-        document.querySelector(".arrow.right").addEventListener("click", () => this.rotateCarousel(1));
 
     }
 
@@ -21,5 +18,12 @@ export class Slider {
         this.angle += direction * 120;
         // @ts-ignore
         this.carousel.style.transform = `rotateY(${this.angle}deg)`;
+    }
+
+    private Arrow() {
+        // @ts-ignore
+        document.querySelector(".arrow.left").addEventListener("click", () => this.rotateCarousel(-1));
+        // @ts-ignore
+        document.querySelector(".arrow.right").addEventListener("click", () => this.rotateCarousel(1));
     }
 }
