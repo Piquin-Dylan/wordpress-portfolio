@@ -1,25 +1,18 @@
 import { Star } from './Star.js';
+import { settings } from "./settings.js";
 export class StarField {
     constructor(myCanvas) {
         this.stars = [];
-        this.canvas = document.getElementById('my-canvas');
-        if (!this.canvas)
-            throw new Error('Canvas introuvable');
-        const ctx = this.canvas.getContext('2d');
-        if (!ctx)
-            throw new Error('Impossible d\'obtenir le contexte 2D');
-        this.ctx = ctx;
-        // ⛔️ PAS de retina scaling
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        this.canvas = document.getElementById(settings.canvas.id);
+        this.ctx = this.canvas.getContext('2d');
         this.createStars();
         this.draw();
     }
     createStars() {
-        for (let i = 0; i < 500; i++) {
+        for (let i = 0; i < settings.generateStars.max; i++) {
             const x = Math.random() * this.canvas.width;
             const y = Math.random() * this.canvas.height;
-            const radius = Math.random() * 1.5 + 1;
+            const radius = Math.random() * settings.radius.min + settings.radius.max;
             this.stars.push(new Star(x, y, radius));
         }
     }

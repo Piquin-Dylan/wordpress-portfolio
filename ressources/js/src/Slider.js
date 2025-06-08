@@ -1,3 +1,4 @@
+import { settings } from "./settings.js";
 export class Slider {
     constructor(angle, carouselId) {
         this.angle = 0;
@@ -12,8 +13,8 @@ export class Slider {
     }
     Arrow() {
         // @ts-ignore
-        document.querySelector(".arrow.left").addEventListener("click", () => this.rotateCarousel(-1));
+        document.querySelector(settings.arrow.left).addEventListener("click", () => this.rotateCarousel(-1));
         // @ts-ignore
-        document.querySelector(".arrow.right").addEventListener("click", () => this.rotateCarousel(1));
+        document.querySelector(settings.arrow.right).addEventListener("click", () => this.rotateCarousel(1));
     }
 }

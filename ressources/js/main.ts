@@ -1,6 +1,7 @@
 import {StarField} from './Stars.js';
 import {Slider} from './Slider.js';
 import {Star} from './Star.js';
+import {settings} from "./settings.js";
 
 console.log('bjr les amis');
 const carouselElement = document.getElementById('carousel');

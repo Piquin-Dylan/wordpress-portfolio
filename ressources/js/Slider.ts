@@ -1,3 +1,6 @@
+import {settings} from "./settings.js";
+
+
 export class Slider {
     private angle: number
     private carousel: HTMLElement | null
@@ -17,8 +20,8 @@ export class Slider {
 
     private Arrow() {
         // @ts-ignore
-        document.querySelector(".arrow.left").addEventListener("click", () => this.rotateCarousel(-1));
+        document.querySelector(settings.arrow.left).addEventListener("click", () => this.rotateCarousel(-1));
         // @ts-ignore
-        document.querySelector(".arrow.right").addEventListener("click", () => this.rotateCarousel(1));
+        document.querySelector(settings.arrow.right).addEventListener("click", () => this.rotateCarousel(1));
     }
 }

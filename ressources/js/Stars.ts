@@ -1,4 +1,5 @@
 import {Star} from './Star.js';
+import {settings} from "./settings.js";
 
 export class StarField {
     private readonly canvas: HTMLCanvasElement;
@@ -6,19 +7,17 @@ export class StarField {
     private stars: Star[] = [];
 
     constructor(myCanvas: string) {
-        this.canvas = document.getElementById('my-canvas') as HTMLCanvasElement
+        this.canvas = document.getElementById(settings.canvas.id) as HTMLCanvasElement
         this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D
-
-
         this.createStars();
         this.draw();
     }
 
     private createStars() {
-        for (let i = 0; i < 500; i++) {
+        for (let i = 0; i < settings.generateStars.max; i++) {
             const x = Math.random() * this.canvas.width;
             const y = Math.random() * this.canvas.height;
-            const radius = Math.random() * 2 + 1.5;
+            const radius = Math.random() * settings.radius.min+settings.radius.max;
             this.stars.push(new Star(x, y, radius));
         }
     }
