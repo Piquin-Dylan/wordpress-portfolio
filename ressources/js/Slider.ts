@@ -1,20 +1,15 @@
 export class Slider {
-
     private angle: number
     private carousel: HTMLElement | null
-
 
     constructor(angle: number, carouselId: string) {
         this.angle = 0
         this.carousel = document.getElementById(carouselId)
         this.rotateCarousel(0);
         this.Arrow()
-
-
-
     }
 
-    rotateCarousel(direction: number) {
+    private rotateCarousel(direction: number) {
         this.angle += direction * 120;
         // @ts-ignore
         this.carousel.style.transform = `rotateY(${this.angle}deg)`;

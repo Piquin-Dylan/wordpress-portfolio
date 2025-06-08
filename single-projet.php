@@ -1,7 +1,6 @@
 <?php get_header();
 
 
-
 // Récupère les champs ACF du projet courant
 $title = get_the_title();
 $description = get_field('description_project');
@@ -22,7 +21,7 @@ $image7 = get_field('autre_projet_image_3');
 <main itemscope itemtype="https://schema.org/CreativeWork">
     <div class="container_max_width">
         <a title="Revenir sur la page Projet" class="back"
-        <a href="<?php echo get_permalink( get_page_by_path('projet') ); ?>">Revenir sur la page de projet</a>
+        <a href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur la page de projet</a>
 
         <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
             Projet <?php echo esc_html($title); ?>
@@ -71,7 +70,7 @@ $image7 = get_field('autre_projet_image_3');
 
         <?php if ($result): ?>
             <section class="project_section">
-                <h2 class="projet_title_single_page">Résultat</h2>
+                <h2 class="projet_title_single_page">Difficulté rencontré</h2>
                 <?php echo wp_kses_post($result); ?>
                 <div class="img_concept">
                     <?php if ($resultat_image_1): ?>
@@ -87,15 +86,14 @@ $image7 = get_field('autre_projet_image_3');
         <?php endif; ?>
 
 
-    <section class="project_section">
-        <h2 class="projet_title_single_page">Autres projets</h2>
-    </section>
+        <section class="project_section">
+            <h2 class="projet_title_single_page">Autres projets</h2>
+        </section>
     </div>
-        <?php
-        // Appelle de la function pour afficher 3 projet et en excluant celui cliquer
-        afficher_projets(3, get_the_ID());
-        ?>
-
+    <?php
+    // Appelle de la function pour afficher 3 projet et en excluant celui cliquer
+    afficher_projets(3, get_the_ID());
+    ?>
 
 
 </main>

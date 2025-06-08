@@ -33,7 +33,7 @@
 
 .project-card {
   width: 250px;
-  height: 320px;
+  height: 340px;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
   border-radius: 8px;
@@ -53,12 +53,8 @@
 }
 
 .image_project {
-  width: 90%;
   height: 280px; /* Taille fixe des images */
-  display: block;
-  border-radius: 6px;
-  position: relative;
-  left: 15px;
+
 }
 
 .name_project {

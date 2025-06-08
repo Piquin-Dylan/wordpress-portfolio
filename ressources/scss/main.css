@@ -689,7 +689,7 @@ aside {
 
 .project-card {
   width: 250px;
-  height: 320px;
+  height: 340px;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
   border: 2px solid #4ec3ff;
   border-radius: 8px;
@@ -708,12 +708,7 @@ aside {
 }
 
 .image_project {
-  width: 90%;
   height: 280px; /* Taille fixe des images */
-  display: block;
-  border-radius: 6px;
-  position: relative;
-  left: 15px;
 }
 
 .name_project {
@@ -816,6 +811,8 @@ aside {
 
 .image_concept {
   max-width: 200px;
+  height: 400px;
+  width: 100%;
 }
 
 .img_concept {
@@ -830,29 +827,6 @@ aside {
 .project_section p {
   margin-bottom: 24px;
   max-width: 1183px;
-}
-
-.container_card {
-  padding: 24px 32px 0;
-  display: flex;
-  gap: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 24px 24px;
-}
-
-.card_1, .card_2, .card_3 {
-  max-width: 200px;
-  background: #0E122E;
-  border: 1px solid white;
-  border-radius: 8px; /* Coins arrondis */
-  padding: 0 20px;
-}
-
-.card_1 img, .card_2 img, .card_3 img {
-  max-width: 200px;
 }
 
 .title_other_project {
@@ -889,6 +863,7 @@ aside {
   }
   .img_concept {
     flex-direction: row;
+    gap: 100px;
   }
   .container_max_width {
     padding: 0 24px;

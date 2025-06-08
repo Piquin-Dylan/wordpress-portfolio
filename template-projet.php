@@ -19,6 +19,10 @@ function afficher_projets($nombre = 3, $exclude_id = null, $categorie = 'tout') 
 
     $query = new WP_Query($args);
 
+    ?>
+
+    <?php
+
     if ($query->have_posts()) {
         echo '<div class="projects-container">';
         while ($query->have_posts()) {
@@ -27,7 +31,9 @@ function afficher_projets($nombre = 3, $exclude_id = null, $categorie = 'tout') 
             $image = get_field('image_projet');
             $title = get_the_title();
             ?>
-            <article class="project-card">
+
+                    <article class="project-card">
+                        <H3 class="hidden"><?php echo $title ?></H3>
                 <a href="<?php the_permalink(); ?>">
                     <?php if ($image): ?>
                         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"

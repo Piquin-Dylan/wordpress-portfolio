@@ -37,6 +37,8 @@
 
 .image_concept {
   max-width: 200px;
+  height: 400px;
+  width: 100%;
 }
 
 .img_concept {
@@ -53,30 +55,6 @@
   max-width: 1183px;
 }
 
-
-.container_card {
-  padding: 24px 32px 0;
-  display: flex;
-  gap: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 24px 24px;
-}
-
-
-.card_1,.card_2,.card_3{
-  max-width: 200px;
-  background: #0E122E;
-  border: 1px solid white;
-  border-radius: 8px; /* Coins arrondis */
-  padding:  0 20px;
-}
-
-.card_1 img,.card_2 img,.card_3 img{
-  max-width: 200px;
-}
 
 .title_other_project{
   font-size: 16px;
@@ -114,6 +92,7 @@
   }
   .img_concept{
     flex-direction: row;
+    gap: 100px;
   }
   .container_max_width{
     padding: 0 24px;
