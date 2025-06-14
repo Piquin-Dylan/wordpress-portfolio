@@ -1,7 +1,5 @@
 <?php get_header();
 
-
-// Récupère les champs ACF du projet courant
 $title = get_the_title();
 $description = get_field('description_project');
 $concept = get_field('concept');
@@ -16,12 +14,32 @@ $resultat_image_2 = get_field('resultat_image_2');
 $image5 = get_field('autre_projet_image_1');
 $image6 = get_field('autre_projet_image_2');
 $image7 = get_field('autre_projet_image_3');
+
+$type_projet = get_field('type_projet');
+$cta_site = get_field('cta_site');
+$cta_github = get_field('cta_github');
+$cta_figma = get_field('cta_figma');
+$link_url = get_field('link');
+$link_github = get_field('link_github');
 ?>
 
 <main itemscope itemtype="https://schema.org/CreativeWork">
     <div class="container_max_width">
-        <a title="Revenir sur la page Projet" class="back"
-        <a href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur la page de projet</a>
+        <div class="cta">
+            <a id="cta" class="btn_header" title="retourner sur la page des projets"
+               href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
+
+            <?php if ($type_projet === 'Web'): ?>
+                <a id="cta" class="btn_header" title="Voir le site"
+                   href="<?php echo esc_url($link_url); ?>"><?php echo $cta_site ?></a>
+                <a id="cta" class="btn_header" title="Voir le GitHub"
+                   href="<?php echo esc_url($link_github); ?>"><?php echo $cta_github ?></a>
+
+            <?php elseif ($type_projet === 'Design'): ?>
+                <a id="cta" class="btn_header" title="Voir sur Figma"
+                   href="<?php echo esc_url($link_url); ?>"><?php echo $cta_figma ?></a>
+            <?php endif; ?>
+        </div>
 
         <h1 class="project_name_single_page" itemprop="name" aria-level="1" role="heading">
             Projet <?php echo esc_html($title); ?>
@@ -91,7 +109,6 @@ $image7 = get_field('autre_projet_image_3');
         </section>
     </div>
     <?php
-    // Appelle de la function pour afficher 3 projet et en excluant celui cliquer
     afficher_projets(3, get_the_ID());
     ?>
 

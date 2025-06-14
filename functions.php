@@ -117,9 +117,10 @@ function register_taxonomy_categorie_projet()
     ]);
 }
 
-add_action('init', 'register_taxonomy_categorie_projet');
 
 add_action('init', 'register_post_type_projet');
+add_action('init', 'register_taxonomy_categorie_projet');
+
 
 
 require_once get_template_directory() . '/template-projet.php';

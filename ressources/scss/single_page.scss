@@ -85,6 +85,21 @@
 
 
 
+.cta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:24px;
+}
+#cta{
+  max-width: 300px;
+  padding: 24px;
+  width: 350px;
+  height: 70px;
+}
+
+
 @media screen and (min-width: 768px){
   .container_card{
     flex-direction: row;
@@ -100,3 +115,9 @@
 }
 
 
+@media screen and (min-width: 1000px) {
+  .cta{
+    flex-direction: row;
+    gap: 24px;
+  }
+}
