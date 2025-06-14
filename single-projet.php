@@ -27,7 +27,7 @@ $link_github = get_field('link_github');
     <div class="container_max_width">
         <div class="cta">
             <a id="cta" class="btn_header" title="retourner sur la page des projets"
-               href="<?php echo get_permalink(get_page_by_path('projet')); ?>">Revenir sur les projets</a>
+               href="<?php echo get_permalink(get_page_by_path('projet')); ?>"><?php _e('Revenir sur les projets', 'theme-de-test-hepl'); ?></a>
 
             <?php if ($type_projet === 'Web'): ?>
                 <a id="cta" class="btn_header" title="Voir le site"
@@ -54,7 +54,7 @@ $link_github = get_field('link_github');
 
         <?php if ($concept): ?>
             <section class="project_section">
-                <h2 class="projet_title_single_page">Concept</h2>
+                <h2 class="projet_title_single_page"><?php _e('Concept', 'theme-de-test-hepl'); ?></h2>
                 <?php echo wp_kses_post($concept); ?>
                 <div class="img_concept">
                     <?php if ($image1): ?>
@@ -71,7 +71,7 @@ $link_github = get_field('link_github');
 
         <?php if ($realisation): ?>
             <section class="project_section">
-                <h2 class="projet_title_single_page">Réalisation</h2>
+                <h2 class="projet_title_single_page"><?php _e('Réalisation', 'theme-de-test-hepl'); ?></h2>
                 <?php echo wp_kses_post($realisation); ?>
                 <div class="img_concept">
                     <?php if ($image3): ?>
@@ -88,7 +88,7 @@ $link_github = get_field('link_github');
 
         <?php if ($result): ?>
             <section class="project_section">
-                <h2 class="projet_title_single_page">Difficulté rencontré</h2>
+                <h2 class="projet_title_single_page"><?php _e('Difficulté Rencontré', 'theme-de-test-hepl'); ?></h2>
                 <?php echo wp_kses_post($result); ?>
                 <div class="img_concept">
                     <?php if ($resultat_image_1): ?>
@@ -105,7 +105,7 @@ $link_github = get_field('link_github');
 
 
         <section class="project_section">
-            <h2 class="projet_title_single_page">Autres projets</h2>
+            <h2 class="projet_title_single_page"><?php _e('Autres projets', 'theme-de-test-hepl'); ?></h2>
         </section>
     </div>
     <?php

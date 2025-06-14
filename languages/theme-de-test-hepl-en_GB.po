@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-06-03 15:58+0200\n"
-"PO-Revision-Date: 2025-06-03 15:59+0200\n"
+"POT-Creation-Date: 2025-06-14 11:19+0200\n"
+"PO-Revision-Date: 2025-06-14 11:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,56 +13,6 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: form.php:34
-msgid "Contactez-moi"
-msgstr "Contact me"
-
-#: form.php:37
-msgid "Prénom"
-msgstr "Firstname"
-
-#: form.php:40
-msgid "Entrer votre prénom ex : Jean"
-msgstr "Enter your first name ex: Jean"
-
-#: form.php:45
-msgid "Nom"
-msgstr "Name"
-
-#: form.php:48
-msgid "Entrer votre nom ex : Dupont"
-msgstr "Enter your name ex : Dupont"
-
-#: form.php:53 form.php:88
-msgid "Adresse mail"
-msgstr "Mail Adress"
-
-#: form.php:56
-msgid "Entrer votre email ex : jean@gmail.com"
-msgstr "Enter your email ex : jean@gmail.com"
-
-#: form.php:62
-#, fuzzy
-#| msgid "Votre Message"
-msgid "Message"
-msgstr "Your message"
-
-#: form.php:71
-msgid "Envoyer"
-msgstr "Sent"
-
-#: form.php:77
-msgid "Mes coordonnées"
-msgstr "My contact details"
-
-#: form.php:80
-msgid "Numéro de téléphone"
-msgstr "telephone numbers"
-
-#: form.php:99
-msgid "Adresse postale"
-msgstr "Postal address"
 
 #: functions.php:39
 msgid "Menu de navigation principal"
@@ -91,6 +41,82 @@ msgstr ""
 #: projet.php:31
 msgid "Mobile"
 msgstr ""
+
+#: single-projet.php:30
+msgid "Revenir sur les projets"
+msgstr "Back to projects"
+
+#: single-projet.php:57
+msgid "Concept"
+msgstr "Concept"
+
+#: single-projet.php:74
+msgid "Réalisation"
+msgstr "Realization"
+
+#: single-projet.php:91
+msgid "Difficulté Rencontré"
+msgstr "Difficulty encountered"
+
+#: single-projet.php:108
+msgid "Autres projets"
+msgstr "Other projects"
+
+#: template-contact.php:31
+msgid "Contactez-moi"
+msgstr "Contact me"
+
+#: template-contact.php:34
+msgid "Prénom"
+msgstr "Firstname"
+
+#: template-contact.php:37
+msgid "Entrer votre prénom ex : Jean"
+msgstr "Enter your first name ex: Jean"
+
+#: template-contact.php:42
+msgid "Nom"
+msgstr "Name"
+
+#: template-contact.php:45
+msgid "Entrer votre nom ex : Dupont"
+msgstr "Enter your name ex : Dupont"
+
+#: template-contact.php:50 template-contact.php:87
+msgid "Adresse mail"
+msgstr "Mail Adress"
+
+#: template-contact.php:53
+msgid "Entrer votre email ex : jean@gmail.com"
+msgstr "Enter your email ex : jean@gmail.com"
+
+#: template-contact.php:59
+#, fuzzy
+#| msgid "Votre Message"
+msgid "Message"
+msgstr "Your message"
+
+#: template-contact.php:62
+#, fuzzy
+#| msgid "Entrer votre prénom ex : Jean"
+msgid "Entrer votre message"
+msgstr "Enter your first name ex: Jean"
+
+#: template-contact.php:70
+msgid "Envoyer"
+msgstr "Sent"
+
+#: template-contact.php:76
+msgid "Mes coordonnées"
+msgstr "My contact details"
+
+#: template-contact.php:79
+msgid "Numéro de téléphone"
+msgstr "telephone numbers"
+
+#: template-contact.php:98
+msgid "Adresse postale"
+msgstr "Postal address"
 
 #~ msgid "Nom complet"
 #~ msgstr "Full name"
