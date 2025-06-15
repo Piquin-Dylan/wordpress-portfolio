@@ -20,6 +20,7 @@ $cta_site = get_field('cta_site');
 $cta_github = get_field('cta_github');
 $cta_figma = get_field('cta_figma');
 $link_url = get_field('link');
+$link_figma = get_field('link_figma');
 $link_github = get_field('link_github');
 ?>
 
@@ -35,9 +36,6 @@ $link_github = get_field('link_github');
                 <a id="cta" class="btn_header" title="Voir le GitHub"
                    href="<?php echo esc_url($link_github); ?>"><?php echo $cta_github ?></a>
 
-            <?php elseif ($type_projet === 'Design'): ?>
-                <a id="cta" class="btn_header" title="Voir sur Figma"
-                   href="<?php echo esc_url($link_url); ?>"><?php echo $cta_figma ?></a>
             <?php endif; ?>
         </div>
 
@@ -99,6 +97,8 @@ $link_github = get_field('link_github');
                         <img class="image_concept" src="<?php echo esc_url($resultat_image_2['url']); ?>"
                              alt="<?php echo esc_attr($resultat_image_2['alt']); ?>">
                     <?php endif; ?>
+                    <a id="cta" class="btn_header" title="Voir le design sur figma"
+                       href="<?php echo esc_url($link_figma); ?>"><?php echo $cta_figma ?></a>
                 </div>
             </section>
         <?php endif; ?>

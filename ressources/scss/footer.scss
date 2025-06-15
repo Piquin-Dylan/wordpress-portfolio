@@ -1,71 +1,61 @@
-/* Universel pour éviter les bugs de dimension */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Footer principal */
 .footer {
   width: 100vw;
   overflow-x: hidden;
   background: var(--background-color);
-  padding-top: 100px;
+  padding-top: 6.25em;
 }
 
-/* Conteneur général du footer */
 .footer-container {
   width: 100%;
-  max-width: 1187px;
+  max-width: 74.1875em;
   margin: 0 auto;
-  padding: 24px;
+  padding: 1.5em;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5em;
 }
 
-/* Colonnes générées par WordPress */
 .footer-columns {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5em;
   list-style: none;
   padding: 0;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
-/* Liens du footer */
 .footer-columns a {
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: "Orbitron Bold", sans-serif;
   font-weight: 700;
   color: white;
   text-decoration: none;
-  margin: 8px 0;
+  margin: 0.5em 0;
 }
 
-/* Items du menu */
 li.menu_item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1em;
 }
 
-/* Sous-menus */
 .sub-menu a {
   color: white;
-  font-size: 16px;
+  font-size: 1em;
   font-family: "Exo Light", sans-serif;
 }
 
-/* Effet feu sur hover */
 .sub-menu a:hover {
   color: #f62727;
-  text-shadow: 0 0 2px #fb3030, 0 0 10px #ff3f3f;
+  text-shadow: 0 0 0.125em #fb3030, 0 0 0.625em #ff3f3f;
 }
 
-
 @media screen and (min-width: 768px) {
-
   .footer-container {
     padding: 0 50px;
   }
@@ -77,18 +67,10 @@ li.menu_item {
   }
 }
 
-
-/* Responsive : tablettes */
 @media screen and (min-width: 900px) {
-
   .footer-columns {
     flex-direction: row;
     justify-content: space-between;
-    gap: 40px;
+    gap: 2.5em;
   }
 }
-
-
-
-
-

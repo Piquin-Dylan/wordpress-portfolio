@@ -1,32 +1,32 @@
 @charset "UTF-8";
 @import url("variable.scss");
+
 body {
   color: white;
 }
 
-.title_form, .title_coordonnées {
+.title_form,
+.title_coordonnées {
   font-family: "Orbitron Bold", sans-serif;
   font-size: var(--font-size-title);
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 }
 
-
-.container{
-  padding-top: 72px;
+.container {
+  padding-top: 4.5em;
 }
-
 
 .container_form {
   display: flex;
   flex-direction: column;
   gap: 1em;
   justify-content: center;
-  padding: 1.5em; /*  24  /16  */
+  padding: 1.5em;
   border-radius: var(--border-radius);
-  border: 1px solid #4ec3ff;
+  border: 0.0625em solid #4ec3ff;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  margin: 0 1.5em 1.5em; /* 24 / 16 */
+  margin: 0 1.5em 1.5em;
 }
 
 label {
@@ -36,25 +36,25 @@ label {
 
 .btn_submit {
   font-size: var(--font-size-text);
-  padding: 0.75em 1.25em; /* 12 / 16  20 / 16 */
-  min-width: 9.375em; /* 150  /16 */
+  padding: 0.75em 1.25em;
+  min-width: 9.375em;
   text-align: center;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
+  border: 0.125em solid #4ec3ff;
   color: white;
-  border-radius: 0.75em; /* 12 / 16 */
+  border-radius: 0.75em;
   cursor: pointer;
 }
 
 .input_form {
   color: white;
-  padding: 1.25em 1em; /* 20 / 16  16 / 16 */
+  padding: 1.25em 1em;
   width: 100%;
-  height: 15px;
-  border-radius: 0.75em; /* 12 / 16 */
+  height: 0.9375em;
+  border-radius: 0.75em;
   background-color: #0D2436;
-  border: 1px solid #314E63;
+  border: 0.0625em solid #314E63;
   resize: vertical;
   box-sizing: border-box;
 }
@@ -62,13 +62,13 @@ label {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 1.5em; /* 24  / 16 */
+  gap: 1.5em;
   justify-content: left;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
-  padding: 1.5em; /* 24 / 16 */
-  border-radius: 20px;
-  margin: 0 1.5em; /* 24  /16 */
+  border: 0.125em solid #4ec3ff;
+  padding: 1.5em;
+  border-radius: 1.25em;
+  margin: 0 1.5em;
 }
 
 .item {
@@ -95,27 +95,29 @@ aside {
 
 @media screen and (min-width: 420px) {
   .container_form {
-    margin: 0 2em; /* 32 / 2 */
+    margin: 0 2em;
   }
+
   aside {
-    margin: 1.5em 2em; /* 24 / 16   32 / 16 */
+    margin: 1.5em 2em;
     text-align: left;
   }
 }
+
 @media screen and (min-width: 768px) {
   .container {
     display: flex;
     flex-direction: row;
-    gap: 1.5em; /* 24 / 16 */
+    gap: 1.5em;
     justify-content: center;
     align-items: flex-start;
   }
+
   .container_form {
     margin-right: 0;
   }
+
   aside {
     margin: 0 1.5em;
   }
 }
-
-/*# sourceMappingURL=forms.css.map */

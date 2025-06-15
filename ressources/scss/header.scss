@@ -6,15 +6,15 @@ html {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
+  height: 0.0625em;
+  width: 0.0625em;
+  margin: -0.0625em;
   padding: 0;
   border: 0;
 }
 
 .header {
-  padding: 1px 0;
+  padding: 0.0625em 0;
 }
 
 .page_item a {
@@ -40,7 +40,7 @@ html {
 
 body.admin-bar {
   padding-top: 0;
-  padding-bottom: 32px;
+  padding-bottom: 2em;
 }
 
 /* Effet au survol */
@@ -50,7 +50,6 @@ body.admin-bar {
   border: none;
 }
 
-/* Page active : classe ajoutée automatiquement par WordPress */
 .page_item.current_page_item a,
 .page_item.current-menu-item a,
 .menu_item.current-menu-item a,
@@ -69,22 +68,22 @@ body.admin-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
-  height: 25px;
+  width: 1.875em;
+  height: 1.5625em;
   cursor: pointer;
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  top: 0.5em;
+  right: 1em;
   z-index: 1001;
   background: none;
   border: none;
 }
 
 .burger span {
-  height: 3px;
+  height: 0.1875em;
   width: 100%;
   background: white;
-  border-radius: 2px;
+  border-radius: 0.125em;
   transition: 0.3s ease;
 }
 
@@ -93,7 +92,7 @@ body.admin-bar {
 }
 
 .main-navigation-wrapper:has(#burger-toggle:checked) .burger span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(0.375em, 0.375em);
   transform-origin: center;
 }
 
@@ -102,11 +101,10 @@ body.admin-bar {
 }
 
 .main-navigation-wrapper:has(#burger-toggle:checked) .burger span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(0.375em, -0.375em);
   transform-origin: center;
 }
 
-/* --- Menu mobile --- */
 .main-navigation {
   display: none;
 }
@@ -120,7 +118,7 @@ body.admin-bar {
   height: 100vh;
   background: white;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2em;
   z-index: 1000;
   overflow-y: auto;
 }
@@ -130,26 +128,25 @@ body.admin-bar {
   position: fixed;
 }
 
-/* --- Liste du menu --- */
 .main-menu {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5em;
 }
 
 .main-menu li a {
   text-decoration: none;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
 .logo {
-  padding-bottom: 24px;
-  max-width: 150px;
+  padding-bottom: 1.5em;
+  max-width: 9.375em;
 }
 
 .logo img {
@@ -158,8 +155,7 @@ body.admin-bar {
   display: block;
 }
 
-/* --- Desktop styles --- */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .burger,
   #burger-toggle {
     display: none;
@@ -167,32 +163,31 @@ body.admin-bar {
 
   .main-navigation {
     display: flex;
-    justify-content: space-between; /* logo à gauche, menu à droite */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 1.25em 1.5em;
     position: static;
-
-    max-width: 1200px; /* Limite la largeur max */
-    margin: 0 auto;    /* Centre horizontalement le container */
-    width: 100%;       /* Prend toute la largeur possible jusqu’à max-width */
+    max-width: 75em;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .logo {
     flex-shrink: 0;
-    max-height: 60px;
+    max-height: 3.75em;
   }
 
   .logo img {
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
-    height: 60px;
+    height: 3.75em;
     width: auto;
     display: block;
   }
 
   .main-menu {
     display: flex;
-    gap: 64px;
+    gap: 4em;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -202,7 +197,7 @@ body.admin-bar {
   .main-menu li a {
     color: white;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1em;
     text-decoration: none;
   }
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-06-15 17:17+0200\n"
-"PO-Revision-Date: 2025-06-15 17:37+0200\n"
+"POT-Creation-Date: 2025-06-15 21:47+0200\n"
+"PO-Revision-Date: 2025-06-16 00:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -14,7 +14,11 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: front-page.php:29
+#: front-page.php:17
+msgid "Aller sur la page d`exploration"
+msgstr "Go to exploration page"
+
+#: front-page.php:30
 #, fuzzy
 #| msgid "Mes projets"
 msgid "Mes derniers projets"
@@ -48,19 +52,19 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: single-projet.php:30
+#: single-projet.php:31
 msgid "Revenir sur les projets"
 msgstr "Back to projects"
 
-#: single-projet.php:57
+#: single-projet.php:55
 msgid "Concept"
 msgstr "Concept"
 
-#: single-projet.php:74
+#: single-projet.php:72
 msgid "Réalisation"
 msgstr "Realization"
 
-#: single-projet.php:91
+#: single-projet.php:89
 #, fuzzy
 #| msgid "Difficulté Rencontré"
 msgid "Difficultés rencontrées"
@@ -125,6 +129,12 @@ msgstr "telephone numbers"
 #: template-contact.php:98
 msgid "Adresse postale"
 msgstr "Postal address"
+
+#: template-projet.php:30
+#, fuzzy
+#| msgid "Aller sur la page d`exploration"
+msgid "Vers la page du projet"
+msgstr "Go to exploration page"
 
 #~ msgid "Nom complet"
 #~ msgstr "Full name"
