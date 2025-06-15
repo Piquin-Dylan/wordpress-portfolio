@@ -42,7 +42,7 @@
 
             <div class="main-navigation">
                 <a class="logo" title="Retourner sur la page d'accueil" href="<?php echo esc_url(pll_home_url()); ?>">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.svg'); ?>" alt="Logo de notre srg">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.svg'); ?>" alt="Logo de notre site">
                 </a>
 
                 <h2 class="hidden">Navigation principale</h2>
@@ -50,7 +50,7 @@
                 wp_nav_menu([
                     'theme_location' => 'navigation',
                     'container' => false,
-                    'menu_class' => 'main-menu ',
+                    'menu_class' => 'main-menu',
                 ]);
                 ?>
             </div>

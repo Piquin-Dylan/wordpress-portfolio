@@ -42,7 +42,6 @@ main.content {
 }
 
 .carousel .slide img {
-  width: 150px;
   height: 180px;
   border-radius: 10px;
   margin-left: 12px;
@@ -99,10 +98,20 @@ main.content {
 }
 
 .title_project {
-  font-size: 32px;
+  font-size: 24px;
   color: white;
   text-align: center;
   margin-bottom: 32px;
+  position: relative;
+  top: 32px;
+}
+
+.title_project_section{
+  font-family: "Orbitron Bold",sans-serif;
+font-size: 24px;
+  font-weight: 700;
+text-align: center;
+padding-bottom: 24px;
 }
 
 .image_project_1 {
@@ -130,13 +139,13 @@ main.content {
 @media screen and (min-width: 1000px) {
   .left {
     left: calc(50% - 400px);
-    top: 1050px;
+    top: 866px;
     transform: translateY(-50%);
   }
 
   .right {
     right: calc(50% - 400px);
-    top: 1050px;
+    top: 866px;
     transform: translateY(-50%);
   }
 }

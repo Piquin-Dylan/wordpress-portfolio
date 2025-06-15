@@ -1,6 +1,5 @@
 <?php
 
-echo 'template-projet chargé<br>';
 function afficher_slider_projets($nombre = 3)
 {
     $args = [

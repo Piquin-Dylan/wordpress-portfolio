@@ -1,26 +1,22 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-menu">
-            <?php
-            if (function_exists('pll_current_language')) {
-                $lang = pll_current_language();
+            <nav aria-labelledby="footer-navigation-heading">
+                <h2 id="footer-navigation-heading" class="hidden">Navigation de pied de page</h2>
+                <?php
+                if (function_exists('pll_current_language')) {
+                    $lang = pll_current_language();
 
-                if ($lang === 'fr') {
+                    $menu_name = ($lang === 'en') ? 'footer-En' : 'footer';
+
                     wp_nav_menu(array(
-                        'menu' => 'footer',
-                        'container' => 'nav',
-                        'menu_class' => 'footer-columns',
-                    ));
-                } elseif ($lang === 'en') {
-                    wp_nav_menu(array(
-                        'menu' => 'footer-En',
-                        'container' => 'nav',
+                        'menu' => $menu_name,
+                        'container' => false,
                         'menu_class' => 'footer-columns',
                     ));
                 }
-            }
-            ?>
+                ?>
+            </nav>
         </div>
     </div>
-    <h2 class="hidden">Menus de navigation de bas de page </h2>
 </footer>

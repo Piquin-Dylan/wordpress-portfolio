@@ -31,7 +31,7 @@ $page_url = $page_obj ? get_permalink($page_obj->ID) : '#';
            class="<?php echo ($categorie_choisie === 'mobile') ? 'active' : ''; ?>"><?php _e('Mobile', 'theme-de-test-hepl'); ?></a>
     </div>
     <?php
-    afficher_projets(-1); // -1 = tous les projets
+    afficher_projets(-1, null, $categorie_choisie);
 ?>
 </section>
 

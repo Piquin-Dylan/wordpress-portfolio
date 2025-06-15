@@ -88,7 +88,7 @@ $link_github = get_field('link_github');
 
         <?php if ($result): ?>
             <section class="project_section">
-                <h2 class="projet_title_single_page"><?php _e('Difficulté Rencontré', 'theme-de-test-hepl'); ?></h2>
+                <h2 class="projet_title_single_page"><?php _e('Difficultés rencontrées', 'theme-de-test-hepl'); ?></h2>
                 <?php echo wp_kses_post($result); ?>
                 <div class="img_concept">
                     <?php if ($resultat_image_1): ?>

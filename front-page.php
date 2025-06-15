@@ -25,7 +25,9 @@
         <button class="arrow left">◀</button>
 
         <section>
-            <h2 class="title_project">Mes derniers Projets</h2>
+            <div class="text">
+            <h2 class="title_project_section"><?php _e('Mes derniers projets', 'theme-de-test-hepl'); ?></h2>
+            </div>
             <?php afficher_slider_projets(3); ?>
         </section>
 

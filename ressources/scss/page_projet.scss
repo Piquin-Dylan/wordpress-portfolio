@@ -20,17 +20,12 @@
   gap: 32px;
   justify-content: flex-start;
   align-items: center;
-  margin: 24px 12px;
+  padding: 24px 0;
 }
 
 .navigation_project a:hover {
   background: #4ec3ff;
 }
-
-
-
-
-
 .project-card {
   width: 250px;
   height: 340px;
@@ -82,7 +77,7 @@
 .project_title {
   font-size: 20px;
   font-family: "Orbitron Bold", sans-serif;
-  margin: 24px auto;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -95,6 +90,10 @@
 }
 
 
+.container_project{
+  padding: 75px 24px 0;
+}
+
 
 @media screen and (min-width: 450px) {
   .navigation_project {
@@ -105,7 +104,6 @@
 .container_project {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 
 
