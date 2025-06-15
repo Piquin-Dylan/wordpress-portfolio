@@ -14,10 +14,23 @@ export class Star {
         this.x += this.dx + globalDx * this.depthFactor;
         this.y += this.dy + globalDy * this.depthFactor;
 
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        if (this.x < 0) {
+            this.x = canvas.width;
+            this.y = Math.random() * canvas.height;
+        }
+        else if (this.x > canvas.width) {
+            this.x = 0;
+            this.y = Math.random() * canvas.height;
+        }
+
+        if (this.y < 0) {
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+        }
+        else if (this.y > canvas.height) {
+            this.y = 0;
+            this.x = Math.random() * canvas.width;
+        }
     }
 
     draw(ctx) {

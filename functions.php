@@ -36,7 +36,7 @@ function mytheme_register_menus()
 {
     register_nav_menus(
         array(
-            'main-menu' => __('Menu de navigation principal')
+            'navigation' => __('Menu de navigation principal')
         )
     );
 }
@@ -160,4 +160,14 @@ function dw_handle_contact_form()
 
     return $form->handle($_POST);
 }
+function ajouter_classe_active_si_page($classes, $item) {
+    if (is_page() || is_singular()) {
+        $current_url = home_url(add_query_arg([], $GLOBALS['wp']->request));
+        if (rtrim($item->url, '/') === rtrim($current_url, '/')) {
+            $classes[] = 'current-menu-item';
+        }
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'ajouter_classe_active_si_page', 10, 2);
 

@@ -46,13 +46,18 @@ body.admin-bar {
   padding-bottom: 32px;
 }
 
-.page_item a:hover {
+/* Effet au survol */
+.page_item a:hover,
+.menu_item a:hover {
   color: #4ec3ff;
   border: none;
 }
 
+/* Page active : classe ajoutée automatiquement par WordPress */
 .page_item.current_page_item a,
-.page_item.current-menu-item a {
+.page_item.current-menu-item a,
+.menu_item.current-menu-item a,
+.menu_item.current_page_item a {
   color: #4ec3ff;
   font-weight: bold;
 }
@@ -164,6 +169,8 @@ body.admin-bar {
   }
   .logo img {
     padding: 24px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
   }
   .main-navigation {
     display: flex;
@@ -499,12 +506,12 @@ main.content {
 
 .left {
   left: 10px;
-  top: 1050px;
+  top: 818px;
 }
 
 .right {
   right: 10px;
-  top: 1050px;
+  top: 818px;
 }
 
 .title_project {

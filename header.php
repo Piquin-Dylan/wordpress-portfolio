@@ -17,7 +17,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Dylan Piquin - Etudiant en Web à la Hepl"/>
     <meta property="og:url" content="<?php echo esc_url(home_url()); ?>"/>
-
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/ressources/reset.css'); ?>">
     <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/ressources/scss/main.css'); ?>">
     <script type="module" src="<?php echo esc_url(get_template_directory_uri() . '/ressources/js/src/main.js'); ?>"></script>
@@ -41,19 +41,16 @@
             </label>
 
             <div class="main-navigation">
-                <!-- Logo qui redirige vers la home dans la bonne langue -->
                 <a class="logo" title="Retourner sur la page d'accueil" href="<?php echo esc_url(pll_home_url()); ?>">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.svg'); ?>" alt="Logo de notre srg">
                 </a>
 
                 <h2 class="hidden">Navigation principale</h2>
                 <?php
-                // Affiche le menu qui correspond à la langue active
                 wp_nav_menu([
-                    'theme_location' => 'main-menu',
+                    'theme_location' => 'navigation',
                     'container' => false,
-                    'menu_class' => 'main-menu',
-                    // Pas nécessaire de gérer la langue ici, Polylang gère ça si menus bien assignés
+                    'menu_class' => 'main-menu ',
                 ]);
                 ?>
             </div>
