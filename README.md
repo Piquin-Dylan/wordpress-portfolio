@@ -6,43 +6,45 @@ Dans le cadre d’un de mes cours, j’ai dû réaliser un portfolio sur un thè
 
 ## 🎯 Objectifs principaux
 
-- Moderniser la présence en ligne de l’institution.  
-- Présenter clairement la mission et le fonctionnement du Vieux Moulin.  
-- Offrir un espace rassurant et informatif destiné aux familles, partenaires et professionnels.  
-- Valoriser les projets éducatifs ainsi que les actualités du service.  
-- Simplifier la prise de contact et l’accès aux informations pratiques.
+- Créer un site qui reflète mon image
+
+- Mettre en avant les différents projets que j’ai réalisés
+
+- Valoriser mes compétences pour un futur entretien
+
+- Mettre le site en ligne et utiliser WordPress
+
+- Concevoir un site responsive
 
 ## ✏️ Organisation du site
 
-- **Page d’accueil** : Vue d’ensemble, présentation rapide des informations essentielles.  
-- **Le Vieux Moulin** : Détails sur la SRG, ses valeurs, ses routines éducatives.  
-- **Foyers** : Description des deux bâtiments d’accueil.  
-- **Actualités** : Mises à jour, projets, événements et témoignages.  
-- **Contact** : Informations pour joindre l’équipe, formulaire de contact intégré.  
-- **Soutien** : Informations pour apporter un soutien à l’institution.
+- Page d’accueil : Présentation de qui je suis et de mes projets
 
-## 🤖 Technologies utilisées
+- Page de contact : Mes informations et un formulaire pour me contacter
 
-### Langages et frameworks
+- Projets : Mise en avant de mes projets
 
-- HTML5  
-- Sass (avec méthodologie BEM)  
+- Exploration : Présentation détaillée de qui je suis, de mes compétences et de mon parcours
+
+Single_projet : Description détaillée du projet avec images
+
+
+### Langages 
+
+- HTML  
+- Sass
+- Javascript  
 - TypeScript  
-- WordPress (CMS)
+- WordPress 
 
 ### Plugins
 
-- Advanced Custom Fields Pro (ACF Pro)  
+- Advanced Custom Fields Pro (ACF Pro)
+- polylang 
 
-### Autres
 
-- Design responsive pour une expérience optimale sur desktop, tablette et mobile.
 
-## ✍️ Auteur
+##  Auteur
 
-[Votre Nom]  
-[Votre contact ou lien LinkedIn/GitHub]  
+Piquin Dylan  
 
----
-
-*Merci de visiter le projet et n’hésitez pas à poser vos questions ou proposer des améliorations !*
