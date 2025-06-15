@@ -9,15 +9,15 @@ html {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
+  height: 0.0625em;
+  width: 0.0625em;
+  margin: -0.0625em;
   padding: 0;
   border: 0;
 }
 
 .header {
-  padding: 1px 0;
+  padding: 0.0625em 0;
 }
 
 .page_item a {
@@ -43,7 +43,7 @@ html {
 
 body.admin-bar {
   padding-top: 0;
-  padding-bottom: 32px;
+  padding-bottom: 2em;
 }
 
 /* Effet au survol */
@@ -53,7 +53,6 @@ body.admin-bar {
   border: none;
 }
 
-/* Page active : classe ajoutée automatiquement par WordPress */
 .page_item.current_page_item a,
 .page_item.current-menu-item a,
 .menu_item.current-menu-item a,
@@ -72,22 +71,22 @@ body.admin-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
-  height: 25px;
+  width: 1.875em;
+  height: 1.5625em;
   cursor: pointer;
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  top: 0.5em;
+  right: 1em;
   z-index: 1001;
   background: none;
   border: none;
 }
 
 .burger span {
-  height: 3px;
+  height: 0.1875em;
   width: 100%;
   background: white;
-  border-radius: 2px;
+  border-radius: 0.125em;
   transition: 0.3s ease;
 }
 
@@ -96,7 +95,7 @@ body.admin-bar {
 }
 
 .main-navigation-wrapper:has(#burger-toggle:checked) .burger span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(0.375em, 0.375em);
   transform-origin: center;
 }
 
@@ -105,11 +104,10 @@ body.admin-bar {
 }
 
 .main-navigation-wrapper:has(#burger-toggle:checked) .burger span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(0.375em, -0.375em);
   transform-origin: center;
 }
 
-/* --- Menu mobile --- */
 .main-navigation {
   display: none;
 }
@@ -123,7 +121,7 @@ body.admin-bar {
   height: 100vh;
   background: white;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2em;
   z-index: 1000;
   overflow-y: auto;
 }
@@ -133,26 +131,25 @@ body.admin-bar {
   position: fixed;
 }
 
-/* --- Liste du menu --- */
 .main-menu {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5em;
 }
 
 .main-menu li a {
   text-decoration: none;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
 .logo {
-  padding-bottom: 24px;
-  max-width: 150px;
+  padding-bottom: 1.5em;
+  max-width: 9.375em;
 }
 
 .logo img {
@@ -161,36 +158,35 @@ body.admin-bar {
   display: block;
 }
 
-/* --- Desktop styles --- */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .burger,
   #burger-toggle {
     display: none;
   }
   .main-navigation {
     display: flex;
-    justify-content: space-between; /* logo à gauche, menu à droite */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 1.25em 1.5em;
     position: static;
-    max-width: 1200px; /* Limite la largeur max */
-    margin: 0 auto; /* Centre horizontalement le container */
-    width: 100%; /* Prend toute la largeur possible jusqu’à max-width */
+    max-width: 75em;
+    margin: 0 auto;
+    width: 100%;
   }
   .logo {
     flex-shrink: 0;
-    max-height: 60px;
+    max-height: 3.75em;
   }
   .logo img {
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
-    height: 60px;
+    height: 3.75em;
     width: auto;
     display: block;
   }
   .main-menu {
     display: flex;
-    gap: 64px;
+    gap: 4em;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -199,7 +195,7 @@ body.admin-bar {
   .main-menu li a {
     color: white;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1em;
     text-decoration: none;
   }
 }
@@ -224,25 +220,25 @@ html, body {
   color: white;
   display: flex;
   flex-direction: column;
-  margin-left: 24px; /* 50 / 16 */
-  margin-bottom: 150px; /* 332 / 16 */
-  margin-top: 4.6875em; /* 75 / 16 */
-  padding-right: 2em; /* 32 / 16 */
+  margin-left: 1.5em;
+  margin-bottom: 9.375em;
+  margin-top: 4.6875em;
+  padding-right: 2em;
 }
 
 .presentation {
   line-height: 1.25em;
-  max-width: 400px;
+  max-width: 25em;
 }
 
 .name {
-  font-size: 3em; /* 48 / 16 */
+  font-size: 3em;
   font-weight: bold;
   line-height: 1.1em;
 }
 
 .job {
-  font-size: 1.5em; /* 24 / 16 */
+  font-size: 1.5em;
 }
 
 .container_btn {
@@ -254,19 +250,19 @@ html, body {
 }
 
 .btn_header {
-  font-size: 16px;
-  padding: 12px;
-  max-width: 150px;
+  font-size: 1em;
+  padding: 0.75em;
+  max-width: 9.375em;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 3.125em;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
+  border: 0.125em solid #4ec3ff;
   color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(78, 195, 255, 0.4);
+  border-radius: 0.75em;
+  box-shadow: 0 0 0.5em rgba(78, 195, 255, 0.4);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625em;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -277,10 +273,10 @@ html, body {
 .btn_header:before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -25%;
-  width: 200%;
-  height: 200%;
+  top: -3.125em;
+  left: -1.5625em;
+  width: 12.5em;
+  height: 12.5em;
   background: radial-gradient(circle, rgba(78, 195, 255, 0.2) 0%, transparent 80%);
   transform: rotate(25deg);
   transition: all 0.5s ease;
@@ -289,12 +285,12 @@ html, body {
 
 .btn_header:hover::before {
   opacity: 1;
-  top: -80%;
-  left: -50%;
+  top: -5em;
+  left: -3.125em;
 }
 
 .btn_header:hover {
-  box-shadow: 0 0 20px #4ec3ff;
+  box-shadow: 0 0 1.25em #4ec3ff;
   border-color: #ffffff;
 }
 
@@ -309,7 +305,7 @@ html, body {
   flex-direction: column;
   justify-content: left;
   align-items: normal;
-  gap: 24px;
+  gap: 1.5em;
 }
 
 @media screen and (min-width: 768px) {
@@ -336,69 +332,61 @@ html, body {
     align-items: normal;
   }
 }
-/* Universel pour éviter les bugs de dimension */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Footer principal */
 .footer {
   width: 100vw;
   overflow-x: hidden;
   background: var(--background-color);
-  padding-top: 100px;
+  padding-top: 6.25em;
 }
 
-/* Conteneur général du footer */
 .footer-container {
   width: 100%;
-  max-width: 1187px;
+  max-width: 74.1875em;
   margin: 0 auto;
-  padding: 24px;
+  padding: 1.5em;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5em;
 }
 
-/* Colonnes générées par WordPress */
 .footer-columns {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5em;
   list-style: none;
   padding: 0;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
-/* Liens du footer */
 .footer-columns a {
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: "Orbitron Bold", sans-serif;
   font-weight: 700;
   color: white;
   text-decoration: none;
-  margin: 8px 0;
+  margin: 0.5em 0;
 }
 
-/* Items du menu */
 li.menu_item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1em;
 }
 
-/* Sous-menus */
 .sub-menu a {
   color: white;
-  font-size: 16px;
+  font-size: 1em;
   font-family: "Exo Light", sans-serif;
 }
 
-/* Effet feu sur hover */
 .sub-menu a:hover {
   color: #f62727;
-  text-shadow: 0 0 2px #fb3030, 0 0 10px #ff3f3f;
+  text-shadow: 0 0 0.125em #fb3030, 0 0 0.625em #ff3f3f;
 }
 
 @media screen and (min-width: 768px) {
@@ -411,12 +399,11 @@ li.menu_item {
     padding: 0;
   }
 }
-/* Responsive : tablettes */
 @media screen and (min-width: 900px) {
   .footer-columns {
     flex-direction: row;
     justify-content: space-between;
-    gap: 40px;
+    gap: 2.5em;
   }
 }
 main.content {
@@ -571,15 +558,16 @@ body {
   color: white;
 }
 
-.title_form, .title_coordonnées {
+.title_form,
+.title_coordonnées {
   font-family: "Orbitron Bold", sans-serif;
   font-size: var(--font-size-title);
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 }
 
 .container {
-  padding-top: 72px;
+  padding-top: 4.5em;
 }
 
 .container_form {
@@ -587,11 +575,11 @@ body {
   flex-direction: column;
   gap: 1em;
   justify-content: center;
-  padding: 1.5em; /*  24  /16  */
+  padding: 1.5em;
   border-radius: var(--border-radius);
-  border: 1px solid #4ec3ff;
+  border: 0.0625em solid #4ec3ff;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  margin: 0 1.5em 1.5em; /* 24 / 16 */
+  margin: 0 1.5em 1.5em;
 }
 
 label {
@@ -601,25 +589,25 @@ label {
 
 .btn_submit {
   font-size: var(--font-size-text);
-  padding: 0.75em 1.25em; /* 12 / 16  20 / 16 */
-  min-width: 9.375em; /* 150  /16 */
+  padding: 0.75em 1.25em;
+  min-width: 9.375em;
   text-align: center;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
+  border: 0.125em solid #4ec3ff;
   color: white;
-  border-radius: 0.75em; /* 12 / 16 */
+  border-radius: 0.75em;
   cursor: pointer;
 }
 
 .input_form {
   color: white;
-  padding: 1.25em 1em; /* 20 / 16  16 / 16 */
+  padding: 1.25em 1em;
   width: 100%;
-  height: 15px;
-  border-radius: 0.75em; /* 12 / 16 */
+  height: 0.9375em;
+  border-radius: 0.75em;
   background-color: #0D2436;
-  border: 1px solid #314E63;
+  border: 0.0625em solid #314E63;
   resize: vertical;
   box-sizing: border-box;
 }
@@ -627,13 +615,13 @@ label {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 1.5em; /* 24  / 16 */
+  gap: 1.5em;
   justify-content: left;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
-  padding: 1.5em; /* 24 / 16 */
-  border-radius: 20px;
-  margin: 0 1.5em; /* 24  /16 */
+  border: 0.125em solid #4ec3ff;
+  padding: 1.5em;
+  border-radius: 1.25em;
+  margin: 0 1.5em;
 }
 
 .item {
@@ -660,10 +648,10 @@ aside {
 
 @media screen and (min-width: 420px) {
   .container_form {
-    margin: 0 2em; /* 32 / 2 */
+    margin: 0 2em;
   }
   aside {
-    margin: 1.5em 2em; /* 24 / 16   32 / 16 */
+    margin: 1.5em 2em;
     text-align: left;
   }
 }
@@ -671,7 +659,7 @@ aside {
   .container {
     display: flex;
     flex-direction: row;
-    gap: 1.5em; /* 24 / 16 */
+    gap: 1.5em;
     justify-content: center;
     align-items: flex-start;
   }
@@ -682,19 +670,17 @@ aside {
     margin: 0 1.5em;
   }
 }
-
-/* === BOUTONS DE NAVIGATION === */
 .navigation_project a {
   font-family: Orbitron-light, sans-serif;
   display: inline-block;
   text-decoration: none;
-  font-size: 16px;
-  padding: 16px;
+  font-size: 1em;
+  padding: 1em;
   background-color: transparent;
-  border: 1px solid white;
-  border-radius: 20px;
-  width: 80px;
-  max-width: 80px;
+  border: 0.0625em solid white;
+  border-radius: 1.25em;
+  width: 5em;
+  max-width: 5em;
   text-align: center;
   color: white;
 }
@@ -702,10 +688,10 @@ aside {
 .navigation_project {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 2em;
   justify-content: flex-start;
   align-items: center;
-  padding: 24px 0;
+  padding: 1.5em 0;
 }
 
 .navigation_project a:hover {
@@ -713,36 +699,36 @@ aside {
 }
 
 .project-card {
-  width: 250px;
-  height: 340px;
+  width: 15.625em;
+  height: 21.25em;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
-  border-radius: 8px;
+  border: 0.125em solid #4ec3ff;
+  border-radius: 0.5em;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 24px;
+  margin: 1.5em;
   text-align: center;
-  box-shadow: 0 0 8px rgba(78, 195, 255, 0.4);
+  box-shadow: 0 0 0.5em rgba(78, 195, 255, 0.4);
 }
 
 .project-card:hover {
-  box-shadow: 0 0 30px #4ec3ff;
+  box-shadow: 0 0 1.875em #4ec3ff;
 }
 
 .image_project {
-  height: 280px; /* Taille fixe des images */
+  height: 17.5em; /* Taille fixe des images */
 }
 
 .name_project {
-  font-size: 18px;
+  font-size: 1.125em;
   font-family: "Orbitron Bold", sans-serif;
-  margin: 12px 0 0 0;
-  padding: 0 8px;
+  margin: 0.75em 0 0 0;
+  padding: 0 0.5em;
   color: white;
-  height: 60px;
+  height: 3.75em;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -755,11 +741,11 @@ aside {
   justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
-  gap: 24px;
+  gap: 1.5em;
 }
 
 .project_title {
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: "Orbitron Bold", sans-serif;
   margin: 0 auto;
   text-align: left;
@@ -772,7 +758,7 @@ aside {
 }
 
 .container_project {
-  padding: 75px 24px 0;
+  padding: 4.6875em 1.5em 0;
 }
 
 @media screen and (min-width: 450px) {
@@ -781,24 +767,24 @@ aside {
   }
 }
 .container_project {
-  max-width: 1200px;
+  max-width: 75em;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
   .project_title {
-    padding-left: 32px;
+    padding-left: 2em;
     margin: 0 auto;
   }
   .navigation_project {
-    padding: 20px;
-    margin: 0 32px auto;
+    padding: 1.25em;
+    margin: 0 2em auto;
     justify-content: center;
   }
   .navigation_project a {
-    width: 150px;
-    max-width: 200px;
-    padding: 20px;
+    width: 9.375em;
+    max-width: 12.5em;
+    padding: 1.25em;
   }
 }
 :root {
@@ -817,26 +803,20 @@ aside {
   max-width: 100%;
   margin-bottom: 3.333em;
   margin-top: 1.333em;
-  line-height: 1.6;
+  line-height: 1.6em;
   text-align: left;
 }
 
 .project_name_single_page {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  margin: 32px 24px;
+  font-size: var(--font-size-title);
+  font-family: var(--font-familly-Orbitron), sans-serif;
+  margin: 1.6em 1.2em; /* 32 /20  24 / 20 */
 }
 
 .project_section {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  margin: 32px 24px;
-}
-
-.projet_title_single_page {
-  font-size: 20px;
-  font-family: "Orbitron Bold", sans-serif;
-  margin: 24px 0;
+  font-size: var(--font-size-title);
+  font-family: var(--font-familly-Orbitron), sans-serif;
+  margin: 1.6em 1.2em; /* 32 /20  24 / 20 */
 }
 
 .image_concept {
@@ -859,23 +839,23 @@ aside {
 }
 
 .title_other_project {
-  font-size: 16px;
-  font-family: "Orbitron Bold", sans-serif;
-  margin: 24px 12px;
+  font-size: var(--font-size-title);
+  font-family: var(--font-familly-Orbitron), sans-serif;
+  margin: 1.5em 0.75em; /* 24 / 16  12 / 16 */
 }
 
 .other_project_title {
   text-align: left;
-  font-size: 24px;
-  font-family: "Orbitron Bold", sans-serif;
-  margin: 24px auto;
+  font-size: 1.5em; /* 24 / 16 */
+  font-family: var(--font-familly-Orbitron), sans-serif;
+  margin: 1em auto;
 }
 
 .project-title_wrapper {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 1.5em; /* 24 / 16 */
 }
 
 /* code permetant de gérer les gros écrans */
@@ -954,7 +934,7 @@ aside {
   position: relative;
   width: 100%;
   z-index: 1;
-  max-width: 450px;
+  max-width: 28.125em;
 }
 
 .title_exploration, .parcours, .title_competence, .compétences {
@@ -964,8 +944,8 @@ aside {
   line-height: 1.2em;
   letter-spacing: 0.1em;
   box-sizing: border-box;
-  margin-bottom: 16px;
-  margin-top: 32px;
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
 
 .description_exploration {
@@ -974,12 +954,12 @@ aside {
   line-height: 1.5em;
   letter-spacing: 0.02em;
   width: 100%;
-  max-width: 700px;
+  max-width: 43.75em;
   box-sizing: border-box;
 }
 
 .parcours, .compétences {
-  margin: 32px 24px;
+  margin: 2em 1.5em;
 }
 
 .parcours-container {
@@ -987,14 +967,14 @@ aside {
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  gap: 24px;
-  margin: 0 24px;
+  gap: 1.5em;
+  margin: 0 1.5em;
 }
 
 .year {
   font-size: var(--font-size-title);
   font-family: "Orbitron Bold", sans-serif;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 .description_year {
@@ -1003,18 +983,18 @@ aside {
 }
 
 .item_description {
-  border: 1px solid white;
-  border-radius: 8px;
+  border: 0.0625em solid white;
+  border-radius: var(--border-radius);
   padding: var(--padding-24px);
 }
 
 .container_competences {
-  margin: 32px 24px 0;
+  margin: 2em 1.5em 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 1.5em;
   justify-content: normal;
   overflow: hidden;
   overflow-x: auto;
@@ -1023,11 +1003,11 @@ aside {
 .item_competence {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 8px;
-  height: 180px;
+  gap: 0.75em;
+  border: 0.0625em solid #ddd;
+  padding: 1em;
+  border-radius: 0.5em;
+  height: 11.25em;
 }
 
 .top_competence {
@@ -1035,28 +1015,28 @@ aside {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 1em;
 }
 
 .img_competences {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 3.125em;
+  max-height: 3.125em;
 }
 
 .title_competence {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 .compétences {
-  margin: 32px 24px;
+  margin: 2em 1.5em;
 }
 
 .description_competence {
-  font-size: 1rem;
+  font-size: 1em;
   color: white;
-  max-width: 200px;
-  width: 200px;
+  max-width: 12.5em;
+  width: 12.5em;
 }
 
 .container_image {
@@ -1105,12 +1085,9 @@ aside {
     justify-content: center;
     margin: 0 auto;
   }
-  /* .container_about,.section_parcours{
-     margin: 0 100px;
-   }*/
   .image_presentation {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 31.25em;
+    max-height: 31.25em;
   }
   .section_parcours {
     max-width: 1300px;
@@ -1119,7 +1096,7 @@ aside {
   }
   h2.compétences {
     max-width: 1100px;
-    margin: 32px auto;
+    margin: 2em auto;
     width: 100%;
   }
 }
@@ -1127,15 +1104,16 @@ body {
   color: white;
 }
 
-.title_form, .title_coordonnées {
+.title_form,
+.title_coordonnées {
   font-family: "Orbitron Bold", sans-serif;
   font-size: var(--font-size-title);
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 }
 
 .container {
-  padding-top: 72px;
+  padding-top: 4.5em;
 }
 
 .container_form {
@@ -1143,11 +1121,11 @@ body {
   flex-direction: column;
   gap: 1em;
   justify-content: center;
-  padding: 1.5em; /*  24  /16  */
+  padding: 1.5em;
   border-radius: var(--border-radius);
-  border: 1px solid #4ec3ff;
+  border: 0.0625em solid #4ec3ff;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  margin: 0 1.5em 1.5em; /* 24 / 16 */
+  margin: 0 1.5em 1.5em;
 }
 
 label {
@@ -1157,25 +1135,25 @@ label {
 
 .btn_submit {
   font-size: var(--font-size-text);
-  padding: 0.75em 1.25em; /* 12 / 16  20 / 16 */
-  min-width: 9.375em; /* 150  /16 */
+  padding: 0.75em 1.25em;
+  min-width: 9.375em;
   text-align: center;
   font-family: "Orbitron", sans-serif;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
+  border: 0.125em solid #4ec3ff;
   color: white;
-  border-radius: 0.75em; /* 12 / 16 */
+  border-radius: 0.75em;
   cursor: pointer;
 }
 
 .input_form {
   color: white;
-  padding: 1.25em 1em; /* 20 / 16  16 / 16 */
+  padding: 1.25em 1em;
   width: 100%;
-  height: 15px;
-  border-radius: 0.75em; /* 12 / 16 */
+  height: 0.9375em;
+  border-radius: 0.75em;
   background-color: #0D2436;
-  border: 1px solid #314E63;
+  border: 0.0625em solid #314E63;
   resize: vertical;
   box-sizing: border-box;
 }
@@ -1183,13 +1161,13 @@ label {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 1.5em; /* 24  / 16 */
+  gap: 1.5em;
   justify-content: left;
   background: linear-gradient(145deg, #0a0f2c, #1b1f47);
-  border: 2px solid #4ec3ff;
-  padding: 1.5em; /* 24 / 16 */
-  border-radius: 20px;
-  margin: 0 1.5em; /* 24  /16 */
+  border: 0.125em solid #4ec3ff;
+  padding: 1.5em;
+  border-radius: 1.25em;
+  margin: 0 1.5em;
 }
 
 .item {
@@ -1216,10 +1194,10 @@ aside {
 
 @media screen and (min-width: 420px) {
   .container_form {
-    margin: 0 2em; /* 32 / 2 */
+    margin: 0 2em;
   }
   aside {
-    margin: 1.5em 2em; /* 24 / 16   32 / 16 */
+    margin: 1.5em 2em;
     text-align: left;
   }
 }
@@ -1227,7 +1205,7 @@ aside {
   .container {
     display: flex;
     flex-direction: row;
-    gap: 1.5em; /* 24 / 16 */
+    gap: 1.5em;
     justify-content: center;
     align-items: flex-start;
   }
@@ -1238,6 +1216,5 @@ aside {
     margin: 0 1.5em;
   }
 }
-
 
 /*# sourceMappingURL=main.css.map */

@@ -2,11 +2,9 @@
 @import "mixin";
 
 .container_about {
-
   @include flex-center;
   margin: 0 var(--margin-24px);
   justify-content: left;
-
 }
 
 .image_presentation {
@@ -15,7 +13,7 @@
   position: relative;
   width: 100%;
   z-index: 1;
-  max-width: 450px;
+  max-width: 28.125em;
 }
 
 .title_exploration, .parcours, .title_competence, .compétences {
@@ -25,8 +23,8 @@
   line-height: 1.2em;
   letter-spacing: 0.1em;
   box-sizing: border-box;
-  margin-bottom: 16px;
-  margin-top: 32px;
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
 
 .description_exploration {
@@ -35,23 +33,23 @@
   line-height: 1.5em;
   letter-spacing: 0.02em;
   width: 100%;
-  max-width: 700px;
+  max-width: 43.75em;
   box-sizing: border-box;
 }
 
 .parcours, .compétences {
-  margin: 32px 24px;
+  margin: 2em 1.5em;
 }
 
 .parcours-container {
-  @include flex(column, left, $gap: 24px);
-  margin: 0 24px;
+  @include flex(column, left, $gap: 1.5em);
+  margin: 0 1.5em;
 }
 
 .year {
   font-size: var(--font-size-title);
   font-family: "Orbitron Bold", sans-serif;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 .description_year {
@@ -60,58 +58,56 @@
 }
 
 .item_description {
-  border: 1px solid white;
-  border-radius: 8px;
+  border: 0.0625em solid white;
+  border-radius: var(--border-radius);
   padding: var(--padding-24px);
 }
 
-
 .container_competences {
-  margin: 32px 24px 0;
-  @include flex( row, $gap: 24px);
+  margin: 2em 1.5em 0;
+  @include flex(row, $gap: 1.5em);
   justify-content: normal;
   overflow: hidden;
   overflow-x: auto;
 }
 
 .item_competence {
-  @include flex(column, null, null, 12px);
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 8px;
-  height: 180px;
+  @include flex(column, null, null, 0.75em);
+  border: 0.0625em solid #ddd;
+  padding: 1em;
+  border-radius: 0.5em;
+  height: 11.25em;
 }
 
 .top_competence {
-  @include flex($align: center, $justify: flex-start, $gap: 16px);
+  @include flex($align: center, $justify: flex-start, $gap: 1em);
 }
 
 .img_competences {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 3.125em;
+  max-height: 3.125em;
 }
 
 .title_competence {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 .compétences {
-  margin: 32px 24px;
+  margin: 2em 1.5em;
 }
 
 .description_competence {
-  font-size: 1rem;
+  font-size: 1em;
   color: white;
-  max-width: 200px;
-  width: 200px;
+  max-width: 12.5em;
+  width: 12.5em;
 }
 
 .container_image {
   text-align: center;
   order: -1;
 }
-
 
 @media screen and (min-width: 768px) {
   .parcours-container {
@@ -148,14 +144,10 @@
     justify-content: center;
     margin: 0 auto;
   }
-  /* .container_about,.section_parcours{
-     margin: 0 100px;
-   }*/
 
   .image_presentation {
-    max-width: 500px;
-    max-height: 500px
-
+    max-width: 31.25em;
+    max-height: 31.25em;
   }
 
   .section_parcours {
@@ -163,10 +155,10 @@
     margin: 0 auto;
     width: 100%;
   }
-  h2.compétences {
 
+  h2.compétences {
     max-width: 1100px;
-    margin: 32px auto;
+    margin: 2em auto;
     width: 100%;
   }
 }
